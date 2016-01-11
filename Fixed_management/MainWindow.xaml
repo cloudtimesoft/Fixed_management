@@ -1,0 +1,73 @@
+﻿<Window xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml"  x:Class="Fixed_management.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
+    <Grid>
+        <Menu Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="menu1" VerticalAlignment="Top" >
+            <MenuItem Header="系统">
+                <MenuItem Header="登录系统" InputGestureText="Alt+S"></MenuItem>
+                <MenuItem Header="退出系统" InputGestureText="Alt+L"></MenuItem>
+                <MenuItem Header="退出(_X)" x:Name="shutdown" InputGestureText="Alt+X"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="资产">
+                <MenuItem Header="资产增加" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="资产转移" Click="MenuItem_Click_1"></MenuItem>
+                <MenuItem Header="资产退出" ></MenuItem>
+                <MenuItem Header="资产删除" ></MenuItem>
+                <Separator />
+                <MenuItem Header="信息导入" ></MenuItem>
+                <MenuItem Header="标签打印" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="查询">
+                <MenuItem Header="有效资产" ></MenuItem>
+                <MenuItem Header="退出资产" ></MenuItem>
+                <MenuItem Header="删除资产" ></MenuItem>
+                <Separator />
+                <MenuItem Header="转移信息" ></MenuItem>
+                <Separator />
+                <MenuItem Header="资产分类明细表" ></MenuItem>
+                <MenuItem Header="资产分类汇总表" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="盘点">
+                <MenuItem Header="资产盘点" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="设置">
+                <MenuItem Header="员工管理" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="维护">
+                <MenuItem Header="注册" ></MenuItem>
+                <Separator />
+                <MenuItem Header="报表设计" ></MenuItem>
+                <MenuItem Header="标签标题" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="帮助">
+                <MenuItem Header="帮助索引" InputGestureText="F1"></MenuItem>
+                <MenuItem Header="关于" ></MenuItem>
+            </MenuItem>
+        </Menu>
+
+
+        <ToolBarPanel Height="36" HorizontalAlignment="Stretch" Margin="0,23,0,0" Name="toolBarPanel1" VerticalAlignment="Top" Orientation="Horizontal" AllowDrop="True" Background="White">
+            <ToolBar Height="36"  Name="toolBar1" VerticalAlignment="Top" AllowDrop="True">
+                <Button Content="资产增加"></Button>
+            </ToolBar>
+        </ToolBarPanel>
+
+
+
+            <avalonDock:DockingManager x:Name="dockingManager" Margin="0,59,0,0">
+            <avalonDock:LayoutRoot>
+                <avalonDock:LayoutPanel Orientation="Horizontal">
+                    <avalonDock:LayoutDocumentPaneGroup>
+                        <avalonDock:LayoutDocumentPane x:Name="mainpanel">
+                        </avalonDock:LayoutDocumentPane>
+
+                    </avalonDock:LayoutDocumentPaneGroup>
+                </avalonDock:LayoutPanel>
+            </avalonDock:LayoutRoot>
+        </avalonDock:DockingManager>
+
+
+    </Grid>
+</Window>
