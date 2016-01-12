@@ -27,16 +27,34 @@ namespace Fixed_management
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+
             C1.WPF.C1Window newwindow =new C1.WPF.C1Window();
-            newwindow.Width = 500;
-            newwindow.Height = 400;
+            newwindow.Width = 800;
+            newwindow.Height = 500;
             newwindow.Margin = new Thickness(SystemParameters.PrimaryScreenWidth/2d-250, SystemParameters.PrimaryScreenHeight/2d-250, 0, 0);
             newwindow.Show();
+            fixedadd newfixedadd = new fixedadd();
+            newwindow.Content = newfixedadd;
+
+            //newwindow.Header = "资产增加";
+            //StackPanel newstackpanel = new StackPanel();
+            //Label barcode = new Label();
+            //barcode.Content = "资产条码";
+            //newstackpanel.Children.Add(barcode);
+            //TextBox barcodetxt = new TextBox();
+            //barcodetxt.Margin = new Thickness(35, 0, 0, 0);
+            //barcodetxt.HorizontalAlignment = HorizontalAlignment.Left;
+            //barcodetxt.Width = 80;
+            //barcodetxt.Height = 26;
+            //newstackpanel.Children.Add(barcodetxt);
+            //newwindow.Content = newstackpanel;
+
         }
 
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
+
             LayoutDocument newreport = new LayoutDocument();
             newreport.Title = "测试";
             mainpanel.Children.Add(newreport);
