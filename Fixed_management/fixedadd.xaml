@@ -10,7 +10,7 @@
         <TextBox Height="23" HorizontalAlignment="Left" Margin="63,2,0,0" Name="barcode" VerticalAlignment="Top" Width="120" />
         <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="189,2,0,0" Name="barcode_btn" VerticalAlignment="Top" Width="51" Click="barcode_btn_Click" />
         <Label Content="资产性质:" Height="28" HorizontalAlignment="Left" Margin="263,2,0,0" Name="label2" VerticalAlignment="Top" />
-        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,2,350,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,2,350,0" Name="nature_txt" VerticalAlignment="Top" Width="120" />
         <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="456,3,0,0" Name="nature_btn" VerticalAlignment="Top" Width="39" Click="nature_btn_Click" />
         <Label Content="资产类别:" Height="28" HorizontalAlignment="Left" Margin="514,2,0,0" Name="label3" VerticalAlignment="Top" />
         <TextBox Height="23" HorizontalAlignment="Right" Margin="0,6,102,0" Name="textBox2" VerticalAlignment="Top" Width="120" />
