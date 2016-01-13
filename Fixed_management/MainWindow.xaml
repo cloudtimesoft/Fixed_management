@@ -51,6 +51,11 @@
         <ToolBarPanel Height="36" HorizontalAlignment="Stretch" Margin="0,23,0,0" Name="toolBarPanel1" VerticalAlignment="Top" Orientation="Horizontal" AllowDrop="True" Background="White">
             <ToolBar Height="36"  Name="toolBar1" VerticalAlignment="Top" AllowDrop="True">
                 <Button Content="资产增加"></Button>
+                <Button Content="资产转移"></Button>
+                <Button Content="标签打印"></Button>
+                <Button Content="有效资产"></Button>
+                <Button Content="转移信息"></Button>
+                <Button Content="资产盘点"></Button>
             </ToolBar>
         </ToolBarPanel>
 

@@ -31,6 +31,7 @@ namespace Fixed_management
             C1.WPF.C1Window newwindow =new C1.WPF.C1Window();
             newwindow.Width = 800;
             newwindow.Height = 500;
+            newwindow.Header = "资产增加";
             newwindow.Margin = new Thickness(SystemParameters.PrimaryScreenWidth/2d-250, SystemParameters.PrimaryScreenHeight/2d-250, 0, 0);
             newwindow.Show();
             fixedadd newfixedadd = new fixedadd();

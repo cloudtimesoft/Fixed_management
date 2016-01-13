@@ -44,5 +44,15 @@ namespace Fixed_management
             newnature.Content = naturelist;
         }
 
+        private void textBox16_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBox17_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
     }
 }
