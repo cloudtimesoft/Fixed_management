@@ -52,10 +52,12 @@
             <ToolBar Height="36"  Name="toolBar1" VerticalAlignment="Top" AllowDrop="True">
                 <Button Content="资产增加"></Button>
                 <Button Content="资产转移"></Button>
+
                 <Button Content="标签打印"></Button>
                 <Button Content="有效资产"></Button>
                 <Button Content="转移信息"></Button>
                 <Button Content="资产盘点"></Button>
+
             </ToolBar>
         </ToolBarPanel>
 
