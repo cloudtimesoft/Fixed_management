@@ -78,6 +78,10 @@ namespace Fixed_management
             newnature.Close();
             
         }
+        void quxiao_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
 
         void naturelist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

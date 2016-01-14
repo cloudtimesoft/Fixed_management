@@ -15,74 +15,73 @@
         <Button Content="Button" Height="28" HorizontalAlignment="Right" Margin="0,2,287,0" Name="nature_btn" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
         <Label Content="资产类别:" Height="28" HorizontalAlignment="Left" Margin="548,2,0,0" Name="label3" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
         <TextBox Height="28" HorizontalAlignment="Right" Margin="0,6,67,0" Name="textBox2" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="738,5,0,0" Name="button2" VerticalAlignment="Top" Width="27" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="738,5,0,0" Name="button2" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
         <Label Height="28" HorizontalAlignment="Left" Margin="31,45,0,0" Name="label4" VerticalAlignment="Top" Width="58" Content="资产名称" FontWeight="Bold" />
         <TextBox Height="28" HorizontalAlignment="Right" Margin="0,45,587,0" Name="textBox3" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Right" Margin="0,45,557,0" Name="button1" VerticalAlignment="Top" Width="27" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="216,45,0,0" Name="button1" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
         <Label Content="资产规格" Height="28" HorizontalAlignment="Right" Margin="0,43,447,0" Name="label5" VerticalAlignment="Top" Width="58" />
         <TextBox Height="28" HorizontalAlignment="Right" Margin="0,45,318,0" Name="textBox4" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Right" Margin="0,0,287,428" Name="button3" VerticalAlignment="Bottom" Width="27" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Right" Margin="0,45,287,0" Name="button3" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
         <Label Content="资产型号" Height="28" HorizontalAlignment="Left" Margin="548,46,0,0" Name="label6" VerticalAlignment="Top" Width="58" />
         <TextBox Height="28" HorizontalAlignment="Right" Margin="0,43,67,0" Name="textBox5" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="738,84,0,0" Name="button4" VerticalAlignment="Top" Width="27" />
-        <Label Content="购置日期" Height="28" HorizontalAlignment="Left" Margin="31,0,0,385" Name="label7" VerticalAlignment="Bottom" Width="58" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="738,84,0,0" Name="button4" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
+        <Label Content="购置日期" Height="28" HorizontalAlignment="Left" Margin="31,85,0,0" Name="label7" VerticalAlignment="Top" Width="58" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="93,87,0,0" Name="textBox6" VerticalAlignment="Top" Width="120" />
         <Label Content="使用期限" Height="28" HorizontalAlignment="Left" Margin="295,85,0,0" Name="label8" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="362,87,0,0" Name="textBox7" VerticalAlignment="Top" Width="120" />
         <Label Content="购置方式" Height="28" HorizontalAlignment="Left" Margin="548,87,0,0" Name="label9" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="613,85,0,0" Name="textBox8" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="738,128,0,0" Name="button7" VerticalAlignment="Top" Width="27" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="738,128,0,0" Name="button7" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
         <Label Content="资产数量" Height="28" HorizontalAlignment="Left" Margin="31,128,0,0" Name="label10" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="93,126,0,0" Name="textBox9" VerticalAlignment="Top" Width="120" />
         <Label Content="计量单位" Height="28" HorizontalAlignment="Left" Margin="295,128,0,0" Name="label11" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="362,126,0,0" Name="textBox10" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="486,126,0,0" Name="button9" VerticalAlignment="Top" Width="27" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="486,126,0,0" Name="button9" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
         <Label Content="资产原值" Height="28" HorizontalAlignment="Left" Margin="548,126,0,0" Name="label12" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="613,126,0,0" Name="textBox11" VerticalAlignment="Top" Width="120" />
         <Label Content="所属单位" Height="28" HorizontalAlignment="Left" Margin="31,165,0,0" Name="label13" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="93,165,0,0" Name="textBox12" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="216,165,0,0" Name="button11" VerticalAlignment="Top" Width="27" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="216,165,0,0" Name="button11" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
         <Label Height="28" HorizontalAlignment="Right" Margin="0,166,447,0" Name="label14" VerticalAlignment="Top" Width="58" Content="保管部门" FontWeight="Bold" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="362,165,0,0" Name="textBox13" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="486,166,0,0" Name="button12" VerticalAlignment="Top" Width="27" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="486,166,0,0" Name="button12" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
         <Label Content="保管人" Height="28" HorizontalAlignment="Left" Margin="548,165,0,0" Name="label15" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="613,165,0,0" Name="textBox14" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="738,165,0,0" Name="button13" VerticalAlignment="Top" Width="27" />
-        <Label Content="供应商" Height="28" HorizontalAlignment="Left" Margin="31,258,0,0" Name="label16" VerticalAlignment="Top" Width="58" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="93,259,0,0" Name="textBox15" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="216,259,0,0" Name="button14" VerticalAlignment="Top" Width="27" />
-        <Label Content="出厂编号" Height="28" HorizontalAlignment="Left" Margin="295,0,0,214" Name="label17" VerticalAlignment="Bottom" Width="58" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="362,258,0,0" Name="textBox16" VerticalAlignment="Top" Width="120" TextChanged="textBox16_TextChanged" />
-        <Label Content="资产编码" Height="28" HorizontalAlignment="Left" Margin="548,0,0,213" Name="label18" VerticalAlignment="Bottom" Width="58" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="613,258,0,0" Name="textBox17" VerticalAlignment="Top" Width="120" TextChanged="textBox17_TextChanged" />
-        <Label Content="存放地点" Height="28" HorizontalAlignment="Left" Margin="31,302,0,0" Name="label19" VerticalAlignment="Top" Width="58" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="93,304,0,0" Name="textBox18" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="216,304,0,0" Name="button17" VerticalAlignment="Top" Width="27" />
-        <Label Content="所在位置" Height="28" HorizontalAlignment="Left" Margin="295,305,0,0" Name="label20" VerticalAlignment="Top" Width="58" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="362,304,0,0" Name="textBox19" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="486,305,0,0" Name="button18" VerticalAlignment="Top" Width="27" />
-        <Label Content="资产状态" Height="28" HorizontalAlignment="Left" Margin="548,304,0,0" Name="label21" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="613,302,0,0" Name="textBox20" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="738,302,0,0" Name="button19" VerticalAlignment="Top" Width="27" />
-        <Label Content="使用人" Height="28" Margin="31,345,0,0" Name="label22" VerticalAlignment="Top" Width="58" HorizontalAlignment="Left" FontWeight="Bold" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="93,347,0,0" Name="textBox21" VerticalAlignment="Top" Width="120" />
-        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="216,347,0,0" Name="button20" VerticalAlignment="Top" Width="27" />
-        <Label Content="入账日期" Height="28" HorizontalAlignment="Left" Margin="295,347,0,0" Name="label23" VerticalAlignment="Top" Width="58" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="362,345,0,0" Name="textBox22" VerticalAlignment="Top" Width="120" />
-        <Label Content="保修期" Height="28" HorizontalAlignment="Left" Margin="548,345,0,0" Name="label24" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="613,345,0,0" Name="textBox23" VerticalAlignment="Top" Width="120" />
-        <Label Content="入账编号" Height="28" HorizontalAlignment="Left" Margin="31,381,0,0" Name="label25" VerticalAlignment="Top" Width="58" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="93,381,0,0" Name="textBox24" VerticalAlignment="Top" Width="120" />
-        <Label Content="原资产号" Height="28" HorizontalAlignment="Left" Margin="295,381,0,0" Name="label26" VerticalAlignment="Top" Width="58" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="362,381,0,0" Name="textBox25" VerticalAlignment="Top" Width="120" />
-        <Label Content="原卡片号" Height="28" HorizontalAlignment="Left" Margin="548,377,0,0" Name="label27" VerticalAlignment="Top" Width="58" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="613,379,0,0" Name="textBox26" VerticalAlignment="Top" Width="120" />
-        <Label Content="备注" Height="28" HorizontalAlignment="Left" Margin="31,421,0,0" Name="label28" VerticalAlignment="Top" Width="58" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="93,423,0,0" Name="textBox27" VerticalAlignment="Top" Width="640" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="738,165,0,0" Name="button13" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
+        <Label Content="供应商" Height="28" HorizontalAlignment="Left" Margin="31,225,0,0" Name="label16" VerticalAlignment="Top" Width="58" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="93,225,0,0" Name="textBox15" VerticalAlignment="Top" Width="120" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="216,225,0,0" Name="button14" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
+        <Label Content="出厂编号" Height="28" HorizontalAlignment="Left" Margin="295,225,0,0" Name="label17" VerticalAlignment="Top" Width="58" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="362,225,0,0" Name="textBox16" VerticalAlignment="Top" Width="120" TextChanged="textBox16_TextChanged" />
+        <Label Content="资产编码" Height="28" HorizontalAlignment="Left" Margin="548,225,0,0" Name="label18" VerticalAlignment="Top" Width="58" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="613,225,0,0" Name="textBox17" VerticalAlignment="Top" Width="120" TextChanged="textBox17_TextChanged" />
+        <Label Content="存放地点" Height="28" HorizontalAlignment="Left" Margin="31,270,0,0" Name="label19" VerticalAlignment="Top" Width="58" />
+        <TextBox Height="28" Margin="93,270,587,0" Name="textBox18" VerticalAlignment="Top" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="216,270,0,0" Name="button17" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
+        <Label Content="所在位置" Height="28" HorizontalAlignment="Left" Margin="295,270,0,0" Name="label20" VerticalAlignment="Top" Width="58" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="362,270,0,0" Name="textBox19" VerticalAlignment="Top" Width="120" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="486,225,0,0" Name="button18" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
+        <Label Content="资产状态" Height="28" HorizontalAlignment="Left" Margin="548,270,0,0" Name="label21" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="613,270,0,0" Name="textBox20" VerticalAlignment="Top" Width="120" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="738,225,0,0" Name="button19" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
+        <Label Content="使用人" Height="28" Margin="31,313,0,0" Name="label22" VerticalAlignment="Top" Width="58" HorizontalAlignment="Left" FontWeight="Bold" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="93,313,0,0" Name="textBox21" VerticalAlignment="Top" Width="120" />
+        <Button Content="Button" Height="28" HorizontalAlignment="Left" Margin="216,313,0,0" Name="button20" VerticalAlignment="Top" Width="27" Click="nature_btn_Click" />
+        <Label Content="入账日期" Height="28" HorizontalAlignment="Left" Margin="295,313,0,0" Name="label23" VerticalAlignment="Top" Width="58" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="362,313,0,0" Name="textBox22" VerticalAlignment="Top" Width="120" />
+        <Label Content="保修期" Height="28" HorizontalAlignment="Left" Margin="548,313,0,0" Name="label24" VerticalAlignment="Top" Width="58" FontWeight="Bold" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="613,313,0,0" Name="textBox23" VerticalAlignment="Top" Width="120" />
+        <Label Content="入账编号" Height="28" HorizontalAlignment="Left" Margin="31,347,0,0" Name="label25" VerticalAlignment="Top" Width="58" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="93,347,0,0" Name="textBox24" VerticalAlignment="Top" Width="120" />
+        <Label Content="原资产号" Height="28" HorizontalAlignment="Left" Margin="295,347,0,0" Name="label26" VerticalAlignment="Top" Width="58" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="362,347,0,0" Name="textBox25" VerticalAlignment="Top" Width="120" />
+        <Label Content="原卡片号" Height="28" HorizontalAlignment="Left" Margin="548,347,0,0" Name="label27" VerticalAlignment="Top" Width="58" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="613,347,0,0" Name="textBox26" VerticalAlignment="Top" Width="120" />
+        <Label Content="备注" Height="28" HorizontalAlignment="Left" Margin="31,381,0,0" Name="label28" VerticalAlignment="Top" Width="58" />
+        <TextBox Height="28" HorizontalAlignment="Right" Margin="0,383,67,0" Name="textBox27" VerticalAlignment="Top" Width="640" />
         <Label Content="年" Height="28" HorizontalAlignment="Left" Margin="486,87,0,0" Name="label29" VerticalAlignment="Top" Width="27" />
-        <Label Content="月" Height="28" HorizontalAlignment="Left" Margin="738,345,0,0" Name="label30" VerticalAlignment="Top" Width="27" />
-
-  
+        <Label Content="月" Height="28" HorizontalAlignment="Left" Margin="738,313,0,0" Name="label30" VerticalAlignment="Top" Width="27" />
+        <Button Content="增加资产" Height="31" HorizontalAlignment="Left" Margin="613,435,0,0" Name="button5" VerticalAlignment="Top" Width="120" />
         <!--<Label Content="资产条码" Height="28" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="63,2,0,0" Name="barcode" VerticalAlignment="Top" Width="120" />
         <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="189,2,0,0" Name="barcode_btn" VerticalAlignment="Top" Width="51" Click="barcode_btn_Click" />
