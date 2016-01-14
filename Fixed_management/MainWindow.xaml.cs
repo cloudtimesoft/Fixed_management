@@ -105,7 +105,27 @@ where T : DependencyObject
 
             LayoutDocument newreport = new LayoutDocument();
             newreport.Title = "测试";
+            
             mainpanel.Children.Add(newreport);
+        }
+
+        private void fixed_transfers_Click(object sender, RoutedEventArgs e)
+        {
+            LayoutDocument newreport = new LayoutDocument();
+            newreport.Title = "资产转移";
+            
+            mainpanel.Children.Add(newreport);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            // 将数据加载到表 nature 中。可以根据需要修改此代码。
+            Fixed_management.FixedDataSetTableAdapters.natureTableAdapter fixedDataSetnatureTableAdapter = new Fixed_management.FixedDataSetTableAdapters.natureTableAdapter();
+            fixedDataSetnatureTableAdapter.Fill(fixedDataSet.nature);
+            System.Windows.Data.CollectionViewSource natureViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("natureViewSource")));
+            natureViewSource.View.MoveCurrentToFirst();
         }
     }
 }
