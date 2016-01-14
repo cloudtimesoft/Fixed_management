@@ -23,78 +23,113 @@ namespace Fixed_management
         {
             InitializeComponent();
         }
-        public string selectedText;
-        private void barcode_btn_Click(object sender, RoutedEventArgs e)
-        {
-          
+ 
 
-        }
+       
 
-        private void nature_btn_Click(object sender, RoutedEventArgs e)
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
 
+            // 不要在设计时加载数据。
+            // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
+            // {
+            // 	//在此处加载数据并将结果指派给 CollectionViewSource。
+            // 	System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
+            // 	myCollectionViewSource.Source = your data
+            // }
 
-            C1.WPF.C1Window newnature = new C1.WPF.C1Window();
-            newnature.Name = "newnature";
-            newnature.Width = 400;
-            newnature.Height = 500;
-            newnature.Margin = new Thickness(SystemParameters.PrimaryScreenWidth / 2d - 250, SystemParameters.PrimaryScreenHeight / 2d - 250, 0, 0);
-            newnature.ShowModal();
-            Canvas newstackpanel = new Canvas();
-          
-            newnature.Content = newstackpanel;
-            ListBox naturelist = new ListBox();
-            naturelist.Width = 390;
-            naturelist.Height = 400;
-            //naturelist.VerticalAlignment = VerticalAlignment.Top;
-            //naturelist.HorizontalAlignment = HorizontalAlignment.Left;
-            naturelist.Items.Add("abc");
-            Button quedin = new Button();
-            quedin.Content = "确定";
-            quedin.Width = 80;
-            quedin.Height = 30;
-            //quedin.HorizontalAlignment = HorizontalAlignment.Left;
-            quedin.Margin = new Thickness(80, 420, 0, 0);
 
-            Button quxiao = new Button();
-            quxiao.Content = "取消";
-            quxiao.Width = 80;
-            quxiao.Height = 30;
-            //quxiao.HorizontalAlignment = HorizontalAlignment.Left;
-            quxiao.Margin = new Thickness(250, 420, 0, 0);
-            newstackpanel.Children.Add(naturelist);
-            newstackpanel.Children.Add(quedin);
-            newstackpanel.Children.Add(quxiao);
-            naturelist.SelectionChanged += new SelectionChangedEventHandler(naturelist_SelectionChanged);
-            quedin.Click += new RoutedEventHandler(quedin_Click);
-         
-           
-        }
 
-        void quedin_Click(object sender, RoutedEventArgs e)
-        {
-            C1.WPF.C1Window newnature = MainWindow.FindChild<C1.WPF.C1Window>(Application.Current.MainWindow, "newnature");
-            nature_txt.Text = selectedText;
-            newnature.Close();
             
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            // 将数据加载到表 nature 中。可以根据需要修改此代码。
+            Fixed_management.FixedDataSetTableAdapters.natureTableAdapter fixedDataSetnatureTableAdapter = new Fixed_management.FixedDataSetTableAdapters.natureTableAdapter();
+            fixedDataSetnatureTableAdapter.Fill(fixedDataSet.nature);
+            System.Windows.Data.CollectionViewSource natureViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("natureViewSource")));
+            natureViewSource.View.MoveCurrentToFirst();
+
+            Fixed_management.FixedDataSetTableAdapters.categoryTableAdapter fixedDataSetcategoryTableAdapter = new Fixed_management.FixedDataSetTableAdapters.categoryTableAdapter();
+            fixedDataSetcategoryTableAdapter.Fill(fixedDataSet.category);
+            System.Windows.Data.CollectionViewSource categoryViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("categoryViewSource")));
+            categoryViewSource.View.MoveCurrentToLast();
         }
         void quxiao_Click(object sender, RoutedEventArgs e)
         {
             
         }
 
-        void naturelist_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void checkmultitable()
         {
-             selectedText = (sender as ListBox).SelectedItem.ToString();
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            // 将数据加载到表 nature 中。可以根据需要修改此代码。
+            Fixed_management.FixedDataSetTableAdapters.natureTableAdapter fixedDataSetnatureTableAdapter = new Fixed_management.FixedDataSetTableAdapters.natureTableAdapter();
+            System.Windows.Data.CollectionViewSource natureViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("natureViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.categoryTableAdapter fixedDataSetcategoryTableAdapter = new Fixed_management.FixedDataSetTableAdapters.categoryTableAdapter();
+            System.Windows.Data.CollectionViewSource categoryViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("categoryViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.designationTableAdapter fixedDataSetdesignationTableAdapter = new Fixed_management.FixedDataSetTableAdapters.designationTableAdapter();
+            System.Windows.Data.CollectionViewSource designationViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("designationViewSource")));
+            var nature = (from c in fixedDataSet.nature where c.nature == natureC1ComboBox.Text select c).Count();
+            var category = (from c in fixedDataSet.category where c.category == categoryC1ComboBox.Text select c).Count();
+            var designation = (from c in fixedDataSet.designation where c.designation == designationC1ComboBox.Text select c).Count();
+            if (nature == 0)
+            {
+                fixedDataSet.nature.AddnatureRow(natureC1ComboBox.Text);
+                fixedDataSetnatureTableAdapter.Update(fixedDataSet.nature);
+                natureViewSource.View.MoveCurrentToLast();
+            }
+            if (category == 0)
+            {
+                fixedDataSet.category.AddcategoryRow(categoryC1ComboBox.Text);
+                fixedDataSetcategoryTableAdapter.Update(fixedDataSet.category);
+                categoryViewSource.View.MoveCurrentToLast();
+            }
+            if (designation == 0)
+            {
+                fixedDataSet.designation.AdddesignationRow(designationC1ComboBox.Text);
+                fixedDataSetdesignationTableAdapter.Update(fixedDataSet.designation);
+                designationViewSource.View.MoveCurrentToLast();
+            }
         }
 
-        private void textBox16_TextChanged(object sender, TextChangedEventArgs e)
+        private bool checknull()
         {
+            bool check_status = true;
+            string status_err="";
+            if (natureC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "资产性质 ";
+            }
 
+            if (categoryC1ComboBox.Text==null)
+            {
+                check_status = false;
+                status_err += "资产类别 ";
+            }
+            if (designationC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "资产名称 ";
+            }
+
+
+           
+           // MessageBox.Show(status_err + "不能为空！");
+            return check_status;
         }
 
-        private void textBox17_TextChanged(object sender, TextChangedEventArgs e)
+        private void fixed_add_Click(object sender, RoutedEventArgs e)
         {
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter fixedDataSetfixedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter();
+            if (checknull())
+            {
+                checkmultitable();
+
+            }
 
         }
 

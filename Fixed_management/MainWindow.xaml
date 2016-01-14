@@ -2,8 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
-        Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
-    <Grid>
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized" xmlns:my="clr-namespace:Fixed_management" Loaded="Window_Loaded">
+    <Window.Resources>
+        <my:FixedDataSet x:Key="fixedDataSet" />
+        <CollectionViewSource x:Key="natureViewSource" Source="{Binding Path=nature, Source={StaticResource fixedDataSet}}" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource natureViewSource}">
         <Menu Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="menu1" VerticalAlignment="Top" >
             <MenuItem Header="系统">
                 <MenuItem Header="登录系统" InputGestureText="Alt+S"></MenuItem>
@@ -51,7 +55,7 @@
         <ToolBarPanel Height="36" HorizontalAlignment="Stretch" Margin="0,23,0,0" Name="toolBarPanel1" VerticalAlignment="Top" Orientation="Horizontal" AllowDrop="True" Background="White">
             <ToolBar Height="36"  Name="toolBar1" VerticalAlignment="Top" AllowDrop="True">
                 <Button Content="资产增加"></Button>
-                <Button Content="资产转移"></Button>
+                <Button Name="fixed_transfers" Content="资产转移" Click="fixed_transfers_Click"></Button>
 
                 <Button Content="标签打印"></Button>
                 <Button Content="有效资产"></Button>
@@ -74,7 +78,5 @@
                 </avalonDock:LayoutPanel>
             </avalonDock:LayoutRoot>
         </avalonDock:DockingManager>
-
-
     </Grid>
 </Window>
