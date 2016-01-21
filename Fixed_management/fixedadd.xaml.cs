@@ -103,6 +103,10 @@ namespace Fixed_management
             System.Windows.Data.CollectionViewSource purchase_wayViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("purchase_wayViewSource")));
             purchase_wayViewSource.View.MoveCurrentToLast();
         }
+        void quxiao_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
 
 
         private void checkmultitable()
