@@ -2119,8 +2119,6 @@ namespace Fixed_management {
             
             private global::System.Data.DataColumn columnpassword;
             
-            private global::System.Data.DataColumn columnconfirm_password;
-            
             private global::System.Data.DataColumn columnsex;
             
             private global::System.Data.DataColumn columnbirthday;
@@ -2132,6 +2130,8 @@ namespace Fixed_management {
             private global::System.Data.DataColumn columnaddress;
             
             private global::System.Data.DataColumn columncontent;
+            
+            private global::System.Data.DataColumn columnpemissions;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2200,14 +2200,6 @@ namespace Fixed_management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn confirm_passwordColumn {
-                get {
-                    return this.columnconfirm_password;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn sexColumn {
                 get {
                     return this.columnsex;
@@ -2256,6 +2248,14 @@ namespace Fixed_management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pemissionsColumn {
+                get {
+                    return this.columnpemissions;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2291,20 +2291,20 @@ namespace Fixed_management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public employeesRow AddemployeesRow(string number, string em_name, string password, string confirm_password, string sex, System.DateTime birthday, string id_number, string phone, string address, string content) {
+            public employeesRow AddemployeesRow(string number, string em_name, string password, string sex, System.DateTime birthday, string id_number, string phone, string address, string content, string pemissions) {
                 employeesRow rowemployeesRow = ((employeesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         number,
                         em_name,
                         password,
-                        confirm_password,
                         sex,
                         birthday,
                         id_number,
                         phone,
                         address,
-                        content};
+                        content,
+                        pemissions};
                 rowemployeesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowemployeesRow);
                 return rowemployeesRow;
@@ -2338,13 +2338,13 @@ namespace Fixed_management {
                 this.columnnumber = base.Columns["number"];
                 this.columnem_name = base.Columns["em_name"];
                 this.columnpassword = base.Columns["password"];
-                this.columnconfirm_password = base.Columns["confirm_password"];
                 this.columnsex = base.Columns["sex"];
                 this.columnbirthday = base.Columns["birthday"];
                 this.columnid_number = base.Columns["id_number"];
                 this.columnphone = base.Columns["phone"];
                 this.columnaddress = base.Columns["address"];
                 this.columncontent = base.Columns["content"];
+                this.columnpemissions = base.Columns["pemissions"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2358,8 +2358,6 @@ namespace Fixed_management {
                 base.Columns.Add(this.columnem_name);
                 this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpassword);
-                this.columnconfirm_password = new global::System.Data.DataColumn("confirm_password", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnconfirm_password);
                 this.columnsex = new global::System.Data.DataColumn("sex", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsex);
                 this.columnbirthday = new global::System.Data.DataColumn("birthday", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -2372,6 +2370,8 @@ namespace Fixed_management {
                 base.Columns.Add(this.columnaddress);
                 this.columncontent = new global::System.Data.DataColumn("content", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncontent);
+                this.columnpemissions = new global::System.Data.DataColumn("pemissions", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpemissions);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnemployees_ID}, true));
                 this.columnemployees_ID.AutoIncrement = true;
@@ -2382,12 +2382,12 @@ namespace Fixed_management {
                 this.columnnumber.MaxLength = 255;
                 this.columnem_name.MaxLength = 255;
                 this.columnpassword.MaxLength = 255;
-                this.columnconfirm_password.MaxLength = 255;
                 this.columnsex.MaxLength = 255;
                 this.columnid_number.MaxLength = 255;
                 this.columnphone.MaxLength = 255;
                 this.columnaddress.MaxLength = 255;
                 this.columncontent.MaxLength = 255;
+                this.columnpemissions.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7892,22 +7892,6 @@ namespace Fixed_management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string confirm_password {
-                get {
-                    try {
-                        return ((string)(this[this.tableemployees.confirm_passwordColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“employees”中列“confirm_password”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tableemployees.confirm_passwordColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string sex {
                 get {
                     try {
@@ -8004,6 +7988,22 @@ namespace Fixed_management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pemissions {
+                get {
+                    try {
+                        return ((string)(this[this.tableemployees.pemissionsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“employees”中列“pemissions”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableemployees.pemissionsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnumberNull() {
                 return this.IsNull(this.tableemployees.numberColumn);
             }
@@ -8036,18 +8036,6 @@ namespace Fixed_management {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetpasswordNull() {
                 this[this.tableemployees.passwordColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isconfirm_passwordNull() {
-                return this.IsNull(this.tableemployees.confirm_passwordColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setconfirm_passwordNull() {
-                this[this.tableemployees.confirm_passwordColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8120,6 +8108,18 @@ namespace Fixed_management {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetcontentNull() {
                 this[this.tableemployees.contentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IspemissionsNull() {
+                return this.IsNull(this.tableemployees.pemissionsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetpemissionsNull() {
+                this[this.tableemployees.pemissionsColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12244,17 +12244,17 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("number", "number");
             tableMapping.ColumnMappings.Add("em_name", "em_name");
             tableMapping.ColumnMappings.Add("password", "password");
-            tableMapping.ColumnMappings.Add("confirm_password", "confirm_password");
             tableMapping.ColumnMappings.Add("sex", "sex");
             tableMapping.ColumnMappings.Add("birthday", "birthday");
             tableMapping.ColumnMappings.Add("id_number", "id_number");
             tableMapping.ColumnMappings.Add("phone", "phone");
             tableMapping.ColumnMappings.Add("address", "address");
             tableMapping.ColumnMappings.Add("content", "content");
+            tableMapping.ColumnMappings.Add("pemissions", "pemissions");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `employees` WHERE ((`employees_ID` = ?) AND ((? = 1 AND `number` IS NULL) OR (`number` = ?)) AND ((? = 1 AND `em_name` IS NULL) OR (`em_name` = ?)) AND ((? = 1 AND `password` IS NULL) OR (`password` = ?)) AND ((? = 1 AND `confirm_password` IS NULL) OR (`confirm_password` = ?)) AND ((? = 1 AND `sex` IS NULL) OR (`sex` = ?)) AND ((? = 1 AND `birthday` IS NULL) OR (`birthday` = ?)) AND ((? = 1 AND `id_number` IS NULL) OR (`id_number` = ?)) AND ((? = 1 AND `phone` IS NULL) OR (`phone` = ?)) AND ((? = 1 AND `address` IS NULL) OR (`address` = ?)) AND ((? = 1 AND `content` IS NULL) OR (`content` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `employees` WHERE ((`employees_ID` = ?) AND ((? = 1 AND `number` IS NULL) OR (`number` = ?)) AND ((? = 1 AND `em_name` IS NULL) OR (`em_name` = ?)) AND ((? = 1 AND `password` IS NULL) OR (`password` = ?)) AND ((? = 1 AND `sex` IS NULL) OR (`sex` = ?)) AND ((? = 1 AND `birthday` IS NULL) OR (`birthday` = ?)) AND ((? = 1 AND `id_number` IS NULL) OR (`id_number` = ?)) AND ((? = 1 AND `phone` IS NULL) OR (`phone` = ?)) AND ((? = 1 AND `address` IS NULL) OR (`address` = ?)) AND ((? = 1 AND `content` IS NULL) OR (`content` = ?)) AND ((? = 1 AND `pemissions` IS NULL) OR (`pemissions` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_employees_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "employees_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "number", global::System.Data.DataRowVersion.Original, true, null));
@@ -12263,8 +12263,6 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_em_name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "em_name", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_password", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "password", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_password", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "password", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_confirm_password", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "confirm_password", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_confirm_password", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "confirm_password", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_sex", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sex", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_sex", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sex", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_birthday", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "birthday", global::System.Data.DataRowVersion.Original, true, null));
@@ -12277,36 +12275,38 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_address", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "address", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_content", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "content", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_content", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "content", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_pemissions", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pemissions", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_pemissions", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pemissions", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `employees` (`number`, `em_name`, `password`, `confirm_password`, `se" +
-                "x`, `birthday`, `id_number`, `phone`, `address`, `content`) VALUES (?, ?, ?, ?, " +
-                "?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `employees` (`number`, `em_name`, `password`, `sex`, `birthday`, `id_" +
+                "number`, `phone`, `address`, `content`, `pemissions`) VALUES (?, ?, ?, ?, ?, ?, " +
+                "?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "number", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("em_name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "em_name", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("password", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "password", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("confirm_password", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "confirm_password", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("sex", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sex", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("birthday", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "birthday", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_number", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("phone", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "phone", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("address", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "address", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("content", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "content", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("pemissions", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pemissions", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `employees` SET `number` = ?, `em_name` = ?, `password` = ?, `confirm_password` = ?, `sex` = ?, `birthday` = ?, `id_number` = ?, `phone` = ?, `address` = ?, `content` = ? WHERE ((`employees_ID` = ?) AND ((? = 1 AND `number` IS NULL) OR (`number` = ?)) AND ((? = 1 AND `em_name` IS NULL) OR (`em_name` = ?)) AND ((? = 1 AND `password` IS NULL) OR (`password` = ?)) AND ((? = 1 AND `confirm_password` IS NULL) OR (`confirm_password` = ?)) AND ((? = 1 AND `sex` IS NULL) OR (`sex` = ?)) AND ((? = 1 AND `birthday` IS NULL) OR (`birthday` = ?)) AND ((? = 1 AND `id_number` IS NULL) OR (`id_number` = ?)) AND ((? = 1 AND `phone` IS NULL) OR (`phone` = ?)) AND ((? = 1 AND `address` IS NULL) OR (`address` = ?)) AND ((? = 1 AND `content` IS NULL) OR (`content` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `employees` SET `number` = ?, `em_name` = ?, `password` = ?, `sex` = ?, `birthday` = ?, `id_number` = ?, `phone` = ?, `address` = ?, `content` = ?, `pemissions` = ? WHERE ((`employees_ID` = ?) AND ((? = 1 AND `number` IS NULL) OR (`number` = ?)) AND ((? = 1 AND `em_name` IS NULL) OR (`em_name` = ?)) AND ((? = 1 AND `password` IS NULL) OR (`password` = ?)) AND ((? = 1 AND `sex` IS NULL) OR (`sex` = ?)) AND ((? = 1 AND `birthday` IS NULL) OR (`birthday` = ?)) AND ((? = 1 AND `id_number` IS NULL) OR (`id_number` = ?)) AND ((? = 1 AND `phone` IS NULL) OR (`phone` = ?)) AND ((? = 1 AND `address` IS NULL) OR (`address` = ?)) AND ((? = 1 AND `content` IS NULL) OR (`content` = ?)) AND ((? = 1 AND `pemissions` IS NULL) OR (`pemissions` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "number", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("em_name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "em_name", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("password", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "password", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("confirm_password", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "confirm_password", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("sex", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sex", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("birthday", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "birthday", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_number", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("phone", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "phone", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("address", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "address", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("content", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "content", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("pemissions", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pemissions", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_employees_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "employees_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "number", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "number", global::System.Data.DataRowVersion.Original, false, null));
@@ -12314,8 +12314,6 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_em_name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "em_name", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_password", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "password", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_password", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "password", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_confirm_password", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "confirm_password", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_confirm_password", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "confirm_password", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_sex", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sex", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_sex", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sex", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_birthday", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "birthday", global::System.Data.DataRowVersion.Original, true, null));
@@ -12328,6 +12326,8 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_address", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "address", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_content", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "content", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_content", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "content", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_pemissions", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pemissions", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_pemissions", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pemissions", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12343,8 +12343,8 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT employees_ID, [number], em_name, [password], confirm_password, sex, birthd" +
-                "ay, id_number, phone, address, content FROM employees";
+            this._commandCollection[0].CommandText = "SELECT employees_ID, [number], em_name, [password], sex, birthday, id_number, pho" +
+                "ne, address, content, pemissions FROM employees";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12405,7 +12405,7 @@ namespace Fixed_management.FixedDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_employees_ID, string Original_number, string Original_em_name, string Original_password, string Original_confirm_password, string Original_sex, global::System.Nullable<global::System.DateTime> Original_birthday, string Original_id_number, string Original_phone, string Original_address, string Original_content) {
+        public virtual int Delete(int Original_employees_ID, string Original_number, string Original_em_name, string Original_password, string Original_sex, global::System.Nullable<global::System.DateTime> Original_birthday, string Original_id_number, string Original_phone, string Original_address, string Original_content, string Original_pemissions) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_employees_ID));
             if ((Original_number == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -12431,61 +12431,61 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_password));
             }
-            if ((Original_confirm_password == null)) {
+            if ((Original_sex == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_confirm_password));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_sex));
             }
-            if ((Original_sex == null)) {
+            if ((Original_birthday.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_birthday.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_sex));
-            }
-            if ((Original_birthday.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_birthday.Value));
-            }
-            else {
+            if ((Original_id_number == null)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_id_number == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_id_number));
+            }
+            if ((Original_phone == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_id_number));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_phone));
             }
-            if ((Original_phone == null)) {
+            if ((Original_address == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_phone));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_address));
             }
-            if ((Original_address == null)) {
+            if ((Original_content == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_address));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_content));
             }
-            if ((Original_content == null)) {
+            if ((Original_pemissions == null)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_content));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_pemissions));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12507,7 +12507,7 @@ namespace Fixed_management.FixedDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string number, string em_name, string password, string confirm_password, string sex, global::System.Nullable<global::System.DateTime> birthday, string id_number, string phone, string address, string content) {
+        public virtual int Insert(string number, string em_name, string password, string sex, global::System.Nullable<global::System.DateTime> birthday, string id_number, string phone, string address, string content, string pemissions) {
             if ((number == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -12526,47 +12526,47 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(password));
             }
-            if ((confirm_password == null)) {
+            if ((sex == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(confirm_password));
-            }
-            if ((sex == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(sex));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(sex));
             }
             if ((birthday.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(birthday.Value));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(birthday.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((id_number == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(id_number));
+            }
+            if ((phone == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(id_number));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(phone));
             }
-            if ((phone == null)) {
+            if ((address == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(phone));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(address));
             }
-            if ((address == null)) {
+            if ((content == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(address));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(content));
             }
-            if ((content == null)) {
+            if ((pemissions == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(content));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(pemissions));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12592,24 +12592,24 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     string number, 
                     string em_name, 
                     string password, 
-                    string confirm_password, 
                     string sex, 
                     global::System.Nullable<global::System.DateTime> birthday, 
                     string id_number, 
                     string phone, 
                     string address, 
                     string content, 
+                    string pemissions, 
                     int Original_employees_ID, 
                     string Original_number, 
                     string Original_em_name, 
                     string Original_password, 
-                    string Original_confirm_password, 
                     string Original_sex, 
                     global::System.Nullable<global::System.DateTime> Original_birthday, 
                     string Original_id_number, 
                     string Original_phone, 
                     string Original_address, 
-                    string Original_content) {
+                    string Original_content, 
+                    string Original_pemissions) {
             if ((number == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -12628,47 +12628,47 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(password));
             }
-            if ((confirm_password == null)) {
+            if ((sex == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(confirm_password));
-            }
-            if ((sex == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(sex));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(sex));
             }
             if ((birthday.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(birthday.Value));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(birthday.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((id_number == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(id_number));
+            }
+            if ((phone == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(id_number));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(phone));
             }
-            if ((phone == null)) {
+            if ((address == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(phone));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(address));
             }
-            if ((address == null)) {
+            if ((content == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(address));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(content));
             }
-            if ((content == null)) {
+            if ((pemissions == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(content));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(pemissions));
             }
             this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_employees_ID));
             if ((Original_number == null)) {
@@ -12695,61 +12695,61 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_password));
             }
-            if ((Original_confirm_password == null)) {
+            if ((Original_sex == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_confirm_password));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_sex));
             }
-            if ((Original_sex == null)) {
+            if ((Original_birthday.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_birthday.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_sex));
-            }
-            if ((Original_birthday.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_birthday.Value));
-            }
-            else {
+            if ((Original_id_number == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((Original_id_number == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_id_number));
+            }
+            if ((Original_phone == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_id_number));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_phone));
             }
-            if ((Original_phone == null)) {
+            if ((Original_address == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_phone));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_address));
             }
-            if ((Original_address == null)) {
+            if ((Original_content == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_address));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_content));
             }
-            if ((Original_content == null)) {
+            if ((Original_pemissions == null)) {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_content));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_pemissions));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 

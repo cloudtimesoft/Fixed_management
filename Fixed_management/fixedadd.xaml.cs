@@ -52,6 +52,56 @@ namespace Fixed_management
             fixedDataSetcategoryTableAdapter.Fill(fixedDataSet.category);
             System.Windows.Data.CollectionViewSource categoryViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("categoryViewSource")));
             categoryViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.designationTableAdapter fixedDataSetdesignationTableAdapter = new Fixed_management.FixedDataSetTableAdapters.designationTableAdapter();
+            fixedDataSetdesignationTableAdapter.Fill(fixedDataSet.designation);
+            System.Windows.Data.CollectionViewSource designationViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("designationViewSource")));
+            designationViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.specificationsTableAdapter fixedDataSetspecificationsTableAdapter = new Fixed_management.FixedDataSetTableAdapters.specificationsTableAdapter();
+            fixedDataSetspecificationsTableAdapter.Fill(fixedDataSet.specifications);
+            System.Windows.Data.CollectionViewSource specificationsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("specificationsViewSource")));
+            specificationsViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.modelTableAdapter fixedDataSetmodelTableAdapter = new Fixed_management.FixedDataSetTableAdapters.modelTableAdapter();
+            fixedDataSetmodelTableAdapter.Fill(fixedDataSet.model);
+            System.Windows.Data.CollectionViewSource modelViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("modelViewSource")));
+            modelViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.unitTableAdapter fixedDataSetunitTableAdapter = new Fixed_management.FixedDataSetTableAdapters.unitTableAdapter();
+            fixedDataSetunitTableAdapter.Fill(fixedDataSet.unit);
+            System.Windows.Data.CollectionViewSource unitViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("unitViewSource")));
+            unitViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.keeperTableAdapter fixedDataSetkeeperTableAdapter = new Fixed_management.FixedDataSetTableAdapters.keeperTableAdapter();
+            fixedDataSetkeeperTableAdapter.Fill(fixedDataSet.keeper);
+            System.Windows.Data.CollectionViewSource keeperViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("keeperViewSource")));
+            keeperViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.supplierTableAdapter fixedDataSetsupplierTableAdapter = new Fixed_management.FixedDataSetTableAdapters.supplierTableAdapter();
+            fixedDataSetsupplierTableAdapter.Fill(fixedDataSet.supplier);
+            System.Windows.Data.CollectionViewSource supplierViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("supplierViewSource")));
+            supplierViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.positionTableAdapter fixedDataSetpositionTableAdapter = new Fixed_management.FixedDataSetTableAdapters.positionTableAdapter();
+            fixedDataSetpositionTableAdapter.Fill(fixedDataSet.position);
+            System.Windows.Data.CollectionViewSource positionViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("positionViewSource")));
+            positionViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.fixed_statuTableAdapter fixedDataSetfixed_statuTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixed_statuTableAdapter();
+            fixedDataSetfixed_statuTableAdapter.Fill(fixedDataSet.fixed_statu);
+            System.Windows.Data.CollectionViewSource fixed_statuViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixed_statuViewSource")));
+            fixed_statuViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.storage_placeTableAdapter fixedDataSetstorage_placeTableAdapter = new Fixed_management.FixedDataSetTableAdapters.storage_placeTableAdapter();
+            fixedDataSetstorage_placeTableAdapter.Fill(fixedDataSet.storage_place);
+            System.Windows.Data.CollectionViewSource storage_placeViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("storage_placeViewSource")));
+            storage_placeViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.purchase_wayTableAdapter fixedDataSetpurchase_wayTableAdapter = new Fixed_management.FixedDataSetTableAdapters.purchase_wayTableAdapter();
+            fixedDataSetpurchase_wayTableAdapter.Fill(fixedDataSet.purchase_way);
+            System.Windows.Data.CollectionViewSource purchase_wayViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("purchase_wayViewSource")));
+            purchase_wayViewSource.View.MoveCurrentToLast();
         }
 
 
@@ -67,9 +117,45 @@ namespace Fixed_management
 
             Fixed_management.FixedDataSetTableAdapters.designationTableAdapter fixedDataSetdesignationTableAdapter = new Fixed_management.FixedDataSetTableAdapters.designationTableAdapter();
             System.Windows.Data.CollectionViewSource designationViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("designationViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.specificationsTableAdapter fixedDataSetspecificationsTableAdapter = new Fixed_management.FixedDataSetTableAdapters.specificationsTableAdapter();
+            System.Windows.Data.CollectionViewSource specificationsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("specificationsViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.modelTableAdapter fixedDataSetmodelTableAdapter = new Fixed_management.FixedDataSetTableAdapters.modelTableAdapter();
+            System.Windows.Data.CollectionViewSource modelViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("modelViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.purchase_wayTableAdapter fixedDataSetpurchase_wayTableAdapter = new Fixed_management.FixedDataSetTableAdapters.purchase_wayTableAdapter();
+            System.Windows.Data.CollectionViewSource purchase_wayViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("purchase_wayViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.unitTableAdapter fixedDataSetunitTableAdapter = new Fixed_management.FixedDataSetTableAdapters.unitTableAdapter();
+            System.Windows.Data.CollectionViewSource unitViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("unitViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.keeperTableAdapter fixedDataSetkeeperTableAdapter = new Fixed_management.FixedDataSetTableAdapters.keeperTableAdapter();
+            System.Windows.Data.CollectionViewSource keeperViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("keeperViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.supplierTableAdapter fixedDataSetsupplierTableAdapter = new Fixed_management.FixedDataSetTableAdapters.supplierTableAdapter();
+            System.Windows.Data.CollectionViewSource supplierViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("supplierViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.positionTableAdapter fixedDataSetpositionTableAdapter = new Fixed_management.FixedDataSetTableAdapters.positionTableAdapter();
+            System.Windows.Data.CollectionViewSource positionViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("positionViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.fixed_statuTableAdapter fixedDataSetfixed_statuTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixed_statuTableAdapter();
+            System.Windows.Data.CollectionViewSource fixed_statusViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixed_statuViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.storage_placeTableAdapter fixedDataSetstorage_placeTableAdapter = new Fixed_management.FixedDataSetTableAdapters.storage_placeTableAdapter();
+            System.Windows.Data.CollectionViewSource storage_placeViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("storage_placeViewSource")));
             var nature = (from c in fixedDataSet.nature where c.nature == natureC1ComboBox.Text select c).Count();
             var category = (from c in fixedDataSet.category where c.category == categoryC1ComboBox.Text select c).Count();
             var designation = (from c in fixedDataSet.designation where c.designation == designationC1ComboBox.Text select c).Count();
+            var specifications = (from c in fixedDataSet.specifications where c.specifications == specifications_IDC1ComboBox.Text select c).Count();
+            var model = (from c in fixedDataSet.model where c.model == model_IDC1ComboBox.Text select c).Count();
+            var purchase_way = (from c in fixedDataSet.purchase_way where c.purchase_way == purchase_way_IDC1ComboBox.Text select c).Count();
+            var unit = (from c in fixedDataSet.unit where c.unit == unit_IDC1ComboBox.Text select c).Count();
+            var keeper = (from c in fixedDataSet.keeper where c.keeper == keeper_IDC1ComboBox.Text select c).Count();
+            var supplier = (from c in fixedDataSet.supplier where c.supplier == supplier_IDC1ComboBox.Text select c).Count();
+            var position = (from c in fixedDataSet.position where c.position == position_IDC1ComboBox.Text select c).Count();
+            var fixed_statu = (from c in fixedDataSet.fixed_statu where c.fixed_statu == fixed_statu_IDC1ComboBox.Text select c).Count();
+            var storage_place = (from c in fixedDataSet.storage_place where c.storage_place == storage_place_IDC1ComboBox.Text select c).Count();
             if (nature == 0)
             {
                 fixedDataSet.nature.AddnatureRow(natureC1ComboBox.Text);
@@ -87,6 +173,60 @@ namespace Fixed_management
                 fixedDataSet.designation.AdddesignationRow(designationC1ComboBox.Text);
                 fixedDataSetdesignationTableAdapter.Update(fixedDataSet.designation);
                 designationViewSource.View.MoveCurrentToLast();
+            }
+            if (specifications == 0)
+            {
+                fixedDataSet.specifications.AddspecificationsRow(specifications_IDC1ComboBox.Text);
+                fixedDataSetspecificationsTableAdapter.Update(fixedDataSet.specifications);
+                specificationsViewSource.View.MoveCurrentToLast();
+            }
+            if (model == 0)
+            {
+                fixedDataSet.model.AddmodelRow(model_IDC1ComboBox.Text);
+                fixedDataSetmodelTableAdapter.Update(fixedDataSet.model);
+                modelViewSource.View.MoveCurrentToLast();
+            }
+            if (purchase_way == 0)
+            {
+                fixedDataSet.purchase_way.Addpurchase_wayRow(purchase_way_IDC1ComboBox.Text);
+                fixedDataSetpurchase_wayTableAdapter.Update(fixedDataSet.purchase_way);
+                purchase_wayViewSource.View.MoveCurrentToLast();
+            }
+            if (unit == 0)
+            {
+                fixedDataSet.unit.AddunitRow(unit_IDC1ComboBox.Text);
+                fixedDataSetunitTableAdapter.Update(fixedDataSet.unit);
+                unitViewSource.View.MoveCurrentToLast();
+            }
+            if (keeper == 0)
+            {
+                fixedDataSet.keeper.AddkeeperRow(keeper_IDC1ComboBox.Text);
+                fixedDataSetkeeperTableAdapter.Update(fixedDataSet.keeper);
+                keeperViewSource.View.MoveCurrentToLast();
+            }
+            if (supplier == 0)
+            {
+                fixedDataSet.supplier.AddsupplierRow(supplier_IDC1ComboBox.Text);
+                fixedDataSetsupplierTableAdapter.Update(fixedDataSet.supplier);
+                supplierViewSource.View.MoveCurrentToLast();
+            }
+            if (position == 0)
+            {
+                fixedDataSet.position.AddpositionRow(position_IDC1ComboBox.Text);
+                fixedDataSetpositionTableAdapter.Update(fixedDataSet.position);
+                positionViewSource.View.MoveCurrentToLast();
+            }
+            if (fixed_statu == 0)
+            {
+                fixedDataSet.fixed_statu.Addfixed_statuRow(fixed_statu_IDC1ComboBox.Text);
+                fixedDataSetfixed_statuTableAdapter.Update(fixedDataSet.fixed_statu);
+                fixed_statusViewSource.View.MoveCurrentToLast();
+            }
+            if (specifications == 0)
+            {
+                fixedDataSet.storage_place.Addstorage_placeRow(storage_place_IDC1ComboBox.Text);
+                fixedDataSetstorage_placeTableAdapter.Update(fixedDataSet.storage_place);
+                storage_placeViewSource.View.MoveCurrentToLast();
             }
         }
 
@@ -110,12 +250,61 @@ namespace Fixed_management
                 check_status = false;
                 status_err += "资产名称 ";
             }
+            if (specifications_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "资产规格 ";
+            }
+            if (model_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "资产型号 ";
+            }
+            if (purchase_way_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "购置方式 ";
+            }
+            if (unit_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "计量单位 ";
+            }
+            if (keeper_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "保管人 ";
+            }
+            if (supplier_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "供应商 ";
+            }
+            if (position_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "所在位置 ";
+            }
+            if (fixed_statu_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "资产状态 ";
+            }
+            if (storage_place_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "存放地点 ";
+            }
+
 
 
            
            // MessageBox.Show(status_err + "不能为空！");
-            return check_status;
+            return check_status;    
+
         }
+
+
 
         private void fixed_add_Click(object sender, RoutedEventArgs e)
         {
@@ -126,6 +315,7 @@ namespace Fixed_management
                 checkmultitable();
 
             }
+
 
         }
 

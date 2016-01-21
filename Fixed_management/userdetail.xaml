@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="Fixed_management.userdetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="700" xmlns:my="clr-namespace:Fixed_management" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <my:FixedDataSet x:Key="fixedDataSet" />
+        <CollectionViewSource x:Key="employeesViewSource" Source="{Binding Path=employees, Source={StaticResource fixedDataSet}}" />
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource employeesViewSource}" >
+        <GroupBox  Header="基本信息" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"  Height="400"  Margin="10,0"></GroupBox>
+        <Grid DataContext="{StaticResource employeesViewSource}" HorizontalAlignment="Left" Margin="32,26,0,0" Name="grid1" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="员工编号:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" Name="numberTextBox" VerticalAlignment="Center" Width="120" />
+        </Grid>
+        <Grid DataContext="{StaticResource employeesViewSource}" HorizontalAlignment="Left" Margin="35,72,0,0" Name="grid2" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="员工姓名:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" Name="em_nameTextBox"  VerticalAlignment="Center" Width="120" />
+        </Grid>
+        <Grid DataContext="{StaticResource employeesViewSource}" HorizontalAlignment="Left" Margin="38,119,0,0" Name="grid3" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="密码:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" Name="passwordTextBox"  VerticalAlignment="Center" Width="120" />
+        </Grid>
+        <Grid DataContext="{StaticResource employeesViewSource}" HorizontalAlignment="Left" Margin="32,169,0,0" Name="grid4" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="确认密码:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" Name="confirm_passwordTextBox"  VerticalAlignment="Center" Width="120" />
+        </Grid>
+        <RadioButton Content="男" Height="16" HorizontalAlignment="Left" Margin="42,217,0,0" Name="radioButton1" VerticalAlignment="Top" />
+        <RadioButton Content="女" Height="16" HorizontalAlignment="Left" Margin="99,217,0,0" Name="radioButton2" VerticalAlignment="Top" />
+        <Grid DataContext="{StaticResource employeesViewSource}" HorizontalAlignment="Left" Margin="38,239,0,0" Name="grid5" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="电话:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" Name="phoneTextBox"  VerticalAlignment="Center" Width="120" />
+        </Grid>
+        <Grid DataContext="{StaticResource employeesViewSource}" HorizontalAlignment="Left" Margin="41,290,0,0" Name="grid6" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="地址:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" Name="addressTextBox" VerticalAlignment="Center" Width="120" />
+        </Grid>
+        <Grid DataContext="{StaticResource employeesViewSource}" HorizontalAlignment="Left" Margin="41,340,0,0" Name="grid7" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="备注:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" Name="contentTextBox"  VerticalAlignment="Center" Width="120" />
+        </Grid>
+        
+        <Button Content="确定" Height="23" HorizontalAlignment="Left" Margin="123,450,0,0" Name="confirm" VerticalAlignment="Top" Width="75" Click="confirm_Click" />
+        <GroupBox Header="权限管理" VerticalAlignment="Top" HorizontalAlignment="Left" Width="400"  Height="400"   Margin="280,0,0,0"></GroupBox>
+        <GroupBox Header="资产" VerticalAlignment="Top" HorizontalAlignment="Left" Width="380"  Height="120"   Margin="290,20,0,0"></GroupBox>
+        <CheckBox Content="资产增加" Height="16" HorizontalAlignment="Left" Margin="300,46,0,0" Name="radioButton3" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="资产转移" Height="16" HorizontalAlignment="Left" Margin="430,46,0,0" Name="radioButton4" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="资产退出" Height="16" HorizontalAlignment="Left" Margin="560,46,0,0" Name="radioButton5" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="资产删除" Height="16" HorizontalAlignment="Left" Margin="300,80,0,0" Name="radioButton6" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="信息导入" Height="16" HorizontalAlignment="Left" Margin="430,80,0,0" Name="radioButton7" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="标签打印" Height="16" HorizontalAlignment="Left" Margin="560,80,0,0" Name="radioButton8" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="资产编辑" Height="16" HorizontalAlignment="Left" Margin="300,114,0,0" Name="radioButton9" VerticalAlignment="Top" IsChecked="False" />
+
+        <GroupBox Header="查询" VerticalAlignment="Top" HorizontalAlignment="Left" Width="380"  Height="80"   Margin="290,150,0,0"></GroupBox>
+        <CheckBox Content="有效资产" Height="16" HorizontalAlignment="Left" Margin="300,170,0,0" Name="radioButton10" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="退出资产" Height="16" HorizontalAlignment="Left" Margin="430,170,0,0" Name="radioButton11" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="删除资产" Height="16" HorizontalAlignment="Left" Margin="560,170,0,0" Name="radioButton12" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="转移信息" Height="16" HorizontalAlignment="Left" Margin="300,204,0,0" Name="radioButton13" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="资产分类明细" Height="16" HorizontalAlignment="Left" Margin="430,204,0,0" Name="radioButton14" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="资产分类汇总" Height="16" HorizontalAlignment="Left" Margin="560,204,0,0" Name="radioButton15" VerticalAlignment="Top" IsChecked="False" />
+
+        <GroupBox Header="盘点" VerticalAlignment="Top" HorizontalAlignment="Left" Width="380"  Height="50"   Margin="290,240,0,0"></GroupBox>
+        <CheckBox Content="数据导出" Height="16" HorizontalAlignment="Left" Margin="350,260,0,0" Name="radioButton16" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="资产盘点" Height="16" HorizontalAlignment="Left" Margin="530,260,0,0" Name="radioButton17" VerticalAlignment="Top" IsChecked="False" />
+
+        <GroupBox Header="设置/维护" VerticalAlignment="Top" HorizontalAlignment="Left" Width="380"  Height="80"   Margin="290,300,0,0"></GroupBox>
+
+        <CheckBox Content="员工管理" Height="16" HorizontalAlignment="Left" Margin="350,320,0,0" Name="radioButton18" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="注册" Height="16" HorizontalAlignment="Left" Margin="530,320,0,0" Name="radioButton19" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="报表设计" Height="16" HorizontalAlignment="Left" Margin="350,354,0,0" Name="radioButton20" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox Content="标签标题" Height="16" HorizontalAlignment="Left" Margin="530,354,0,0" Name="radioButton21" VerticalAlignment="Top" IsChecked="False" />
+        <Button Content="全选" Height="23" HorizontalAlignment="Left" Margin="420,450,0,0" Name="check_all" VerticalAlignment="Top" Width="75" Click="check_all_Click" />
+    </Grid>
+</UserControl>

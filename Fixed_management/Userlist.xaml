@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="Fixed_management.Userlist"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" xmlns:my="clr-namespace:Fixed_management" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <my:FixedDataSet x:Key="fixedDataSet" />
+        <CollectionViewSource x:Key="employeesViewSource" Source="{Binding Path=employees, Source={StaticResource fixedDataSet}}" />
+    </UserControl.Resources>
+    <Grid ShowGridLines="True" DataContext="{StaticResource employeesViewSource}">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" AutoGenerateColumns="False" EnableRowVirtualization="True"  HorizontalAlignment="Left" ItemsSource="{Binding}"  Name="employeesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="employees_IDColumn" Binding="{Binding Path=employees_ID}" Header="employees ID" Width="SizeToHeader" Visibility="Hidden" />
+                <DataGridTextColumn x:Name="numberColumn" Binding="{Binding Path=number}" Header="number" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="em_nameColumn" Binding="{Binding Path=em_name}" Header="em name" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="passwordColumn" Binding="{Binding Path=password}" Header="password" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="confirm_passwordColumn" Binding="{Binding Path=confirm_password}" Header="confirm password" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="sexColumn" Binding="{Binding Path=sex}" Header="sex" Width="SizeToHeader" />
+                <DataGridTemplateColumn x:Name="birthdayColumn" Header="birthday" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Path=birthday, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="id_numberColumn" Binding="{Binding Path=id_number}" Header="id number" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="phoneColumn" Binding="{Binding Path=phone}" Header="phone" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Path=address}" Header="address" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="content" Width="SizeToHeader" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="编辑" x:Name="edit" Click="edit_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="删除"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="add_user" Grid.Row="1" Width="80" Height="26" HorizontalAlignment="Right" Margin="0,0,20,0" Content="新增" Click="add_user_Click"></Button>
+    </Grid>
+</UserControl>

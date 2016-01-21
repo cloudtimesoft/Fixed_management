@@ -71,18 +71,27 @@ where T : DependencyObject
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
 
+            C1.WPF.C1Window findfixed = MainWindow.FindChild<C1.WPF.C1Window>(Application.Current.MainWindow, "newfixed");
+            if (findfixed != null)
+            {
+                findfixed.IsActive = true;
+            }
+            else
+            {
+                C1.WPF.C1Window newfixed = new C1.WPF.C1Window();
+                newfixed.Name = "newfixed";
+                newfixed.Width = 800;
+                newfixed.Height = 500;
+                newfixed.Header = "资产增加";
+                newfixed.Margin = new Thickness(SystemParameters.PrimaryScreenWidth / 2d - 250, SystemParameters.PrimaryScreenHeight / 2d - 250, 0, 0);
+                newfixed.Show();
+                newfixed.ShowMaximizeButton = false;
+                newfixed.ShowMinimizeButton = false;
+                fixedadd newfixedadd = new fixedadd();
+                newfixedadd.Name = "newfixedadd";
+                newfixed.Content = newfixedadd;
 
-            C1.WPF.C1Window newfixed =new C1.WPF.C1Window();
-            newfixed.Name = "newfixed";
-            newfixed.Width = 800;
-            newfixed.Height = 500;
-            newfixed.Header = "资产增加";
-            newfixed.Margin = new Thickness(SystemParameters.PrimaryScreenWidth / 2d - 250, SystemParameters.PrimaryScreenHeight / 2d - 250, 0, 0);
-            newfixed.Show();
-
-            fixedadd newfixedadd = new fixedadd();
-            newfixedadd.Name = "newfixedadd";
-            newfixed.Content = newfixedadd;
+            }
 
             //newwindow.Header = "资产增加";
             //StackPanel newstackpanel = new StackPanel();
@@ -100,21 +109,33 @@ where T : DependencyObject
         }
 
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-
-            LayoutDocument newreport = new LayoutDocument();
-            newreport.Title = "测试";
-            
-            mainpanel.Children.Add(newreport);
-        }
+    
 
         private void fixed_transfers_Click(object sender, RoutedEventArgs e)
         {
-            LayoutDocument newreport = new LayoutDocument();
-            newreport.Title = "资产转移";
+            fixedadd findfix = MainWindow.FindChild<fixedadd>(Application.Current.MainWindow, "fix");
+            if (findfix != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "资产转移")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                fixedadd newfix = new fixedadd();
+                LayoutDocument newreport = new LayoutDocument();
+                newreport.Title = "资产转移";
+                newreport.IsActive=true;
+                newreport.Content = newfix;
+                newfix.Name = "fix";
+                mainpanel.Children.Add(newreport);
+            }
             
-            mainpanel.Children.Add(newreport);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -126,6 +147,51 @@ where T : DependencyObject
             fixedDataSetnatureTableAdapter.Fill(fixedDataSet.nature);
             System.Windows.Data.CollectionViewSource natureViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("natureViewSource")));
             natureViewSource.View.MoveCurrentToFirst();
+
+            dockingManager.Height = SystemParameters.PrimaryScreenHeight - 150;
+        }
+
+        private void employees_Click(object sender, RoutedEventArgs e)
+        {
+
+            Userlist findemployees = MainWindow.FindChild<Userlist>(Application.Current.MainWindow, "newuserlist");
+            if (findemployees != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "员工管理")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                //C1.WPF.C1Window employeeswindow = new C1.WPF.C1Window();
+                //employeeswindow.Name = "employeeswindow";
+                //employeeswindow.Width = 700;
+                //employeeswindow.Height = 550;
+                //employeeswindow.Header = "员工管理";
+                //employeeswindow.Margin = new Thickness(SystemParameters.PrimaryScreenWidth / 2d - 250, SystemParameters.PrimaryScreenHeight / 2d - 250, 0, 0);
+                //employeeswindow.Show();
+                //employeeswindow.ShowMaximizeButton = false;
+                //employeeswindow.ShowMinimizeButton = false;
+                //Userlist newemployees = new Userlist();
+                //newemployees.Name = "newemployees";
+                //employeeswindow.Content = newemployees;
+
+                Userlist newuserlist = new Userlist();
+                newuserlist.Name = "newuserlist";
+                LayoutDocument newuser = new LayoutDocument();
+                newuser.Content = newuserlist;
+                newuser.IsActive = true;
+                newuser.Title = "员工管理";
+                mainpanel.Children.Add(newuser);
+
+
+
+            }
         }
     }
 }
