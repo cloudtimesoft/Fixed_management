@@ -102,6 +102,22 @@ namespace Fixed_management
             fixedDataSetpurchase_wayTableAdapter.Fill(fixedDataSet.purchase_way);
             System.Windows.Data.CollectionViewSource purchase_wayViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("purchase_wayViewSource")));
             purchase_wayViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.affiliatedTableAdapter fixedDataSetaffiliatedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.affiliatedTableAdapter();
+            fixedDataSetaffiliatedTableAdapter.Fill(fixedDataSet.affiliated);
+            System.Windows.Data.CollectionViewSource affiliatedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("affiliatedViewSource")));
+            affiliatedViewSource.View.MoveCurrentToLast();
+
+            Fixed_management.FixedDataSetTableAdapters.departmentTableAdapter fixedDataSetdepartmentTableAdapter = new Fixed_management.FixedDataSetTableAdapters.departmentTableAdapter();
+            fixedDataSetdepartmentTableAdapter.Fill(fixedDataSet.department);
+            System.Windows.Data.CollectionViewSource departmentViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("departmentViewSource")));
+            departmentViewSource.View.MoveCurrentToLast();
+
+
+            Fixed_management.FixedDataSetTableAdapters.userTableAdapter fixedDataSetuserTableAdapter = new Fixed_management.FixedDataSetTableAdapters.userTableAdapter();
+            fixedDataSetuserTableAdapter.Fill(fixedDataSet.user);
+            System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
+            userViewSource.View.MoveCurrentToLast();
         }
         void quxiao_Click(object sender, RoutedEventArgs e)
         {
@@ -148,6 +164,16 @@ namespace Fixed_management
 
             Fixed_management.FixedDataSetTableAdapters.storage_placeTableAdapter fixedDataSetstorage_placeTableAdapter = new Fixed_management.FixedDataSetTableAdapters.storage_placeTableAdapter();
             System.Windows.Data.CollectionViewSource storage_placeViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("storage_placeViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.affiliatedTableAdapter fixedDataSetaffiliatedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.affiliatedTableAdapter();
+            System.Windows.Data.CollectionViewSource affiliatedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("affiliatedViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.departmentTableAdapter fixedDataSetdepartmentTableAdapter = new Fixed_management.FixedDataSetTableAdapters.departmentTableAdapter();
+            System.Windows.Data.CollectionViewSource departmentViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("departmentViewSource")));
+
+            Fixed_management.FixedDataSetTableAdapters.userTableAdapter fixedDataSetuserTableAdapter = new Fixed_management.FixedDataSetTableAdapters.userTableAdapter();
+            System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
+
             var nature = (from c in fixedDataSet.nature where c.nature == natureC1ComboBox.Text select c).Count();
             var category = (from c in fixedDataSet.category where c.category == categoryC1ComboBox.Text select c).Count();
             var designation = (from c in fixedDataSet.designation where c.designation == designationC1ComboBox.Text select c).Count();
@@ -160,12 +186,18 @@ namespace Fixed_management
             var position = (from c in fixedDataSet.position where c.position == position_IDC1ComboBox.Text select c).Count();
             var fixed_statu = (from c in fixedDataSet.fixed_statu where c.fixed_statu == fixed_statu_IDC1ComboBox.Text select c).Count();
             var storage_place = (from c in fixedDataSet.storage_place where c.storage_place == storage_place_IDC1ComboBox.Text select c).Count();
+            var affiliated = (from c in fixedDataSet.affiliated where c.affiliated == affiliated_IDC1ComboBox.Text select c).Count();
+            var department = (from c in fixedDataSet.department where c.department == department_IDC1ComboBox.Text select c).Count();
+            var user = (from c in fixedDataSet.user where c.user == user_IDC1ComboBox.Text select c).Count();
             if (nature == 0)
             {
                 fixedDataSet.nature.AddnatureRow(natureC1ComboBox.Text);
                 fixedDataSetnatureTableAdapter.Update(fixedDataSet.nature);
+                fixedDataSetnatureTableAdapter.Fill(fixedDataSet.nature);
                 natureViewSource.View.MoveCurrentToLast();
+                
             }
+            
             if (category == 0)
             {
                 fixedDataSet.category.AddcategoryRow(categoryC1ComboBox.Text);
@@ -232,6 +264,26 @@ namespace Fixed_management
                 fixedDataSetstorage_placeTableAdapter.Update(fixedDataSet.storage_place);
                 storage_placeViewSource.View.MoveCurrentToLast();
             }
+            if (affiliated == 0)
+            {
+                fixedDataSet.affiliated.AddaffiliatedRow(1,affiliated_IDC1ComboBox.Text);
+                fixedDataSetaffiliatedTableAdapter.Update(fixedDataSet.affiliated);
+                affiliatedViewSource.View.MoveCurrentToLast();
+            }
+            if (department == 0)
+            {
+                fixedDataSet.department.AdddepartmentRow(1,department_IDC1ComboBox.Text);
+                fixedDataSetdepartmentTableAdapter.Update(fixedDataSet.department);
+                departmentViewSource.View.MoveCurrentToLast();
+            }
+
+            if (user == 0)
+            {
+                fixedDataSet.user.AdduserRow(user_IDC1ComboBox.Text);
+                fixedDataSetuserTableAdapter.Update(fixedDataSet.user);
+                userViewSource.View.MoveCurrentToLast();
+            }
+
         }
 
         private bool checknull()
@@ -274,6 +326,16 @@ namespace Fixed_management
                 check_status = false;
                 status_err += "计量单位 ";
             }
+            if (affiliated_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "所属单位 ";
+            }
+            if (department_IDC1ComboBox.Text == null)
+            {
+                check_status = false;
+                status_err += "保管部门 ";
+            }
             if (keeper_IDC1ComboBox.Text == null)
             {
                 check_status = false;
@@ -303,7 +365,7 @@ namespace Fixed_management
 
 
            
-           // MessageBox.Show(status_err + "不能为空！");
+           MessageBox.Show(status_err + "不能为空！");
             return check_status;    
 
         }
@@ -319,8 +381,19 @@ namespace Fixed_management
                 checkmultitable();
 
             }
-
-
+            var t =natureC1ComboBox.SelectedValue;
+            //fixedDataSet._fixed.AddfixedRow(barcode.Text, natureC1ComboBox.Text, categoryC1ComboBox.Text, designationC1ComboBox.Text, specifications_IDC1ComboBox.Text, model_IDC1ComboBox.Text, DateTime.Parse(purchase_dateDatePicker.Text), limitTextBox.Text, purchase_way_IDC1ComboBox.Text, fixed_numberTextBox.Text, unit_IDC1ComboBox.Text, fixed_valeTextBox.Text, keeper_IDC1ComboBox.Text, supplier_IDC1ComboBox.Text, factory_numberTextBox.Text, fixed_encodingTextBox.Text, storage_place_IDC1ComboBox.Text, position_IDC1ComboBox.Text, fixed_statu_IDC1ComboBox.Text, user_IDTextBox.Text,DateTime.Parse( billing_dateDatePicker.Text), warrantyTextBox.Text, account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "", "", "", contentTextBox.Text, affiliated_IDC1ComboBox,1,1);
+            //fixedDataSet._fixed.AddfixedRow("", 1, 1, "", 1, "", DateTime.Now, 1, 1, 1, 1, "", 1, 1, "", "", 1, 1, 1, "", DateTime.Now, 1, "", "", "", "", "", "", "", 1, 1, 1);
+            int A;
+            var Vnature = from c in fixedDataSet.nature where c.nature == natureC1ComboBox.Text select c;
+            int Inature=0;
+            foreach (var s in Vnature)
+            {
+                Inature = s.nature_ID;
+                break;
+            }
+            fixedDataSet._fixed.AddfixedRow(barcode.Text, Inature, int.Parse(categoryC1ComboBox.SelectedValue.ToString()), int.Parse(designationC1ComboBox.SelectedValue.ToString()), int.Parse(specifications_IDC1ComboBox.SelectedValue.ToString()), int.Parse(model_IDC1ComboBox.SelectedValue.ToString()), DateTime.Now, int.Parse(limitTextBox.Text), int.Parse(purchase_way_IDC1ComboBox.SelectedValue.ToString()), int.Parse(fixed_numberTextBox.Text), int.Parse(unit_IDC1ComboBox.SelectedValue.ToString()), fixed_valeTextBox.Text, int.Parse(keeper_IDC1ComboBox.SelectedValue.ToString()), int.Parse(supplier_IDC1ComboBox.SelectedValue.ToString()), factory_numberTextBox.Text, fixed_encodingTextBox.Text, int.Parse(storage_place_IDC1ComboBox.SelectedValue.ToString()), int.Parse(position_IDC1ComboBox.SelectedValue.ToString()), int.Parse(fixed_statu_IDC1ComboBox.SelectedValue.ToString()), int.Parse(user_IDC1ComboBox.SelectedValue.ToString()), DateTime.Now, int.Parse(warrantyTextBox.Text), account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "", "", "", contentTextBox.Text, 1, int.Parse(affiliated_IDC1ComboBox.SelectedValue.ToString()), int.Parse(department_IDC1ComboBox.SelectedValue.ToString()));
+            //fixedDataSetfixedTableAdapter.Update(fixedDataSet._fixed);
         }
 
     }

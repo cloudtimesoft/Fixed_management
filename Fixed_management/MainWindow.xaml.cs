@@ -79,9 +79,10 @@ where T : DependencyObject
             else
             {
                 C1.WPF.C1Window newfixed = new C1.WPF.C1Window();
+                newfixed.IsResizable = false;
                 newfixed.Name = "newfixed";
                 newfixed.Width = 800;
-                newfixed.Height = 500;
+                newfixed.Height = 540;
                 newfixed.Header = "资产增加";
                 newfixed.Margin = new Thickness(SystemParameters.PrimaryScreenWidth / 2d - 250, SystemParameters.PrimaryScreenHeight / 2d - 250, 0, 0);
                 newfixed.Show();
