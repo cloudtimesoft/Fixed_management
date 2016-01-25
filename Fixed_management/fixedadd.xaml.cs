@@ -384,7 +384,7 @@ namespace Fixed_management
             var t =natureC1ComboBox.SelectedValue;
             //fixedDataSet._fixed.AddfixedRow(barcode.Text, natureC1ComboBox.Text, categoryC1ComboBox.Text, designationC1ComboBox.Text, specifications_IDC1ComboBox.Text, model_IDC1ComboBox.Text, DateTime.Parse(purchase_dateDatePicker.Text), limitTextBox.Text, purchase_way_IDC1ComboBox.Text, fixed_numberTextBox.Text, unit_IDC1ComboBox.Text, fixed_valeTextBox.Text, keeper_IDC1ComboBox.Text, supplier_IDC1ComboBox.Text, factory_numberTextBox.Text, fixed_encodingTextBox.Text, storage_place_IDC1ComboBox.Text, position_IDC1ComboBox.Text, fixed_statu_IDC1ComboBox.Text, user_IDTextBox.Text,DateTime.Parse( billing_dateDatePicker.Text), warrantyTextBox.Text, account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "", "", "", contentTextBox.Text, affiliated_IDC1ComboBox,1,1);
             //fixedDataSet._fixed.AddfixedRow("", 1, 1, "", 1, "", DateTime.Now, 1, 1, 1, 1, "", 1, 1, "", "", 1, 1, 1, "", DateTime.Now, 1, "", "", "", "", "", "", "", 1, 1, 1);
-            int A;
+          //  int A;
             var Vnature = from c in fixedDataSet.nature where c.nature == natureC1ComboBox.Text select c;
             int Inature=0;
             foreach (var s in Vnature)
