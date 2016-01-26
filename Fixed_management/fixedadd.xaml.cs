@@ -428,8 +428,12 @@ namespace Fixed_management
                 Imodel = s.model_ID;
                 break;
             }
+<<<<<<< HEAD
 
   var Vpurchase_way = from c in fixedDataSet.purchase_way where c.purchase_way == purchase_way_IDC1ComboBox.Text select c;
+=======
+            var Vpurchase_way = from c in fixedDataSet.purchase_way where c.purchase_way == purchase_way_IDC1ComboBox.Text select c;
+>>>>>>> a50c9cadd3cee493f2573ba19269e41b2a6ae97a
             int Ipurchase_way = 0;
             foreach (var s in Vpurchase_way)
             {
@@ -478,8 +482,12 @@ namespace Fixed_management
                 Istorage_place = s.storage_place_ID;
                 break;
             }
+<<<<<<< HEAD
 
   var Vposition = from c in fixedDataSet.position where c.position == position_IDC1ComboBox.Text select c;
+=======
+            var Vposition = from c in fixedDataSet.position where c.position == position_IDC1ComboBox.Text select c;
+>>>>>>> a50c9cadd3cee493f2573ba19269e41b2a6ae97a
             int Iposition = 0;
             foreach (var s in Vposition)
             {
@@ -501,9 +509,14 @@ namespace Fixed_management
                 break;
             }
 
+<<<<<<< HEAD
             fixedDataSet._fixed.AddfixedRow(barcode.Text, Inature, Icategory, Idesignation, Ispecifications, Imodel, DateTime.Now, int.Parse(limitTextBox.Text), Ipurchase_way, int.Parse(fixed_numberTextBox.Text), Iunit, fixed_valeTextBox.Text, Ikeeper, Isupplier, factory_numberTextBox.Text, fixed_encodingTextBox.Text, Istorage_place, Iposition, Ifixed_statu, Iuser, DateTime.Now, int.Parse(warrantyTextBox.Text), account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "", "", "", contentTextBox.Text, 1, Iaffiliated, Idepartment, 1, 1);
             fixedDataSetfixedTableAdapter.Update(fixedDataSet._fixed);
 
+=======
+            fixedDataSet._fixed.AddfixedRow(barcode.Text, Inature, Icategory, Idesignation, Ispecifications, Imodel, DateTime.Now, int.Parse(limitTextBox.Text), Ipurchase_way, int.Parse(fixed_numberTextBox.Text), Iunit, fixed_valeTextBox.Text, Ikeeper, Isupplier, factory_numberTextBox.Text, fixed_encodingTextBox.Text, Istorage_place, Iposition, Ifixed_statu, Iuser, DateTime.Now, int.Parse(warrantyTextBox.Text), account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "", "", "", contentTextBox.Text, 1, Iaffiliated, Idepartment);
+            //fixedDataSetfixedTableAdapter.Update(fixedDataSet._fixed);
+>>>>>>> a50c9cadd3cee493f2573ba19269e41b2a6ae97a
         }
 
     }
