@@ -7,6 +7,7 @@ namespace Fixed_management
 {
     class Public
     {
-        public static int user_id=0;
+        public static int user_id;
+        //public static string [] s;
     }
 }

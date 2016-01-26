@@ -26,6 +26,7 @@ namespace Fixed_management
         }
 
 
+        public string[] permsis;
 
         public static T FindChild<T>(DependencyObject parent, string childName)//查找控件
 where T : DependencyObject
@@ -149,8 +150,143 @@ where T : DependencyObject
             System.Windows.Data.CollectionViewSource natureViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("natureViewSource")));
             natureViewSource.View.MoveCurrentToFirst();
 
+            Fixed_management.FixedDataSetTableAdapters.employeesTableAdapter fixedDataSetemployeesTableAdapter = new Fixed_management.FixedDataSetTableAdapters.employeesTableAdapter();
+            fixedDataSetemployeesTableAdapter.Fill(fixedDataSet.employees);
+
             dockingManager.Height = SystemParameters.PrimaryScreenHeight - 150;
+
+
+            string user = fixedDataSet.employees.FindByemployees_ID(Public.user_id).em_name;
+
+
+            StackPanel newstack = new StackPanel();
+            newstack.Opacity = 0.65;
+            newstack.Height = 28;
+           // newstack.Background = Brushes.Red;
+            newstack.VerticalAlignment = VerticalAlignment.Bottom;
+
+            TextBlock newtextblock = new TextBlock();
+            newtextblock.VerticalAlignment = VerticalAlignment.Center;
+            newtextblock.Height = 28;
+            newtextblock.FontSize = 20;
+            newtextblock.Margin = new Thickness(200, 0, 0, 0);
+            newtextblock.Text ="当前登录  ：" +user;
+            newstack.Children.Add(newtextblock);
+            mainwindow.Children.Add(newstack);
+
+
+            permissions();
+
+
+
         }
+
+
+        private void permissions()
+        {
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            string pem = fixedDataSet.employees.FindByemployees_ID(Public.user_id).pemissions;
+            permsis = pem.Split('f');
+
+
+
+            foreach (string s in permsis)
+            {
+                if (s == "3")
+                {
+                    fix_add.IsEnabled = true;
+                    fix_addtool.IsEnabled = true;
+                }
+                if (s == "4")
+                {
+                    fix_transfertool.IsEnabled = true;
+                    fixed_transfers.IsEnabled = true;
+                }
+                if (s == "5")
+                {
+                    fix_outtool.IsEnabled = true;
+
+                }
+                if (s == "6")
+                {
+                    fix_deltool.IsEnabled = true;
+                    del_fixtool.IsEnabled = true;
+                }
+                if (s == "7")
+                {
+                    information_intool.IsEnabled = true;
+                }
+                if (s == "8")
+                {
+                    fix_printool.IsEnabled = true;
+                    fix_prin.IsEnabled = true;
+                }
+                if (s == "9")
+                {
+
+                }
+                if (s == "10")
+                {
+                    enable_fixtool.IsEnabled = true;
+                    effective_name.IsEnabled = true;
+                }
+                if (s == "11")
+                {
+                    exit_fixtool.IsEnabled = true;
+                }
+                if (s == "12")
+                {
+                    del_fixtool.IsEnabled = true;
+                }
+                if (s == "13")
+                {
+                    transfer_information_tool.IsEnabled = true;
+                    transfer_information.IsEnabled = true;
+                }
+                if (s == "14")
+                {
+                    fixclass_detailtool.IsEnabled = true;
+
+                }
+                if (s == "15")
+                {
+                    fixclass_tal.IsEnabled = true;
+                }
+                if (s == "16")
+                {
+
+                }
+                if (s == "17")
+                {
+                    fix_inventorytool.IsEnabled = true;
+                    fix_inventory.IsEnabled = true;
+                }
+                if (s == "18")
+                {
+                    employees.IsEnabled = true;
+                }
+                if (s == "19")
+                {
+                    register_tool.IsEnabled = true;
+                }
+                if (s == "20")
+                {
+                    report_designtool.IsEnabled = true;
+                }
+                if (s == "21")
+                {
+                    tag_titletool.IsEnabled = true;
+                }
+                
+            }
+  
+           
+
+        }
+
+
+
+
 
         private void employees_Click(object sender, RoutedEventArgs e)
         {

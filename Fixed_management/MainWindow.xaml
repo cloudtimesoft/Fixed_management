@@ -7,7 +7,7 @@
         <my:FixedDataSet x:Key="fixedDataSet" />
         <CollectionViewSource x:Key="natureViewSource" Source="{Binding Path=nature, Source={StaticResource fixedDataSet}}" />
     </Window.Resources>
-    <Grid DataContext="{StaticResource natureViewSource}">
+    <Grid x:Name="mainwindow" DataContext="{StaticResource natureViewSource}">
         <Menu Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="menu1" VerticalAlignment="Top" >
             <MenuItem Header="系统">
                 <MenuItem Header="登录系统" InputGestureText="Alt+S"></MenuItem>
@@ -15,35 +15,35 @@
                 <MenuItem Header="退出(_X)" x:Name="shutdown" InputGestureText="Alt+X"></MenuItem>
             </MenuItem>
             <MenuItem Header="资产">
-                <MenuItem Header="资产增加" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="资产转移"></MenuItem>
-                <MenuItem Header="资产退出" ></MenuItem>
-                <MenuItem Header="资产删除" ></MenuItem>
+                <MenuItem Header="资产增加" x:Name="fix_addtool" Click="MenuItem_Click" IsEnabled="False"></MenuItem>
+                <MenuItem Header="资产转移" x:Name="fix_transfertool" IsEnabled="False"></MenuItem>
+                <MenuItem Header="资产退出"  x:Name="fix_outtool" IsEnabled="False"></MenuItem>
+                <MenuItem Header="资产删除" x:Name="fix_deltool" IsEnabled="False" ></MenuItem>
                 <Separator />
-                <MenuItem Header="信息导入" ></MenuItem>
-                <MenuItem Header="标签打印" ></MenuItem>
+                <MenuItem Header="信息导入" x:Name="information_intool" IsEnabled="False" ></MenuItem>
+                <MenuItem Header="标签打印" x:Name="fix_printool" IsEnabled="False"></MenuItem>
             </MenuItem>
             <MenuItem Header="查询">
-                <MenuItem Header="有效资产" ></MenuItem>
-                <MenuItem Header="退出资产" ></MenuItem>
-                <MenuItem Header="删除资产" ></MenuItem>
+                <MenuItem Header="有效资产" x:Name="enable_fixtool" IsEnabled="False" ></MenuItem>
+                <MenuItem Header="退出资产" x:Name="exit_fixtool" IsEnabled="False" ></MenuItem>
+                <MenuItem Header="删除资产" x:Name="del_fixtool" IsEnabled="False"   ></MenuItem>
                 <Separator />
-                <MenuItem Header="转移信息" ></MenuItem>
+                <MenuItem Header="转移信息" x:Name="transfer_information_tool" IsEnabled="False"  ></MenuItem>
                 <Separator />
-                <MenuItem Header="资产分类明细表" ></MenuItem>
-                <MenuItem Header="资产分类汇总表" ></MenuItem>
+                <MenuItem Header="资产分类明细表" x:Name="fixclass_detailtool" IsEnabled="False"  ></MenuItem>
+                <MenuItem Header="资产分类汇总表" x:Name="fixclass_tal" IsEnabled="False"  ></MenuItem>
             </MenuItem>
             <MenuItem Header="盘点">
-                <MenuItem Header="资产盘点" ></MenuItem>
+                <MenuItem Header="资产盘点" x:Name="fix_inventorytool" IsEnabled="False"  ></MenuItem>
             </MenuItem>
             <MenuItem Header="设置">
-                <MenuItem Header="员工管理" Name="employees" Click="employees_Click"></MenuItem>
+                <MenuItem Header="员工管理" Name="employees" IsEnabled="False"  Click="employees_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="维护">
-                <MenuItem Header="注册" ></MenuItem>
+                <MenuItem Header="注册" x:Name="register_tool"  IsEnabled="False" ></MenuItem>
                 <Separator />
-                <MenuItem Header="报表设计" ></MenuItem>
-                <MenuItem Header="标签标题" ></MenuItem>
+                <MenuItem Header="报表设计" x:Name="report_designtool"  IsEnabled="False" ></MenuItem>
+                <MenuItem Header="标签标题" x:Name="tag_titletool"  IsEnabled="False" ></MenuItem>
             </MenuItem>
             <MenuItem Header="帮助">
                 <MenuItem Header="帮助索引" InputGestureText="F1"></MenuItem>
@@ -54,13 +54,13 @@
 
         <ToolBarPanel Height="36" HorizontalAlignment="Stretch" Margin="0,23,0,0" Name="toolBarPanel1" VerticalAlignment="Top" Orientation="Horizontal" AllowDrop="True" Background="White">
             <ToolBar Height="36"  Name="toolBar1" VerticalAlignment="Top" AllowDrop="True">
-                <Button Content="资产增加"></Button>
-                <Button Name="fixed_transfers" Content="资产转移" Click="fixed_transfers_Click"></Button>
+                <Button x:Name="fix_add" Content="资产增加" IsEnabled="False"></Button>
+                <Button Name="fixed_transfers" Content="资产转移" Click="fixed_transfers_Click" IsEnabled="False"></Button>
 
-                <Button Content="标签打印"></Button>
-                <Button Content="有效资产" x:Name="effective_name" Click="effective_name_Click"></Button>
-                <Button Content="转移信息"></Button>
-                <Button Content="资产盘点"></Button>
+                <Button x:Name="fix_prin" Content="标签打印" IsEnabled="False" ></Button>
+                <Button Content="有效资产" x:Name="effective_name" Click="effective_name_Click" IsEnabled="False"></Button>
+                <Button x:Name="transfer_information" Content="转移信息" IsEnabled="False"></Button>
+                <Button x:Name="fix_inventory" Content="资产盘点" IsEnabled="False"></Button>
 
             </ToolBar>
         </ToolBarPanel>
