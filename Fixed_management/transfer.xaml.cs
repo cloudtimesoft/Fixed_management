@@ -31,6 +31,8 @@ namespace Fixed_management
         string old_storage_place;
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            fixednameDataGrid.CanUserAddRows = false;
+
 
             // 不要在设计时加载数据。
             // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
@@ -70,6 +72,24 @@ namespace Fixed_management
            transfer_dateDatePicker.SelectedDate = DateTime.Now;
         }
 
+
+        private bool check_repat(int i)
+        {
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter fixedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter();
+            fixedTableAdapter.Fill(fixedDataSet._fixed);
+
+            int s = (from c in fixedDataSet._fixed where c.affiliated_ID == int.Parse(affiliated_IDC1ComboBox.SelectedValue.ToString()) && c.department_ID == int.Parse(department_IDC1ComboBox.SelectedValue.ToString()) && c.keeper_ID == int.Parse(keeper_IDC1ComboBox.SelectedValue.ToString()) && c.storage_place_ID == int.Parse(storage_place_IDC1ComboBox.SelectedValue.ToString()) && c.fixed_ID == i select c).Count();
+            if (s > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
         private void transfer_btn_Click(object sender, RoutedEventArgs e)
         {
             Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
@@ -86,10 +106,11 @@ namespace Fixed_management
                     DataGridTemplateColumn templeColumn = fixednameDataGrid.Columns[0] as DataGridTemplateColumn;
                     FrameworkElement s = fixednameDataGrid.Columns[0].GetCellContent(fixednameDataGrid.Items[i]);
                     CheckBox tbOper = templeColumn.CellTemplate.FindName("checkbox", s) as CheckBox;
-                    if ((bool)tbOper.IsChecked)
+                    DataRowView mySelectedElement = (DataRowView)fixednameDataGrid.Items[i];
+                    int fixedname_id = int.Parse(mySelectedElement.Row[32].ToString());
+                    if ((bool)tbOper.IsChecked && check_repat(fixedname_id))
                     {
-                        DataRowView mySelectedElement = (DataRowView)fixednameDataGrid.Items[i];
-                        int fixedname_id = int.Parse(mySelectedElement.Row[32].ToString());
+                        
 
                         barcode = mySelectedElement.Row[0].ToString();
                         old_unit = mySelectedElement.Row[28].ToString();
@@ -104,7 +125,7 @@ namespace Fixed_management
                             n.keeper_ID = int.Parse(keeper_IDC1ComboBox.SelectedValue.ToString());
                             n.storage_place_ID = int.Parse(storage_place_IDC1ComboBox.SelectedValue.ToString());
                         }
-
+                        transfer_detail();
                     }
 
 
@@ -112,7 +133,10 @@ namespace Fixed_management
                 fixedTableAdapter.Update(fixedDataSet._fixed);
                 fixedDataSet._fixed.AcceptChanges();
 
-                transfer_detail();
+                Fixed_management.FixedDataSetTableAdapters.fixednameTableAdapter fixednameTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixednameTableAdapter();
+                fixednameTableAdapter.Fill(fixedDataSet.fixedname);
+
+                //transfer_detail();
 
             }
         }

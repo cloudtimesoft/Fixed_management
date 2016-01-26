@@ -53,10 +53,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Xceed.Wpf.AvalonDock">
-      <HintPath>..\..\Fixed_dll\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <HintPath>bin\Debug\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
     <Reference Include="Xceed.Wpf.AvalonDock.resources">
-      <HintPath>..\..\Fixed_dll\Xceed.Wpf.AvalonDock.resources.dll</HintPath>
+      <HintPath>bin\Debug\Xceed.Wpf.AvalonDock.resources.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +77,9 @@
     <Compile Include="Public.cs" />
     <Compile Include="transfer.xaml.cs">
       <DependentUpon>transfer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transfer_Fixed.xaml.cs">
+      <DependentUpon>Transfer_Fixed.xaml</DependentUpon>
     </Compile>
     <Compile Include="userdetail.xaml.cs">
       <DependentUpon>userdetail.xaml</DependentUpon>
@@ -128,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="transfer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Transfer_Fixed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
