@@ -64,13 +64,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Effective.xaml.cs">
+      <DependentUpon>Effective.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FixedDataSet.cs">
+      <DependentUpon>FixedDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Public.cs" />
+    <Compile Include="transfer.xaml.cs">
+      <DependentUpon>transfer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userdetail.xaml.cs">
       <DependentUpon>userdetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Userlist.xaml.cs">
       <DependentUpon>Userlist.xaml</DependentUpon>
     </Compile>
+    <Page Include="Effective.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="employees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +117,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="permissions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="transfer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

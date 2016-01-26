@@ -58,7 +58,7 @@
                 <Button Name="fixed_transfers" Content="资产转移" Click="fixed_transfers_Click"></Button>
 
                 <Button Content="标签打印"></Button>
-                <Button Content="有效资产"></Button>
+                <Button Content="有效资产" x:Name="effective_name" Click="effective_name_Click"></Button>
                 <Button Content="转移信息"></Button>
                 <Button Content="资产盘点"></Button>
 

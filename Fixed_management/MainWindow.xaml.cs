@@ -114,7 +114,7 @@ where T : DependencyObject
 
         private void fixed_transfers_Click(object sender, RoutedEventArgs e)
         {
-            fixedadd findfix = MainWindow.FindChild<fixedadd>(Application.Current.MainWindow, "fix");
+            transfer findfix = MainWindow.FindChild<transfer>(Application.Current.MainWindow, "transfer");
             if (findfix != null)
             {
                 foreach (var t in mainpanel.Children)
@@ -128,12 +128,12 @@ where T : DependencyObject
             }
             else
             {
-                fixedadd newfix = new fixedadd();
+                transfer newtransfer = new transfer();
                 LayoutDocument newreport = new LayoutDocument();
                 newreport.Title = "资产转移";
                 newreport.IsActive=true;
-                newreport.Content = newfix;
-                newfix.Name = "fix";
+                newreport.Content = newtransfer;
+                newtransfer.Name = "transfer";
                 mainpanel.Children.Add(newreport);
             }
             
@@ -193,6 +193,33 @@ where T : DependencyObject
 
 
             }
+        }
+
+        private void effective_name_Click(object sender, RoutedEventArgs e)
+        {
+            Effective findfix = MainWindow.FindChild<Effective>(Application.Current.MainWindow, "fix");
+            if (findfix != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "资产转移")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Effective newEffective = new Effective();
+                LayoutDocument newreport = new LayoutDocument();
+                newreport.Title = "资产转移";
+                newreport.IsActive = true;
+                newreport.Content = newEffective;
+                newEffective.Name = "newEffective";
+                mainpanel.Children.Add(newreport);
+            }
+
         }
     }
 }

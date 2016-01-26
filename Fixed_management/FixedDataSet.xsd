@@ -1074,12 +1074,84 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fixednameTableAdapter" GeneratorDataComponentClassName="fixednameTableAdapter" Name="fixedname" UserDataComponentName="fixednameTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FixedConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   fixed.barcode, fixed.purchase_date, fixed.limit, fixed.fixed_number, fixed.fixed_vale, fixed.factory_number, 
+                fixed.fixed_encoding, fixed.billing_date, fixed.warranty, fixed.account_number, fixed.fixed_asset, fixed.card_number, 
+                fixed.enable_status, fixed.del_status, fixed.content, nature.nature, category.category, specifications.specifications, 
+                designation.designation, model.model, unit.unit, purchase_way.purchase_way, keeper.keeper, supplier.supplier, 
+                [position].[position], fixed_statu.fixed_statu, [user].[user], operator.operator, affiliated.affiliated, department.department, 
+                exit_way.way, storage_place.storage_place, fixed.fixed_ID
+FROM      (((((((([user] INNER JOIN
+                ((((((((((fixed INNER JOIN
+                nature ON fixed.nature_ID = nature.nature_ID) INNER JOIN
+                category ON fixed.category_ID = category.category_ID) INNER JOIN
+                designation ON fixed.designation_ID = designation.designation_ID) INNER JOIN
+                specifications ON fixed.specifications_ID = specifications.specifications_ID) INNER JOIN
+                model ON fixed.model_ID = model.model_ID) INNER JOIN
+                purchase_way ON fixed.purchase_way_ID = purchase_way.purchase_way_ID) INNER JOIN
+                unit ON fixed.unit_ID = unit.unit_ID) INNER JOIN
+                keeper ON fixed.keeper_ID = keeper.keeper_ID) INNER JOIN
+                supplier ON fixed.supplier_ID = supplier.supplier_ID) INNER JOIN
+                [position] ON fixed.position_ID = [position].position_ID) ON [user].user_ID = fixed.user_ID) INNER JOIN
+                operator ON fixed.operator_ID = operator.operator_ID) INNER JOIN
+                affiliated ON fixed.affiliated_ID = affiliated.affiliated_ID) INNER JOIN
+                department ON fixed.department_ID = department.department_ID) INNER JOIN
+                exit_way ON fixed.exit_way_ID = exit_way.exit_way_ID) INNER JOIN
+                employees ON fixed.employees_ID = employees.employees_ID) INNER JOIN
+                fixed_statu ON fixed.fixed_status_ID = fixed_statu.fixed_statu_ID) INNER JOIN
+                storage_place ON fixed.storage_place_ID = storage_place.storage_place_ID)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="barcode" DataSetColumn="barcode" />
+              <Mapping SourceColumn="purchase_date" DataSetColumn="purchase_date" />
+              <Mapping SourceColumn="limit" DataSetColumn="limit" />
+              <Mapping SourceColumn="fixed_number" DataSetColumn="fixed_number" />
+              <Mapping SourceColumn="fixed_vale" DataSetColumn="fixed_vale" />
+              <Mapping SourceColumn="factory_number" DataSetColumn="factory_number" />
+              <Mapping SourceColumn="fixed_encoding" DataSetColumn="fixed_encoding" />
+              <Mapping SourceColumn="billing_date" DataSetColumn="billing_date" />
+              <Mapping SourceColumn="warranty" DataSetColumn="warranty" />
+              <Mapping SourceColumn="account_number" DataSetColumn="account_number" />
+              <Mapping SourceColumn="fixed_asset" DataSetColumn="fixed_asset" />
+              <Mapping SourceColumn="card_number" DataSetColumn="card_number" />
+              <Mapping SourceColumn="enable_status" DataSetColumn="enable_status" />
+              <Mapping SourceColumn="del_status" DataSetColumn="del_status" />
+              <Mapping SourceColumn="content" DataSetColumn="content" />
+              <Mapping SourceColumn="nature" DataSetColumn="nature" />
+              <Mapping SourceColumn="category" DataSetColumn="category" />
+              <Mapping SourceColumn="specifications" DataSetColumn="specifications" />
+              <Mapping SourceColumn="designation" DataSetColumn="designation" />
+              <Mapping SourceColumn="model" DataSetColumn="model" />
+              <Mapping SourceColumn="unit" DataSetColumn="unit" />
+              <Mapping SourceColumn="purchase_way" DataSetColumn="purchase_way" />
+              <Mapping SourceColumn="keeper" DataSetColumn="keeper" />
+              <Mapping SourceColumn="supplier" DataSetColumn="supplier" />
+              <Mapping SourceColumn="position" DataSetColumn="position" />
+              <Mapping SourceColumn="fixed_statu" DataSetColumn="fixed_statu" />
+              <Mapping SourceColumn="user" DataSetColumn="user" />
+              <Mapping SourceColumn="operator" DataSetColumn="operator" />
+              <Mapping SourceColumn="affiliated" DataSetColumn="affiliated" />
+              <Mapping SourceColumn="department" DataSetColumn="department" />
+              <Mapping SourceColumn="way" DataSetColumn="way" />
+              <Mapping SourceColumn="storage_place" DataSetColumn="storage_place" />
+              <Mapping SourceColumn="fixed_ID" DataSetColumn="fixed_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fixedTableAdapter" GeneratorDataComponentClassName="fixedTableAdapter" Name="fixed" UserDataComponentName="fixedTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="FixedConnectionString (Settings)" DbObjectName="fixed" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `fixed` WHERE ((`fixed_ID` = ?) AND ((? = 1 AND `barcode` IS NULL) OR (`barcode` = ?)) AND ((? = 1 AND `nature_ID` IS NULL) OR (`nature_ID` = ?)) AND ((? = 1 AND `category_ID` IS NULL) OR (`category_ID` = ?)) AND ((? = 1 AND `designation_ID` IS NULL) OR (`designation_ID` = ?)) AND ((? = 1 AND `specifications_ID` IS NULL) OR (`specifications_ID` = ?)) AND ((? = 1 AND `model_ID` IS NULL) OR (`model_ID` = ?)) AND ((? = 1 AND `purchase_date` IS NULL) OR (`purchase_date` = ?)) AND ((? = 1 AND `limit` IS NULL) OR (`limit` = ?)) AND ((? = 1 AND `purchase_way_ID` IS NULL) OR (`purchase_way_ID` = ?)) AND ((? = 1 AND `fixed_number` IS NULL) OR (`fixed_number` = ?)) AND ((? = 1 AND `unit_ID` IS NULL) OR (`unit_ID` = ?)) AND ((? = 1 AND `fixed_vale` IS NULL) OR (`fixed_vale` = ?)) AND ((? = 1 AND `keeper_ID` IS NULL) OR (`keeper_ID` = ?)) AND ((? = 1 AND `supplier_ID` IS NULL) OR (`supplier_ID` = ?)) AND ((? = 1 AND `factory_number` IS NULL) OR (`factory_number` = ?)) AND ((? = 1 AND `fixed_encoding` IS NULL) OR (`fixed_encoding` = ?)) AND ((? = 1 AND `storage_place_ID` IS NULL) OR (`storage_place_ID` = ?)) AND ((? = 1 AND `position_ID` IS NULL) OR (`position_ID` = ?)) AND ((? = 1 AND `fixed_status_ID` IS NULL) OR (`fixed_status_ID` = ?)) AND ((? = 1 AND `user_ID` IS NULL) OR (`user_ID` = ?)) AND ((? = 1 AND `billing_date` IS NULL) OR (`billing_date` = ?)) AND ((? = 1 AND `warranty` IS NULL) OR (`warranty` = ?)) AND ((? = 1 AND `account_number` IS NULL) OR (`account_number` = ?)) AND ((? = 1 AND `fixed_asset` IS NULL) OR (`fixed_asset` = ?)) AND ((? = 1 AND `card_number` IS NULL) OR (`card_number` = ?)) AND ((? = 1 AND `enable_status` IS NULL) OR (`enable_status` = ?)) AND ((? = 1 AND `del_status` IS NULL) OR (`del_status` = ?)) AND ((? = 1 AND `permissions` IS NULL) OR (`permissions` = ?)) AND ((? = 1 AND `content` IS NULL) OR (`content` = ?)) AND ((? = 1 AND `operator_ID` IS NULL) OR (`operator_ID` = ?)) AND ((? = 1 AND `affiliated_ID` IS NULL) OR (`affiliated_ID` = ?)) AND ((? = 1 AND `department_ID` IS NULL) OR (`department_ID` = ?)))</CommandText>
+                    <CommandText>DELETE FROM `fixed` WHERE ((`fixed_ID` = ?) AND ((? = 1 AND `barcode` IS NULL) OR (`barcode` = ?)) AND ((? = 1 AND `nature_ID` IS NULL) OR (`nature_ID` = ?)) AND ((? = 1 AND `category_ID` IS NULL) OR (`category_ID` = ?)) AND ((? = 1 AND `designation_ID` IS NULL) OR (`designation_ID` = ?)) AND ((? = 1 AND `specifications_ID` IS NULL) OR (`specifications_ID` = ?)) AND ((? = 1 AND `model_ID` IS NULL) OR (`model_ID` = ?)) AND ((? = 1 AND `purchase_date` IS NULL) OR (`purchase_date` = ?)) AND ((? = 1 AND `limit` IS NULL) OR (`limit` = ?)) AND ((? = 1 AND `purchase_way_ID` IS NULL) OR (`purchase_way_ID` = ?)) AND ((? = 1 AND `fixed_number` IS NULL) OR (`fixed_number` = ?)) AND ((? = 1 AND `unit_ID` IS NULL) OR (`unit_ID` = ?)) AND ((? = 1 AND `fixed_vale` IS NULL) OR (`fixed_vale` = ?)) AND ((? = 1 AND `keeper_ID` IS NULL) OR (`keeper_ID` = ?)) AND ((? = 1 AND `supplier_ID` IS NULL) OR (`supplier_ID` = ?)) AND ((? = 1 AND `factory_number` IS NULL) OR (`factory_number` = ?)) AND ((? = 1 AND `fixed_encoding` IS NULL) OR (`fixed_encoding` = ?)) AND ((? = 1 AND `storage_place_ID` IS NULL) OR (`storage_place_ID` = ?)) AND ((? = 1 AND `position_ID` IS NULL) OR (`position_ID` = ?)) AND ((? = 1 AND `fixed_status_ID` IS NULL) OR (`fixed_status_ID` = ?)) AND ((? = 1 AND `user_ID` IS NULL) OR (`user_ID` = ?)) AND ((? = 1 AND `billing_date` IS NULL) OR (`billing_date` = ?)) AND ((? = 1 AND `warranty` IS NULL) OR (`warranty` = ?)) AND ((? = 1 AND `account_number` IS NULL) OR (`account_number` = ?)) AND ((? = 1 AND `fixed_asset` IS NULL) OR (`fixed_asset` = ?)) AND ((? = 1 AND `card_number` IS NULL) OR (`card_number` = ?)) AND ((? = 1 AND `enable_status` IS NULL) OR (`enable_status` = ?)) AND ((? = 1 AND `del_status` IS NULL) OR (`del_status` = ?)) AND ((? = 1 AND `permissions` IS NULL) OR (`permissions` = ?)) AND ((? = 1 AND `content` IS NULL) OR (`content` = ?)) AND ((? = 1 AND `operator_ID` IS NULL) OR (`operator_ID` = ?)) AND ((? = 1 AND `affiliated_ID` IS NULL) OR (`affiliated_ID` = ?)) AND ((? = 1 AND `department_ID` IS NULL) OR (`department_ID` = ?)) AND ((? = 1 AND `exit_way_ID` IS NULL) OR (`exit_way_ID` = ?)) AND ((? = 1 AND `employees_ID` IS NULL) OR (`employees_ID` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_fixed_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="fixed_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_barcode" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="barcode" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -1146,12 +1218,16 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_affiliated_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="affiliated_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_department_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="department_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_department_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="department_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_exit_way_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="exit_way_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_exit_way_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="exit_way_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_employees_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="employees_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_employees_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="employees_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `fixed` (`barcode`, `nature_ID`, `category_ID`, `designation_ID`, `specifications_ID`, `model_ID`, `purchase_date`, `limit`, `purchase_way_ID`, `fixed_number`, `unit_ID`, `fixed_vale`, `keeper_ID`, `supplier_ID`, `factory_number`, `fixed_encoding`, `storage_place_ID`, `position_ID`, `fixed_status_ID`, `user_ID`, `billing_date`, `warranty`, `account_number`, `fixed_asset`, `card_number`, `enable_status`, `del_status`, `permissions`, `content`, `operator_ID`, `affiliated_ID`, `department_ID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <CommandText>INSERT INTO `fixed` (`barcode`, `nature_ID`, `category_ID`, `designation_ID`, `specifications_ID`, `model_ID`, `purchase_date`, `limit`, `purchase_way_ID`, `fixed_number`, `unit_ID`, `fixed_vale`, `keeper_ID`, `supplier_ID`, `factory_number`, `fixed_encoding`, `storage_place_ID`, `position_ID`, `fixed_status_ID`, `user_ID`, `billing_date`, `warranty`, `account_number`, `fixed_asset`, `card_number`, `enable_status`, `del_status`, `permissions`, `content`, `operator_ID`, `affiliated_ID`, `department_ID`, `exit_way_ID`, `employees_ID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="barcode" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="barcode" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="nature_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="nature_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1185,18 +1261,20 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="operator_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="operator_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="affiliated_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="affiliated_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="department_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="department_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="exit_way_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="exit_way_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="employees_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="employees_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT fixed_ID, barcode, nature_ID, category_ID, designation_ID, specifications_ID, model_ID, purchase_date, limit, purchase_way_ID, fixed_number, unit_ID, fixed_vale, keeper_ID, supplier_ID, factory_number, fixed_encoding, storage_place_ID, position_ID, fixed_status_ID, user_ID, billing_date, warranty, account_number, fixed_asset, card_number, enable_status, del_status, permissions, content, operator_ID, affiliated_ID, department_ID FROM fixed</CommandText>
+                    <CommandText>SELECT fixed_ID, barcode, nature_ID, category_ID, designation_ID, specifications_ID, model_ID, purchase_date, limit, purchase_way_ID, fixed_number, unit_ID, fixed_vale, keeper_ID, supplier_ID, factory_number, fixed_encoding, storage_place_ID, position_ID, fixed_status_ID, user_ID, billing_date, warranty, account_number, fixed_asset, card_number, enable_status, del_status, permissions, content, operator_ID, affiliated_ID, department_ID, exit_way_ID, employees_ID FROM fixed</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `fixed` SET `barcode` = ?, `nature_ID` = ?, `category_ID` = ?, `designation_ID` = ?, `specifications_ID` = ?, `model_ID` = ?, `purchase_date` = ?, `limit` = ?, `purchase_way_ID` = ?, `fixed_number` = ?, `unit_ID` = ?, `fixed_vale` = ?, `keeper_ID` = ?, `supplier_ID` = ?, `factory_number` = ?, `fixed_encoding` = ?, `storage_place_ID` = ?, `position_ID` = ?, `fixed_status_ID` = ?, `user_ID` = ?, `billing_date` = ?, `warranty` = ?, `account_number` = ?, `fixed_asset` = ?, `card_number` = ?, `enable_status` = ?, `del_status` = ?, `permissions` = ?, `content` = ?, `operator_ID` = ?, `affiliated_ID` = ?, `department_ID` = ? WHERE ((`fixed_ID` = ?) AND ((? = 1 AND `barcode` IS NULL) OR (`barcode` = ?)) AND ((? = 1 AND `nature_ID` IS NULL) OR (`nature_ID` = ?)) AND ((? = 1 AND `category_ID` IS NULL) OR (`category_ID` = ?)) AND ((? = 1 AND `designation_ID` IS NULL) OR (`designation_ID` = ?)) AND ((? = 1 AND `specifications_ID` IS NULL) OR (`specifications_ID` = ?)) AND ((? = 1 AND `model_ID` IS NULL) OR (`model_ID` = ?)) AND ((? = 1 AND `purchase_date` IS NULL) OR (`purchase_date` = ?)) AND ((? = 1 AND `limit` IS NULL) OR (`limit` = ?)) AND ((? = 1 AND `purchase_way_ID` IS NULL) OR (`purchase_way_ID` = ?)) AND ((? = 1 AND `fixed_number` IS NULL) OR (`fixed_number` = ?)) AND ((? = 1 AND `unit_ID` IS NULL) OR (`unit_ID` = ?)) AND ((? = 1 AND `fixed_vale` IS NULL) OR (`fixed_vale` = ?)) AND ((? = 1 AND `keeper_ID` IS NULL) OR (`keeper_ID` = ?)) AND ((? = 1 AND `supplier_ID` IS NULL) OR (`supplier_ID` = ?)) AND ((? = 1 AND `factory_number` IS NULL) OR (`factory_number` = ?)) AND ((? = 1 AND `fixed_encoding` IS NULL) OR (`fixed_encoding` = ?)) AND ((? = 1 AND `storage_place_ID` IS NULL) OR (`storage_place_ID` = ?)) AND ((? = 1 AND `position_ID` IS NULL) OR (`position_ID` = ?)) AND ((? = 1 AND `fixed_status_ID` IS NULL) OR (`fixed_status_ID` = ?)) AND ((? = 1 AND `user_ID` IS NULL) OR (`user_ID` = ?)) AND ((? = 1 AND `billing_date` IS NULL) OR (`billing_date` = ?)) AND ((? = 1 AND `warranty` IS NULL) OR (`warranty` = ?)) AND ((? = 1 AND `account_number` IS NULL) OR (`account_number` = ?)) AND ((? = 1 AND `fixed_asset` IS NULL) OR (`fixed_asset` = ?)) AND ((? = 1 AND `card_number` IS NULL) OR (`card_number` = ?)) AND ((? = 1 AND `enable_status` IS NULL) OR (`enable_status` = ?)) AND ((? = 1 AND `del_status` IS NULL) OR (`del_status` = ?)) AND ((? = 1 AND `permissions` IS NULL) OR (`permissions` = ?)) AND ((? = 1 AND `content` IS NULL) OR (`content` = ?)) AND ((? = 1 AND `operator_ID` IS NULL) OR (`operator_ID` = ?)) AND ((? = 1 AND `affiliated_ID` IS NULL) OR (`affiliated_ID` = ?)) AND ((? = 1 AND `department_ID` IS NULL) OR (`department_ID` = ?)))</CommandText>
+                    <CommandText>UPDATE `fixed` SET `barcode` = ?, `nature_ID` = ?, `category_ID` = ?, `designation_ID` = ?, `specifications_ID` = ?, `model_ID` = ?, `purchase_date` = ?, `limit` = ?, `purchase_way_ID` = ?, `fixed_number` = ?, `unit_ID` = ?, `fixed_vale` = ?, `keeper_ID` = ?, `supplier_ID` = ?, `factory_number` = ?, `fixed_encoding` = ?, `storage_place_ID` = ?, `position_ID` = ?, `fixed_status_ID` = ?, `user_ID` = ?, `billing_date` = ?, `warranty` = ?, `account_number` = ?, `fixed_asset` = ?, `card_number` = ?, `enable_status` = ?, `del_status` = ?, `permissions` = ?, `content` = ?, `operator_ID` = ?, `affiliated_ID` = ?, `department_ID` = ?, `exit_way_ID` = ?, `employees_ID` = ? WHERE ((`fixed_ID` = ?) AND ((? = 1 AND `barcode` IS NULL) OR (`barcode` = ?)) AND ((? = 1 AND `nature_ID` IS NULL) OR (`nature_ID` = ?)) AND ((? = 1 AND `category_ID` IS NULL) OR (`category_ID` = ?)) AND ((? = 1 AND `designation_ID` IS NULL) OR (`designation_ID` = ?)) AND ((? = 1 AND `specifications_ID` IS NULL) OR (`specifications_ID` = ?)) AND ((? = 1 AND `model_ID` IS NULL) OR (`model_ID` = ?)) AND ((? = 1 AND `purchase_date` IS NULL) OR (`purchase_date` = ?)) AND ((? = 1 AND `limit` IS NULL) OR (`limit` = ?)) AND ((? = 1 AND `purchase_way_ID` IS NULL) OR (`purchase_way_ID` = ?)) AND ((? = 1 AND `fixed_number` IS NULL) OR (`fixed_number` = ?)) AND ((? = 1 AND `unit_ID` IS NULL) OR (`unit_ID` = ?)) AND ((? = 1 AND `fixed_vale` IS NULL) OR (`fixed_vale` = ?)) AND ((? = 1 AND `keeper_ID` IS NULL) OR (`keeper_ID` = ?)) AND ((? = 1 AND `supplier_ID` IS NULL) OR (`supplier_ID` = ?)) AND ((? = 1 AND `factory_number` IS NULL) OR (`factory_number` = ?)) AND ((? = 1 AND `fixed_encoding` IS NULL) OR (`fixed_encoding` = ?)) AND ((? = 1 AND `storage_place_ID` IS NULL) OR (`storage_place_ID` = ?)) AND ((? = 1 AND `position_ID` IS NULL) OR (`position_ID` = ?)) AND ((? = 1 AND `fixed_status_ID` IS NULL) OR (`fixed_status_ID` = ?)) AND ((? = 1 AND `user_ID` IS NULL) OR (`user_ID` = ?)) AND ((? = 1 AND `billing_date` IS NULL) OR (`billing_date` = ?)) AND ((? = 1 AND `warranty` IS NULL) OR (`warranty` = ?)) AND ((? = 1 AND `account_number` IS NULL) OR (`account_number` = ?)) AND ((? = 1 AND `fixed_asset` IS NULL) OR (`fixed_asset` = ?)) AND ((? = 1 AND `card_number` IS NULL) OR (`card_number` = ?)) AND ((? = 1 AND `enable_status` IS NULL) OR (`enable_status` = ?)) AND ((? = 1 AND `del_status` IS NULL) OR (`del_status` = ?)) AND ((? = 1 AND `permissions` IS NULL) OR (`permissions` = ?)) AND ((? = 1 AND `content` IS NULL) OR (`content` = ?)) AND ((? = 1 AND `operator_ID` IS NULL) OR (`operator_ID` = ?)) AND ((? = 1 AND `affiliated_ID` IS NULL) OR (`affiliated_ID` = ?)) AND ((? = 1 AND `department_ID` IS NULL) OR (`department_ID` = ?)) AND ((? = 1 AND `exit_way_ID` IS NULL) OR (`exit_way_ID` = ?)) AND ((? = 1 AND `employees_ID` IS NULL) OR (`employees_ID` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="barcode" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="barcode" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="nature_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="nature_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1230,6 +1308,8 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="operator_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="operator_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="affiliated_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="affiliated_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="department_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="department_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="exit_way_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="exit_way_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="employees_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="employees_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_fixed_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="fixed_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_barcode" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="barcode" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_barcode" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="barcode" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -1295,6 +1375,10 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_affiliated_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="affiliated_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_department_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="department_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_department_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="department_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_exit_way_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="exit_way_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_exit_way_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="exit_way_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_employees_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="employees_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_employees_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="employees_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -1334,6 +1418,8 @@
               <Mapping SourceColumn="operator_ID" DataSetColumn="operator_ID" />
               <Mapping SourceColumn="affiliated_ID" DataSetColumn="affiliated_ID" />
               <Mapping SourceColumn="department_ID" DataSetColumn="department_ID" />
+              <Mapping SourceColumn="exit_way_ID" DataSetColumn="exit_way_ID" />
+              <Mapping SourceColumn="employees_ID" DataSetColumn="employees_ID" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1748,7 +1834,208 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fixed" msprop:Generator_TableClassName="fixedDataTable" msprop:Generator_TableVarName="tablefixed" msprop:Generator_TablePropName="_fixed" msprop:Generator_RowDeletingName="fixedRowDeleting" msprop:Generator_RowChangingName="fixedRowChanging" msprop:Generator_RowEvHandlerName="fixedRowChangeEventHandler" msprop:Generator_RowDeletedName="fixedRowDeleted" msprop:Generator_UserTableName="fixed" msprop:Generator_RowChangedName="fixedRowChanged" msprop:Generator_RowEvArgName="fixedRowChangeEvent" msprop:Generator_RowClassName="fixedRow">
+        <xs:element name="fixedname" msprop:Generator_TableClassName="fixednameDataTable" msprop:Generator_TableVarName="tablefixedname" msprop:Generator_RowChangedName="fixednameRowChanged" msprop:Generator_TablePropName="fixedname" msprop:Generator_RowDeletingName="fixednameRowDeleting" msprop:Generator_RowChangingName="fixednameRowChanging" msprop:Generator_RowEvHandlerName="fixednameRowChangeEventHandler" msprop:Generator_RowDeletedName="fixednameRowDeleted" msprop:Generator_RowClassName="fixednameRow" msprop:Generator_UserTableName="fixedname" msprop:Generator_RowEvArgName="fixednameRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="barcode" msprop:Generator_ColumnVarNameInTable="columnbarcode" msprop:Generator_ColumnPropNameInRow="barcode" msprop:Generator_ColumnPropNameInTable="barcodeColumn" msprop:Generator_UserColumnName="barcode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="purchase_date" msprop:Generator_ColumnVarNameInTable="columnpurchase_date" msprop:Generator_ColumnPropNameInRow="purchase_date" msprop:Generator_ColumnPropNameInTable="purchase_dateColumn" msprop:Generator_UserColumnName="purchase_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="limit" msprop:Generator_ColumnVarNameInTable="columnlimit" msprop:Generator_ColumnPropNameInRow="limit" msprop:Generator_ColumnPropNameInTable="limitColumn" msprop:Generator_UserColumnName="limit" type="xs:int" minOccurs="0" />
+              <xs:element name="fixed_number" msprop:Generator_ColumnVarNameInTable="columnfixed_number" msprop:Generator_ColumnPropNameInRow="fixed_number" msprop:Generator_ColumnPropNameInTable="fixed_numberColumn" msprop:Generator_UserColumnName="fixed_number" type="xs:int" minOccurs="0" />
+              <xs:element name="fixed_vale" msprop:Generator_ColumnVarNameInTable="columnfixed_vale" msprop:Generator_ColumnPropNameInRow="fixed_vale" msprop:Generator_ColumnPropNameInTable="fixed_valeColumn" msprop:Generator_UserColumnName="fixed_vale" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="factory_number" msprop:Generator_ColumnVarNameInTable="columnfactory_number" msprop:Generator_ColumnPropNameInRow="factory_number" msprop:Generator_ColumnPropNameInTable="factory_numberColumn" msprop:Generator_UserColumnName="factory_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fixed_encoding" msprop:Generator_ColumnVarNameInTable="columnfixed_encoding" msprop:Generator_ColumnPropNameInRow="fixed_encoding" msprop:Generator_ColumnPropNameInTable="fixed_encodingColumn" msprop:Generator_UserColumnName="fixed_encoding" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="billing_date" msprop:Generator_ColumnVarNameInTable="columnbilling_date" msprop:Generator_ColumnPropNameInRow="billing_date" msprop:Generator_ColumnPropNameInTable="billing_dateColumn" msprop:Generator_UserColumnName="billing_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="warranty" msprop:Generator_ColumnVarNameInTable="columnwarranty" msprop:Generator_ColumnPropNameInRow="warranty" msprop:Generator_ColumnPropNameInTable="warrantyColumn" msprop:Generator_UserColumnName="warranty" type="xs:int" minOccurs="0" />
+              <xs:element name="account_number" msprop:Generator_ColumnVarNameInTable="columnaccount_number" msprop:Generator_ColumnPropNameInRow="account_number" msprop:Generator_ColumnPropNameInTable="account_numberColumn" msprop:Generator_UserColumnName="account_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fixed_asset" msprop:Generator_ColumnVarNameInTable="columnfixed_asset" msprop:Generator_ColumnPropNameInRow="fixed_asset" msprop:Generator_ColumnPropNameInTable="fixed_assetColumn" msprop:Generator_UserColumnName="fixed_asset" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="card_number" msprop:Generator_ColumnVarNameInTable="columncard_number" msprop:Generator_ColumnPropNameInRow="card_number" msprop:Generator_ColumnPropNameInTable="card_numberColumn" msprop:Generator_UserColumnName="card_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="enable_status" msprop:Generator_ColumnVarNameInTable="columnenable_status" msprop:Generator_ColumnPropNameInRow="enable_status" msprop:Generator_ColumnPropNameInTable="enable_statusColumn" msprop:Generator_UserColumnName="enable_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="del_status" msprop:Generator_ColumnVarNameInTable="columndel_status" msprop:Generator_ColumnPropNameInRow="del_status" msprop:Generator_ColumnPropNameInTable="del_statusColumn" msprop:Generator_UserColumnName="del_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="content" msprop:Generator_ColumnVarNameInTable="columncontent" msprop:Generator_ColumnPropNameInRow="content" msprop:Generator_ColumnPropNameInTable="contentColumn" msprop:Generator_UserColumnName="content" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nature" msprop:Generator_ColumnVarNameInTable="columnnature" msprop:Generator_ColumnPropNameInRow="nature" msprop:Generator_ColumnPropNameInTable="natureColumn" msprop:Generator_UserColumnName="nature" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="category" msprop:Generator_ColumnVarNameInTable="columncategory" msprop:Generator_ColumnPropNameInRow="category" msprop:Generator_ColumnPropNameInTable="categoryColumn" msprop:Generator_UserColumnName="category" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="specifications" msprop:Generator_ColumnVarNameInTable="columnspecifications" msprop:Generator_ColumnPropNameInRow="specifications" msprop:Generator_ColumnPropNameInTable="specificationsColumn" msprop:Generator_UserColumnName="specifications" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="designation" msprop:Generator_ColumnVarNameInTable="columndesignation" msprop:Generator_ColumnPropNameInRow="designation" msprop:Generator_ColumnPropNameInTable="designationColumn" msprop:Generator_UserColumnName="designation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="model" msprop:Generator_ColumnVarNameInTable="columnmodel" msprop:Generator_ColumnPropNameInRow="model" msprop:Generator_ColumnPropNameInTable="modelColumn" msprop:Generator_UserColumnName="model" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="unit" msprop:Generator_ColumnVarNameInTable="columnunit" msprop:Generator_ColumnPropNameInRow="unit" msprop:Generator_ColumnPropNameInTable="unitColumn" msprop:Generator_UserColumnName="unit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="purchase_way" msprop:Generator_ColumnVarNameInTable="columnpurchase_way" msprop:Generator_ColumnPropNameInRow="purchase_way" msprop:Generator_ColumnPropNameInTable="purchase_wayColumn" msprop:Generator_UserColumnName="purchase_way" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="keeper" msprop:Generator_ColumnVarNameInTable="columnkeeper" msprop:Generator_ColumnPropNameInRow="keeper" msprop:Generator_ColumnPropNameInTable="keeperColumn" msprop:Generator_UserColumnName="keeper" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="supplier" msprop:Generator_ColumnVarNameInTable="columnsupplier" msprop:Generator_ColumnPropNameInRow="supplier" msprop:Generator_ColumnPropNameInTable="supplierColumn" msprop:Generator_UserColumnName="supplier" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="position" msprop:Generator_ColumnVarNameInTable="columnposition" msprop:Generator_ColumnPropNameInRow="position" msprop:Generator_ColumnPropNameInTable="positionColumn" msprop:Generator_UserColumnName="position" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fixed_statu" msprop:Generator_ColumnVarNameInTable="columnfixed_statu" msprop:Generator_ColumnPropNameInRow="fixed_statu" msprop:Generator_ColumnPropNameInTable="fixed_statuColumn" msprop:Generator_UserColumnName="fixed_statu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="user" msprop:Generator_ColumnVarNameInTable="columnuser" msprop:Generator_ColumnPropNameInRow="user" msprop:Generator_ColumnPropNameInTable="userColumn" msprop:Generator_UserColumnName="user" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="operator" msprop:Generator_ColumnVarNameInTable="columnoperator" msprop:Generator_ColumnPropNameInRow="_operator" msprop:Generator_ColumnPropNameInTable="operatorColumn" msprop:Generator_UserColumnName="operator" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="affiliated" msprop:Generator_ColumnVarNameInTable="columnaffiliated" msprop:Generator_ColumnPropNameInRow="affiliated" msprop:Generator_ColumnPropNameInTable="affiliatedColumn" msprop:Generator_UserColumnName="affiliated" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="department" msprop:Generator_ColumnVarNameInTable="columndepartment" msprop:Generator_ColumnPropNameInRow="department" msprop:Generator_ColumnPropNameInTable="departmentColumn" msprop:Generator_UserColumnName="department" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="way" msprop:Generator_ColumnVarNameInTable="columnway" msprop:Generator_ColumnPropNameInRow="way" msprop:Generator_ColumnPropNameInTable="wayColumn" msprop:Generator_UserColumnName="way" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="storage_place" msprop:Generator_ColumnVarNameInTable="columnstorage_place" msprop:Generator_ColumnPropNameInRow="storage_place" msprop:Generator_ColumnPropNameInTable="storage_placeColumn" msprop:Generator_UserColumnName="storage_place" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fixed_ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnfixed_ID" msprop:Generator_ColumnPropNameInRow="fixed_ID" msprop:Generator_ColumnPropNameInTable="fixed_IDColumn" msprop:Generator_UserColumnName="fixed_ID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="fixed" msprop:Generator_TableClassName="fixedDataTable" msprop:Generator_TableVarName="tablefixed" msprop:Generator_RowChangedName="fixedRowChanged" msprop:Generator_TablePropName="_fixed" msprop:Generator_RowDeletingName="fixedRowDeleting" msprop:Generator_RowChangingName="fixedRowChanging" msprop:Generator_RowEvHandlerName="fixedRowChangeEventHandler" msprop:Generator_RowDeletedName="fixedRowDeleted" msprop:Generator_RowClassName="fixedRow" msprop:Generator_UserTableName="fixed" msprop:Generator_RowEvArgName="fixedRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="fixed_ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnfixed_ID" msprop:Generator_ColumnPropNameInRow="fixed_ID" msprop:Generator_ColumnPropNameInTable="fixed_IDColumn" msprop:Generator_UserColumnName="fixed_ID" type="xs:int" />
@@ -1850,6 +2137,8 @@
               <xs:element name="operator_ID" msprop:Generator_ColumnVarNameInTable="columnoperator_ID" msprop:Generator_ColumnPropNameInRow="operator_ID" msprop:Generator_ColumnPropNameInTable="operator_IDColumn" msprop:Generator_UserColumnName="operator_ID" type="xs:int" minOccurs="0" />
               <xs:element name="affiliated_ID" msprop:Generator_ColumnVarNameInTable="columnaffiliated_ID" msprop:Generator_ColumnPropNameInRow="affiliated_ID" msprop:Generator_ColumnPropNameInTable="affiliated_IDColumn" msprop:Generator_UserColumnName="affiliated_ID" type="xs:int" minOccurs="0" />
               <xs:element name="department_ID" msprop:Generator_ColumnVarNameInTable="columndepartment_ID" msprop:Generator_ColumnPropNameInRow="department_ID" msprop:Generator_ColumnPropNameInTable="department_IDColumn" msprop:Generator_UserColumnName="department_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="exit_way_ID" msprop:Generator_ColumnVarNameInTable="columnexit_way_ID" msprop:Generator_ColumnPropNameInRow="exit_way_ID" msprop:Generator_ColumnPropNameInTable="exit_way_IDColumn" msprop:Generator_UserColumnName="exit_way_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="employees_ID" msprop:Generator_ColumnVarNameInTable="columnemployees_ID" msprop:Generator_ColumnPropNameInRow="employees_ID" msprop:Generator_ColumnPropNameInTable="employees_IDColumn" msprop:Generator_UserColumnName="employees_ID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

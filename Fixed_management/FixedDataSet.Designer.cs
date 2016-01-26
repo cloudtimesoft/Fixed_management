@@ -64,6 +64,8 @@ namespace Fixed_management {
         
         private userDataTable tableuser;
         
+        private fixednameDataTable tablefixedname;
+        
         private fixedDataTable tablefixed;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -153,6 +155,9 @@ namespace Fixed_management {
                 }
                 if ((ds.Tables["user"] != null)) {
                     base.Tables.Add(new userDataTable(ds.Tables["user"]));
+                }
+                if ((ds.Tables["fixedname"] != null)) {
+                    base.Tables.Add(new fixednameDataTable(ds.Tables["fixedname"]));
                 }
                 if ((ds.Tables["fixed"] != null)) {
                     base.Tables.Add(new fixedDataTable(ds.Tables["fixed"]));
@@ -379,6 +384,16 @@ namespace Fixed_management {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public fixednameDataTable fixedname {
+            get {
+                return this.tablefixedname;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public fixedDataTable _fixed {
             get {
                 return this.tablefixed;
@@ -511,6 +526,9 @@ namespace Fixed_management {
                 }
                 if ((ds.Tables["user"] != null)) {
                     base.Tables.Add(new userDataTable(ds.Tables["user"]));
+                }
+                if ((ds.Tables["fixedname"] != null)) {
+                    base.Tables.Add(new fixednameDataTable(ds.Tables["fixedname"]));
                 }
                 if ((ds.Tables["fixed"] != null)) {
                     base.Tables.Add(new fixedDataTable(ds.Tables["fixed"]));
@@ -668,6 +686,12 @@ namespace Fixed_management {
                     this.tableuser.InitVars();
                 }
             }
+            this.tablefixedname = ((fixednameDataTable)(base.Tables["fixedname"]));
+            if ((initTable == true)) {
+                if ((this.tablefixedname != null)) {
+                    this.tablefixedname.InitVars();
+                }
+            }
             this.tablefixed = ((fixedDataTable)(base.Tables["fixed"]));
             if ((initTable == true)) {
                 if ((this.tablefixed != null)) {
@@ -724,6 +748,8 @@ namespace Fixed_management {
             base.Tables.Add(this.tableunit);
             this.tableuser = new userDataTable();
             base.Tables.Add(this.tableuser);
+            this.tablefixedname = new fixednameDataTable();
+            base.Tables.Add(this.tablefixedname);
             this.tablefixed = new fixedDataTable();
             base.Tables.Add(this.tablefixed);
         }
@@ -850,6 +876,12 @@ namespace Fixed_management {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializefixedname() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerialize_fixed() {
             return false;
         }
@@ -968,6 +1000,9 @@ namespace Fixed_management {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void userRowChangeEventHandler(object sender, userRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void fixednameRowChangeEventHandler(object sender, fixednameRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void fixedRowChangeEventHandler(object sender, fixedRowChangeEvent e);
@@ -6819,6 +6854,766 @@ namespace Fixed_management {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class fixednameDataTable : global::System.Data.TypedTableBase<fixednameRow> {
+            
+            private global::System.Data.DataColumn columnbarcode;
+            
+            private global::System.Data.DataColumn columnpurchase_date;
+            
+            private global::System.Data.DataColumn columnlimit;
+            
+            private global::System.Data.DataColumn columnfixed_number;
+            
+            private global::System.Data.DataColumn columnfixed_vale;
+            
+            private global::System.Data.DataColumn columnfactory_number;
+            
+            private global::System.Data.DataColumn columnfixed_encoding;
+            
+            private global::System.Data.DataColumn columnbilling_date;
+            
+            private global::System.Data.DataColumn columnwarranty;
+            
+            private global::System.Data.DataColumn columnaccount_number;
+            
+            private global::System.Data.DataColumn columnfixed_asset;
+            
+            private global::System.Data.DataColumn columncard_number;
+            
+            private global::System.Data.DataColumn columnenable_status;
+            
+            private global::System.Data.DataColumn columndel_status;
+            
+            private global::System.Data.DataColumn columncontent;
+            
+            private global::System.Data.DataColumn columnnature;
+            
+            private global::System.Data.DataColumn columncategory;
+            
+            private global::System.Data.DataColumn columnspecifications;
+            
+            private global::System.Data.DataColumn columndesignation;
+            
+            private global::System.Data.DataColumn columnmodel;
+            
+            private global::System.Data.DataColumn columnunit;
+            
+            private global::System.Data.DataColumn columnpurchase_way;
+            
+            private global::System.Data.DataColumn columnkeeper;
+            
+            private global::System.Data.DataColumn columnsupplier;
+            
+            private global::System.Data.DataColumn columnposition;
+            
+            private global::System.Data.DataColumn columnfixed_statu;
+            
+            private global::System.Data.DataColumn columnuser;
+            
+            private global::System.Data.DataColumn columnoperator;
+            
+            private global::System.Data.DataColumn columnaffiliated;
+            
+            private global::System.Data.DataColumn columndepartment;
+            
+            private global::System.Data.DataColumn columnway;
+            
+            private global::System.Data.DataColumn columnstorage_place;
+            
+            private global::System.Data.DataColumn columnfixed_ID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fixednameDataTable() {
+                this.TableName = "fixedname";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fixednameDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected fixednameDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn barcodeColumn {
+                get {
+                    return this.columnbarcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn purchase_dateColumn {
+                get {
+                    return this.columnpurchase_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn limitColumn {
+                get {
+                    return this.columnlimit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fixed_numberColumn {
+                get {
+                    return this.columnfixed_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fixed_valeColumn {
+                get {
+                    return this.columnfixed_vale;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn factory_numberColumn {
+                get {
+                    return this.columnfactory_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fixed_encodingColumn {
+                get {
+                    return this.columnfixed_encoding;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn billing_dateColumn {
+                get {
+                    return this.columnbilling_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn warrantyColumn {
+                get {
+                    return this.columnwarranty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn account_numberColumn {
+                get {
+                    return this.columnaccount_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fixed_assetColumn {
+                get {
+                    return this.columnfixed_asset;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn card_numberColumn {
+                get {
+                    return this.columncard_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn enable_statusColumn {
+                get {
+                    return this.columnenable_status;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn del_statusColumn {
+                get {
+                    return this.columndel_status;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn contentColumn {
+                get {
+                    return this.columncontent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn natureColumn {
+                get {
+                    return this.columnnature;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn categoryColumn {
+                get {
+                    return this.columncategory;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn specificationsColumn {
+                get {
+                    return this.columnspecifications;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn designationColumn {
+                get {
+                    return this.columndesignation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn modelColumn {
+                get {
+                    return this.columnmodel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn unitColumn {
+                get {
+                    return this.columnunit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn purchase_wayColumn {
+                get {
+                    return this.columnpurchase_way;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn keeperColumn {
+                get {
+                    return this.columnkeeper;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn supplierColumn {
+                get {
+                    return this.columnsupplier;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn positionColumn {
+                get {
+                    return this.columnposition;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fixed_statuColumn {
+                get {
+                    return this.columnfixed_statu;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn userColumn {
+                get {
+                    return this.columnuser;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn operatorColumn {
+                get {
+                    return this.columnoperator;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn affiliatedColumn {
+                get {
+                    return this.columnaffiliated;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn departmentColumn {
+                get {
+                    return this.columndepartment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn wayColumn {
+                get {
+                    return this.columnway;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn storage_placeColumn {
+                get {
+                    return this.columnstorage_place;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fixed_IDColumn {
+                get {
+                    return this.columnfixed_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fixednameRow this[int index] {
+                get {
+                    return ((fixednameRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fixednameRowChangeEventHandler fixednameRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fixednameRowChangeEventHandler fixednameRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fixednameRowChangeEventHandler fixednameRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fixednameRowChangeEventHandler fixednameRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddfixednameRow(fixednameRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fixednameRow AddfixednameRow(
+                        string barcode, 
+                        System.DateTime purchase_date, 
+                        int limit, 
+                        int fixed_number, 
+                        string fixed_vale, 
+                        string factory_number, 
+                        string fixed_encoding, 
+                        System.DateTime billing_date, 
+                        int warranty, 
+                        string account_number, 
+                        string fixed_asset, 
+                        string card_number, 
+                        string enable_status, 
+                        string del_status, 
+                        string content, 
+                        string nature, 
+                        string category, 
+                        string specifications, 
+                        string designation, 
+                        string model, 
+                        string unit, 
+                        string purchase_way, 
+                        string keeper, 
+                        string supplier, 
+                        string position, 
+                        string fixed_statu, 
+                        string user, 
+                        string _operator, 
+                        string affiliated, 
+                        string department, 
+                        string way, 
+                        string storage_place) {
+                fixednameRow rowfixednameRow = ((fixednameRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        barcode,
+                        purchase_date,
+                        limit,
+                        fixed_number,
+                        fixed_vale,
+                        factory_number,
+                        fixed_encoding,
+                        billing_date,
+                        warranty,
+                        account_number,
+                        fixed_asset,
+                        card_number,
+                        enable_status,
+                        del_status,
+                        content,
+                        nature,
+                        category,
+                        specifications,
+                        designation,
+                        model,
+                        unit,
+                        purchase_way,
+                        keeper,
+                        supplier,
+                        position,
+                        fixed_statu,
+                        user,
+                        _operator,
+                        affiliated,
+                        department,
+                        way,
+                        storage_place,
+                        null};
+                rowfixednameRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfixednameRow);
+                return rowfixednameRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                fixednameDataTable cln = ((fixednameDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new fixednameDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnbarcode = base.Columns["barcode"];
+                this.columnpurchase_date = base.Columns["purchase_date"];
+                this.columnlimit = base.Columns["limit"];
+                this.columnfixed_number = base.Columns["fixed_number"];
+                this.columnfixed_vale = base.Columns["fixed_vale"];
+                this.columnfactory_number = base.Columns["factory_number"];
+                this.columnfixed_encoding = base.Columns["fixed_encoding"];
+                this.columnbilling_date = base.Columns["billing_date"];
+                this.columnwarranty = base.Columns["warranty"];
+                this.columnaccount_number = base.Columns["account_number"];
+                this.columnfixed_asset = base.Columns["fixed_asset"];
+                this.columncard_number = base.Columns["card_number"];
+                this.columnenable_status = base.Columns["enable_status"];
+                this.columndel_status = base.Columns["del_status"];
+                this.columncontent = base.Columns["content"];
+                this.columnnature = base.Columns["nature"];
+                this.columncategory = base.Columns["category"];
+                this.columnspecifications = base.Columns["specifications"];
+                this.columndesignation = base.Columns["designation"];
+                this.columnmodel = base.Columns["model"];
+                this.columnunit = base.Columns["unit"];
+                this.columnpurchase_way = base.Columns["purchase_way"];
+                this.columnkeeper = base.Columns["keeper"];
+                this.columnsupplier = base.Columns["supplier"];
+                this.columnposition = base.Columns["position"];
+                this.columnfixed_statu = base.Columns["fixed_statu"];
+                this.columnuser = base.Columns["user"];
+                this.columnoperator = base.Columns["operator"];
+                this.columnaffiliated = base.Columns["affiliated"];
+                this.columndepartment = base.Columns["department"];
+                this.columnway = base.Columns["way"];
+                this.columnstorage_place = base.Columns["storage_place"];
+                this.columnfixed_ID = base.Columns["fixed_ID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnbarcode = new global::System.Data.DataColumn("barcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbarcode);
+                this.columnpurchase_date = new global::System.Data.DataColumn("purchase_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpurchase_date);
+                this.columnlimit = new global::System.Data.DataColumn("limit", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlimit);
+                this.columnfixed_number = new global::System.Data.DataColumn("fixed_number", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfixed_number);
+                this.columnfixed_vale = new global::System.Data.DataColumn("fixed_vale", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfixed_vale);
+                this.columnfactory_number = new global::System.Data.DataColumn("factory_number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfactory_number);
+                this.columnfixed_encoding = new global::System.Data.DataColumn("fixed_encoding", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfixed_encoding);
+                this.columnbilling_date = new global::System.Data.DataColumn("billing_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbilling_date);
+                this.columnwarranty = new global::System.Data.DataColumn("warranty", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwarranty);
+                this.columnaccount_number = new global::System.Data.DataColumn("account_number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaccount_number);
+                this.columnfixed_asset = new global::System.Data.DataColumn("fixed_asset", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfixed_asset);
+                this.columncard_number = new global::System.Data.DataColumn("card_number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncard_number);
+                this.columnenable_status = new global::System.Data.DataColumn("enable_status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnenable_status);
+                this.columndel_status = new global::System.Data.DataColumn("del_status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndel_status);
+                this.columncontent = new global::System.Data.DataColumn("content", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontent);
+                this.columnnature = new global::System.Data.DataColumn("nature", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnature);
+                this.columncategory = new global::System.Data.DataColumn("category", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncategory);
+                this.columnspecifications = new global::System.Data.DataColumn("specifications", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspecifications);
+                this.columndesignation = new global::System.Data.DataColumn("designation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndesignation);
+                this.columnmodel = new global::System.Data.DataColumn("model", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmodel);
+                this.columnunit = new global::System.Data.DataColumn("unit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunit);
+                this.columnpurchase_way = new global::System.Data.DataColumn("purchase_way", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpurchase_way);
+                this.columnkeeper = new global::System.Data.DataColumn("keeper", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkeeper);
+                this.columnsupplier = new global::System.Data.DataColumn("supplier", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsupplier);
+                this.columnposition = new global::System.Data.DataColumn("position", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnposition);
+                this.columnfixed_statu = new global::System.Data.DataColumn("fixed_statu", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfixed_statu);
+                this.columnuser = new global::System.Data.DataColumn("user", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser);
+                this.columnoperator = new global::System.Data.DataColumn("operator", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnoperator.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "operatorColumn");
+                this.columnoperator.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnoperator");
+                this.columnoperator.ExtendedProperties.Add("Generator_UserColumnName", "operator");
+                base.Columns.Add(this.columnoperator);
+                this.columnaffiliated = new global::System.Data.DataColumn("affiliated", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaffiliated);
+                this.columndepartment = new global::System.Data.DataColumn("department", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndepartment);
+                this.columnway = new global::System.Data.DataColumn("way", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnway);
+                this.columnstorage_place = new global::System.Data.DataColumn("storage_place", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstorage_place);
+                this.columnfixed_ID = new global::System.Data.DataColumn("fixed_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfixed_ID);
+                this.columnbarcode.MaxLength = 255;
+                this.columnfixed_vale.MaxLength = 255;
+                this.columnfactory_number.MaxLength = 255;
+                this.columnfixed_encoding.MaxLength = 255;
+                this.columnaccount_number.MaxLength = 255;
+                this.columnfixed_asset.MaxLength = 255;
+                this.columncard_number.MaxLength = 255;
+                this.columnenable_status.MaxLength = 255;
+                this.columndel_status.MaxLength = 255;
+                this.columncontent.MaxLength = 255;
+                this.columnnature.MaxLength = 255;
+                this.columncategory.MaxLength = 255;
+                this.columnspecifications.MaxLength = 255;
+                this.columndesignation.MaxLength = 255;
+                this.columnmodel.MaxLength = 255;
+                this.columnunit.MaxLength = 255;
+                this.columnpurchase_way.MaxLength = 255;
+                this.columnkeeper.MaxLength = 255;
+                this.columnsupplier.MaxLength = 255;
+                this.columnposition.MaxLength = 255;
+                this.columnfixed_statu.MaxLength = 255;
+                this.columnuser.MaxLength = 255;
+                this.columnoperator.MaxLength = 255;
+                this.columnaffiliated.MaxLength = 255;
+                this.columndepartment.MaxLength = 255;
+                this.columnway.MaxLength = 255;
+                this.columnstorage_place.MaxLength = 255;
+                this.columnfixed_ID.AutoIncrement = true;
+                this.columnfixed_ID.AutoIncrementSeed = -1;
+                this.columnfixed_ID.AutoIncrementStep = -1;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fixednameRow NewfixednameRow() {
+                return ((fixednameRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new fixednameRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(fixednameRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.fixednameRowChanged != null)) {
+                    this.fixednameRowChanged(this, new fixednameRowChangeEvent(((fixednameRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.fixednameRowChanging != null)) {
+                    this.fixednameRowChanging(this, new fixednameRowChangeEvent(((fixednameRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.fixednameRowDeleted != null)) {
+                    this.fixednameRowDeleted(this, new fixednameRowChangeEvent(((fixednameRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.fixednameRowDeleting != null)) {
+                    this.fixednameRowDeleting(this, new fixednameRowChangeEvent(((fixednameRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovefixednameRow(fixednameRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                FixedDataSet ds = new FixedDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "fixednameDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class fixedDataTable : global::System.Data.TypedTableBase<fixedRow> {
             
             private global::System.Data.DataColumn columnfixed_ID;
@@ -6886,6 +7681,10 @@ namespace Fixed_management {
             private global::System.Data.DataColumn columnaffiliated_ID;
             
             private global::System.Data.DataColumn columndepartment_ID;
+            
+            private global::System.Data.DataColumn columnexit_way_ID;
+            
+            private global::System.Data.DataColumn columnemployees_ID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -7186,6 +7985,22 @@ namespace Fixed_management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn exit_way_IDColumn {
+                get {
+                    return this.columnexit_way_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn employees_IDColumn {
+                get {
+                    return this.columnemployees_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7253,7 +8068,9 @@ namespace Fixed_management {
                         string content, 
                         int operator_ID, 
                         int affiliated_ID, 
-                        int department_ID) {
+                        int department_ID, 
+                        int exit_way_ID, 
+                        int employees_ID) {
                 fixedRow rowfixedRow = ((fixedRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -7288,7 +8105,9 @@ namespace Fixed_management {
                         content,
                         operator_ID,
                         affiliated_ID,
-                        department_ID};
+                        department_ID,
+                        exit_way_ID,
+                        employees_ID};
                 rowfixedRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfixedRow);
                 return rowfixedRow;
@@ -7351,6 +8170,8 @@ namespace Fixed_management {
                 this.columnoperator_ID = base.Columns["operator_ID"];
                 this.columnaffiliated_ID = base.Columns["affiliated_ID"];
                 this.columndepartment_ID = base.Columns["department_ID"];
+                this.columnexit_way_ID = base.Columns["exit_way_ID"];
+                this.columnemployees_ID = base.Columns["employees_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7422,6 +8243,10 @@ namespace Fixed_management {
                 base.Columns.Add(this.columnaffiliated_ID);
                 this.columndepartment_ID = new global::System.Data.DataColumn("department_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndepartment_ID);
+                this.columnexit_way_ID = new global::System.Data.DataColumn("exit_way_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexit_way_ID);
+                this.columnemployees_ID = new global::System.Data.DataColumn("employees_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemployees_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnfixed_ID}, true));
                 this.columnfixed_ID.AutoIncrement = true;
@@ -9243,6 +10068,945 @@ namespace Fixed_management {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class fixednameRow : global::System.Data.DataRow {
+            
+            private fixednameDataTable tablefixedname;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fixednameRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablefixedname = ((fixednameDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string barcode {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.barcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“barcode”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.barcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime purchase_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablefixedname.purchase_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“purchase_date”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.purchase_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int limit {
+                get {
+                    try {
+                        return ((int)(this[this.tablefixedname.limitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“limit”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.limitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int fixed_number {
+                get {
+                    try {
+                        return ((int)(this[this.tablefixedname.fixed_numberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“fixed_number”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.fixed_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fixed_vale {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.fixed_valeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“fixed_vale”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.fixed_valeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string factory_number {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.factory_numberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“factory_number”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.factory_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fixed_encoding {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.fixed_encodingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“fixed_encoding”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.fixed_encodingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime billing_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablefixedname.billing_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“billing_date”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.billing_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int warranty {
+                get {
+                    try {
+                        return ((int)(this[this.tablefixedname.warrantyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“warranty”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.warrantyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string account_number {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.account_numberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“account_number”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.account_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fixed_asset {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.fixed_assetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“fixed_asset”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.fixed_assetColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string card_number {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.card_numberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“card_number”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.card_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string enable_status {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.enable_statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“enable_status”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.enable_statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string del_status {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.del_statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“del_status”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.del_statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string content {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.contentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“content”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.contentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nature {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.natureColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“nature”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.natureColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string category {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.categoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“category”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.categoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string specifications {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.specificationsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“specifications”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.specificationsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string designation {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.designationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“designation”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.designationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string model {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.modelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“model”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.modelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string unit {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.unitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“unit”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.unitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string purchase_way {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.purchase_wayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“purchase_way”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.purchase_wayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string keeper {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.keeperColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“keeper”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.keeperColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string supplier {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.supplierColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“supplier”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.supplierColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string position {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.positionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“position”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.positionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fixed_statu {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.fixed_statuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“fixed_statu”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.fixed_statuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string user {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.userColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“user”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.userColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _operator {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.operatorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“operator”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.operatorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string affiliated {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.affiliatedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“affiliated”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.affiliatedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string department {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.departmentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“department”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.departmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string way {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.wayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“way”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.wayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string storage_place {
+                get {
+                    try {
+                        return ((string)(this[this.tablefixedname.storage_placeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“storage_place”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.storage_placeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int fixed_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tablefixedname.fixed_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixedname”中列“fixed_ID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixedname.fixed_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsbarcodeNull() {
+                return this.IsNull(this.tablefixedname.barcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetbarcodeNull() {
+                this[this.tablefixedname.barcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispurchase_dateNull() {
+                return this.IsNull(this.tablefixedname.purchase_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpurchase_dateNull() {
+                this[this.tablefixedname.purchase_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IslimitNull() {
+                return this.IsNull(this.tablefixedname.limitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetlimitNull() {
+                this[this.tablefixedname.limitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfixed_numberNull() {
+                return this.IsNull(this.tablefixedname.fixed_numberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfixed_numberNull() {
+                this[this.tablefixedname.fixed_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfixed_valeNull() {
+                return this.IsNull(this.tablefixedname.fixed_valeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfixed_valeNull() {
+                this[this.tablefixedname.fixed_valeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfactory_numberNull() {
+                return this.IsNull(this.tablefixedname.factory_numberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfactory_numberNull() {
+                this[this.tablefixedname.factory_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfixed_encodingNull() {
+                return this.IsNull(this.tablefixedname.fixed_encodingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfixed_encodingNull() {
+                this[this.tablefixedname.fixed_encodingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isbilling_dateNull() {
+                return this.IsNull(this.tablefixedname.billing_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setbilling_dateNull() {
+                this[this.tablefixedname.billing_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IswarrantyNull() {
+                return this.IsNull(this.tablefixedname.warrantyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetwarrantyNull() {
+                this[this.tablefixedname.warrantyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isaccount_numberNull() {
+                return this.IsNull(this.tablefixedname.account_numberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setaccount_numberNull() {
+                this[this.tablefixedname.account_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfixed_assetNull() {
+                return this.IsNull(this.tablefixedname.fixed_assetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfixed_assetNull() {
+                this[this.tablefixedname.fixed_assetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscard_numberNull() {
+                return this.IsNull(this.tablefixedname.card_numberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcard_numberNull() {
+                this[this.tablefixedname.card_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isenable_statusNull() {
+                return this.IsNull(this.tablefixedname.enable_statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setenable_statusNull() {
+                this[this.tablefixedname.enable_statusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdel_statusNull() {
+                return this.IsNull(this.tablefixedname.del_statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdel_statusNull() {
+                this[this.tablefixedname.del_statusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscontentNull() {
+                return this.IsNull(this.tablefixedname.contentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcontentNull() {
+                this[this.tablefixedname.contentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnatureNull() {
+                return this.IsNull(this.tablefixedname.natureColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnatureNull() {
+                this[this.tablefixedname.natureColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscategoryNull() {
+                return this.IsNull(this.tablefixedname.categoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcategoryNull() {
+                this[this.tablefixedname.categoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsspecificationsNull() {
+                return this.IsNull(this.tablefixedname.specificationsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetspecificationsNull() {
+                this[this.tablefixedname.specificationsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdesignationNull() {
+                return this.IsNull(this.tablefixedname.designationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdesignationNull() {
+                this[this.tablefixedname.designationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmodelNull() {
+                return this.IsNull(this.tablefixedname.modelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmodelNull() {
+                this[this.tablefixedname.modelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsunitNull() {
+                return this.IsNull(this.tablefixedname.unitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetunitNull() {
+                this[this.tablefixedname.unitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispurchase_wayNull() {
+                return this.IsNull(this.tablefixedname.purchase_wayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpurchase_wayNull() {
+                this[this.tablefixedname.purchase_wayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IskeeperNull() {
+                return this.IsNull(this.tablefixedname.keeperColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetkeeperNull() {
+                this[this.tablefixedname.keeperColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssupplierNull() {
+                return this.IsNull(this.tablefixedname.supplierColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsupplierNull() {
+                this[this.tablefixedname.supplierColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IspositionNull() {
+                return this.IsNull(this.tablefixedname.positionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetpositionNull() {
+                this[this.tablefixedname.positionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfixed_statuNull() {
+                return this.IsNull(this.tablefixedname.fixed_statuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfixed_statuNull() {
+                this[this.tablefixedname.fixed_statuColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsuserNull() {
+                return this.IsNull(this.tablefixedname.userColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetuserNull() {
+                this[this.tablefixedname.userColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_operatorNull() {
+                return this.IsNull(this.tablefixedname.operatorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_operatorNull() {
+                this[this.tablefixedname.operatorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsaffiliatedNull() {
+                return this.IsNull(this.tablefixedname.affiliatedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetaffiliatedNull() {
+                this[this.tablefixedname.affiliatedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdepartmentNull() {
+                return this.IsNull(this.tablefixedname.departmentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdepartmentNull() {
+                this[this.tablefixedname.departmentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IswayNull() {
+                return this.IsNull(this.tablefixedname.wayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetwayNull() {
+                this[this.tablefixedname.wayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isstorage_placeNull() {
+                return this.IsNull(this.tablefixedname.storage_placeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setstorage_placeNull() {
+                this[this.tablefixedname.storage_placeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfixed_IDNull() {
+                return this.IsNull(this.tablefixedname.fixed_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfixed_IDNull() {
+                this[this.tablefixedname.fixed_IDColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class fixedRow : global::System.Data.DataRow {
             
             private fixedDataTable tablefixed;
@@ -9779,6 +11543,38 @@ namespace Fixed_management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int exit_way_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tablefixed.exit_way_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixed”中列“exit_way_ID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixed.exit_way_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int employees_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tablefixed.employees_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“fixed”中列“employees_ID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablefixed.employees_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsbarcodeNull() {
                 return this.IsNull(this.tablefixed.barcodeColumn);
             }
@@ -10159,6 +11955,30 @@ namespace Fixed_management {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setdepartment_IDNull() {
                 this[this.tablefixed.department_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isexit_way_IDNull() {
+                return this.IsNull(this.tablefixed.exit_way_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setexit_way_IDNull() {
+                this[this.tablefixed.exit_way_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isemployees_IDNull() {
+                return this.IsNull(this.tablefixed.employees_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setemployees_IDNull() {
+                this[this.tablefixed.employees_IDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10828,6 +12648,40 @@ namespace Fixed_management {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public userRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class fixednameRowChangeEvent : global::System.EventArgs {
+            
+            private fixednameRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fixednameRowChangeEvent(fixednameRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fixednameRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -17917,6 +19771,233 @@ namespace Fixed_management.FixedDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class fixednameTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public fixednameTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "fixedname";
+            tableMapping.ColumnMappings.Add("barcode", "barcode");
+            tableMapping.ColumnMappings.Add("purchase_date", "purchase_date");
+            tableMapping.ColumnMappings.Add("limit", "limit");
+            tableMapping.ColumnMappings.Add("fixed_number", "fixed_number");
+            tableMapping.ColumnMappings.Add("fixed_vale", "fixed_vale");
+            tableMapping.ColumnMappings.Add("factory_number", "factory_number");
+            tableMapping.ColumnMappings.Add("fixed_encoding", "fixed_encoding");
+            tableMapping.ColumnMappings.Add("billing_date", "billing_date");
+            tableMapping.ColumnMappings.Add("warranty", "warranty");
+            tableMapping.ColumnMappings.Add("account_number", "account_number");
+            tableMapping.ColumnMappings.Add("fixed_asset", "fixed_asset");
+            tableMapping.ColumnMappings.Add("card_number", "card_number");
+            tableMapping.ColumnMappings.Add("enable_status", "enable_status");
+            tableMapping.ColumnMappings.Add("del_status", "del_status");
+            tableMapping.ColumnMappings.Add("content", "content");
+            tableMapping.ColumnMappings.Add("nature", "nature");
+            tableMapping.ColumnMappings.Add("category", "category");
+            tableMapping.ColumnMappings.Add("specifications", "specifications");
+            tableMapping.ColumnMappings.Add("designation", "designation");
+            tableMapping.ColumnMappings.Add("model", "model");
+            tableMapping.ColumnMappings.Add("unit", "unit");
+            tableMapping.ColumnMappings.Add("purchase_way", "purchase_way");
+            tableMapping.ColumnMappings.Add("keeper", "keeper");
+            tableMapping.ColumnMappings.Add("supplier", "supplier");
+            tableMapping.ColumnMappings.Add("position", "position");
+            tableMapping.ColumnMappings.Add("fixed_statu", "fixed_statu");
+            tableMapping.ColumnMappings.Add("user", "user");
+            tableMapping.ColumnMappings.Add("operator", "operator");
+            tableMapping.ColumnMappings.Add("affiliated", "affiliated");
+            tableMapping.ColumnMappings.Add("department", "department");
+            tableMapping.ColumnMappings.Add("way", "way");
+            tableMapping.ColumnMappings.Add("storage_place", "storage_place");
+            tableMapping.ColumnMappings.Add("fixed_ID", "fixed_ID");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::Fixed_management.Properties.Settings.Default.FixedConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT   fixed.barcode, fixed.purchase_date, fixed.limit, fixed.fixed_number, fix" +
+                "ed.fixed_vale, fixed.factory_number, \r\n                fixed.fixed_encoding, fix" +
+                "ed.billing_date, fixed.warranty, fixed.account_number, fixed.fixed_asset, fixed." +
+                "card_number, \r\n                fixed.enable_status, fixed.del_status, fixed.cont" +
+                "ent, nature.nature, category.category, specifications.specifications, \r\n        " +
+                "        designation.designation, model.model, unit.unit, purchase_way.purchase_w" +
+                "ay, keeper.keeper, supplier.supplier, \r\n                [position].[position], f" +
+                "ixed_statu.fixed_statu, [user].[user], operator.operator, affiliated.affiliated," +
+                " department.department, \r\n                exit_way.way, storage_place.storage_pl" +
+                "ace, fixed.fixed_ID\r\nFROM      (((((((([user] INNER JOIN\r\n                ((((((" +
+                "((((fixed INNER JOIN\r\n                nature ON fixed.nature_ID = nature.nature_" +
+                "ID) INNER JOIN\r\n                category ON fixed.category_ID = category.categor" +
+                "y_ID) INNER JOIN\r\n                designation ON fixed.designation_ID = designat" +
+                "ion.designation_ID) INNER JOIN\r\n                specifications ON fixed.specific" +
+                "ations_ID = specifications.specifications_ID) INNER JOIN\r\n                model " +
+                "ON fixed.model_ID = model.model_ID) INNER JOIN\r\n                purchase_way ON " +
+                "fixed.purchase_way_ID = purchase_way.purchase_way_ID) INNER JOIN\r\n              " +
+                "  unit ON fixed.unit_ID = unit.unit_ID) INNER JOIN\r\n                keeper ON fi" +
+                "xed.keeper_ID = keeper.keeper_ID) INNER JOIN\r\n                supplier ON fixed." +
+                "supplier_ID = supplier.supplier_ID) INNER JOIN\r\n                [position] ON fi" +
+                "xed.position_ID = [position].position_ID) ON [user].user_ID = fixed.user_ID) INN" +
+                "ER JOIN\r\n                operator ON fixed.operator_ID = operator.operator_ID) I" +
+                "NNER JOIN\r\n                affiliated ON fixed.affiliated_ID = affiliated.affili" +
+                "ated_ID) INNER JOIN\r\n                department ON fixed.department_ID = departm" +
+                "ent.department_ID) INNER JOIN\r\n                exit_way ON fixed.exit_way_ID = e" +
+                "xit_way.exit_way_ID) INNER JOIN\r\n                employees ON fixed.employees_ID" +
+                " = employees.employees_ID) INNER JOIN\r\n                fixed_statu ON fixed.fixe" +
+                "d_status_ID = fixed_statu.fixed_statu_ID) INNER JOIN\r\n                storage_pl" +
+                "ace ON fixed.storage_place_ID = storage_place.storage_place_ID)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(FixedDataSet.fixednameDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual FixedDataSet.fixednameDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            FixedDataSet.fixednameDataTable dataTable = new FixedDataSet.fixednameDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class fixedTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
@@ -18062,6 +20143,8 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("operator_ID", "operator_ID");
             tableMapping.ColumnMappings.Add("affiliated_ID", "affiliated_ID");
             tableMapping.ColumnMappings.Add("department_ID", "department_ID");
+            tableMapping.ColumnMappings.Add("exit_way_ID", "exit_way_ID");
+            tableMapping.ColumnMappings.Add("employees_ID", "employees_ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -18090,7 +20173,9 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                 "D ((? = 1 AND `permissions` IS NULL) OR (`permissions` = ?)) AND ((? = 1 AND `co" +
                 "ntent` IS NULL) OR (`content` = ?)) AND ((? = 1 AND `operator_ID` IS NULL) OR (`" +
                 "operator_ID` = ?)) AND ((? = 1 AND `affiliated_ID` IS NULL) OR (`affiliated_ID` " +
-                "= ?)) AND ((? = 1 AND `department_ID` IS NULL) OR (`department_ID` = ?)))";
+                "= ?)) AND ((? = 1 AND `department_ID` IS NULL) OR (`department_ID` = ?)) AND ((?" +
+                " = 1 AND `exit_way_ID` IS NULL) OR (`exit_way_ID` = ?)) AND ((? = 1 AND `employe" +
+                "es_ID` IS NULL) OR (`employees_ID` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fixed_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fixed_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_barcode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Original, true, null));
@@ -18157,9 +20242,13 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_affiliated_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "affiliated_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_department_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "department_ID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_department_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "department_ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_exit_way_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "exit_way_ID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_exit_way_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "exit_way_ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_employees_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "employees_ID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_employees_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "employees_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `fixed` (`barcode`, `nature_ID`, `category_ID`, `designation_ID`, `specifications_ID`, `model_ID`, `purchase_date`, `limit`, `purchase_way_ID`, `fixed_number`, `unit_ID`, `fixed_vale`, `keeper_ID`, `supplier_ID`, `factory_number`, `fixed_encoding`, `storage_place_ID`, `position_ID`, `fixed_status_ID`, `user_ID`, `billing_date`, `warranty`, `account_number`, `fixed_asset`, `card_number`, `enable_status`, `del_status`, `permissions`, `content`, `operator_ID`, `affiliated_ID`, `department_ID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `fixed` (`barcode`, `nature_ID`, `category_ID`, `designation_ID`, `specifications_ID`, `model_ID`, `purchase_date`, `limit`, `purchase_way_ID`, `fixed_number`, `unit_ID`, `fixed_vale`, `keeper_ID`, `supplier_ID`, `factory_number`, `fixed_encoding`, `storage_place_ID`, `position_ID`, `fixed_status_ID`, `user_ID`, `billing_date`, `warranty`, `account_number`, `fixed_asset`, `card_number`, `enable_status`, `del_status`, `permissions`, `content`, `operator_ID`, `affiliated_ID`, `department_ID`, `exit_way_ID`, `employees_ID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("barcode", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("nature_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nature_ID", global::System.Data.DataRowVersion.Current, false, null));
@@ -18193,6 +20282,8 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("operator_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "operator_ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("affiliated_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "affiliated_ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("department_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "department_ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("exit_way_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "exit_way_ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("employees_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "employees_ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE `fixed` SET `barcode` = ?, `nature_ID` = ?, `category_ID` = ?, `designatio" +
@@ -18202,33 +20293,35 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                 ", `storage_place_ID` = ?, `position_ID` = ?, `fixed_status_ID` = ?, `user_ID` = " +
                 "?, `billing_date` = ?, `warranty` = ?, `account_number` = ?, `fixed_asset` = ?, " +
                 "`card_number` = ?, `enable_status` = ?, `del_status` = ?, `permissions` = ?, `co" +
-                "ntent` = ?, `operator_ID` = ?, `affiliated_ID` = ?, `department_ID` = ? WHERE ((" +
-                "`fixed_ID` = ?) AND ((? = 1 AND `barcode` IS NULL) OR (`barcode` = ?)) AND ((? =" +
-                " 1 AND `nature_ID` IS NULL) OR (`nature_ID` = ?)) AND ((? = 1 AND `category_ID` " +
-                "IS NULL) OR (`category_ID` = ?)) AND ((? = 1 AND `designation_ID` IS NULL) OR (`" +
-                "designation_ID` = ?)) AND ((? = 1 AND `specifications_ID` IS NULL) OR (`specific" +
-                "ations_ID` = ?)) AND ((? = 1 AND `model_ID` IS NULL) OR (`model_ID` = ?)) AND ((" +
-                "? = 1 AND `purchase_date` IS NULL) OR (`purchase_date` = ?)) AND ((? = 1 AND `li" +
-                "mit` IS NULL) OR (`limit` = ?)) AND ((? = 1 AND `purchase_way_ID` IS NULL) OR (`" +
-                "purchase_way_ID` = ?)) AND ((? = 1 AND `fixed_number` IS NULL) OR (`fixed_number" +
-                "` = ?)) AND ((? = 1 AND `unit_ID` IS NULL) OR (`unit_ID` = ?)) AND ((? = 1 AND `" +
-                "fixed_vale` IS NULL) OR (`fixed_vale` = ?)) AND ((? = 1 AND `keeper_ID` IS NULL)" +
-                " OR (`keeper_ID` = ?)) AND ((? = 1 AND `supplier_ID` IS NULL) OR (`supplier_ID` " +
-                "= ?)) AND ((? = 1 AND `factory_number` IS NULL) OR (`factory_number` = ?)) AND (" +
-                "(? = 1 AND `fixed_encoding` IS NULL) OR (`fixed_encoding` = ?)) AND ((? = 1 AND " +
-                "`storage_place_ID` IS NULL) OR (`storage_place_ID` = ?)) AND ((? = 1 AND `positi" +
-                "on_ID` IS NULL) OR (`position_ID` = ?)) AND ((? = 1 AND `fixed_status_ID` IS NUL" +
-                "L) OR (`fixed_status_ID` = ?)) AND ((? = 1 AND `user_ID` IS NULL) OR (`user_ID` " +
-                "= ?)) AND ((? = 1 AND `billing_date` IS NULL) OR (`billing_date` = ?)) AND ((? =" +
-                " 1 AND `warranty` IS NULL) OR (`warranty` = ?)) AND ((? = 1 AND `account_number`" +
-                " IS NULL) OR (`account_number` = ?)) AND ((? = 1 AND `fixed_asset` IS NULL) OR (" +
-                "`fixed_asset` = ?)) AND ((? = 1 AND `card_number` IS NULL) OR (`card_number` = ?" +
-                ")) AND ((? = 1 AND `enable_status` IS NULL) OR (`enable_status` = ?)) AND ((? = " +
-                "1 AND `del_status` IS NULL) OR (`del_status` = ?)) AND ((? = 1 AND `permissions`" +
-                " IS NULL) OR (`permissions` = ?)) AND ((? = 1 AND `content` IS NULL) OR (`conten" +
-                "t` = ?)) AND ((? = 1 AND `operator_ID` IS NULL) OR (`operator_ID` = ?)) AND ((? " +
-                "= 1 AND `affiliated_ID` IS NULL) OR (`affiliated_ID` = ?)) AND ((? = 1 AND `depa" +
-                "rtment_ID` IS NULL) OR (`department_ID` = ?)))";
+                "ntent` = ?, `operator_ID` = ?, `affiliated_ID` = ?, `department_ID` = ?, `exit_w" +
+                "ay_ID` = ?, `employees_ID` = ? WHERE ((`fixed_ID` = ?) AND ((? = 1 AND `barcode`" +
+                " IS NULL) OR (`barcode` = ?)) AND ((? = 1 AND `nature_ID` IS NULL) OR (`nature_I" +
+                "D` = ?)) AND ((? = 1 AND `category_ID` IS NULL) OR (`category_ID` = ?)) AND ((? " +
+                "= 1 AND `designation_ID` IS NULL) OR (`designation_ID` = ?)) AND ((? = 1 AND `sp" +
+                "ecifications_ID` IS NULL) OR (`specifications_ID` = ?)) AND ((? = 1 AND `model_I" +
+                "D` IS NULL) OR (`model_ID` = ?)) AND ((? = 1 AND `purchase_date` IS NULL) OR (`p" +
+                "urchase_date` = ?)) AND ((? = 1 AND `limit` IS NULL) OR (`limit` = ?)) AND ((? =" +
+                " 1 AND `purchase_way_ID` IS NULL) OR (`purchase_way_ID` = ?)) AND ((? = 1 AND `f" +
+                "ixed_number` IS NULL) OR (`fixed_number` = ?)) AND ((? = 1 AND `unit_ID` IS NULL" +
+                ") OR (`unit_ID` = ?)) AND ((? = 1 AND `fixed_vale` IS NULL) OR (`fixed_vale` = ?" +
+                ")) AND ((? = 1 AND `keeper_ID` IS NULL) OR (`keeper_ID` = ?)) AND ((? = 1 AND `s" +
+                "upplier_ID` IS NULL) OR (`supplier_ID` = ?)) AND ((? = 1 AND `factory_number` IS" +
+                " NULL) OR (`factory_number` = ?)) AND ((? = 1 AND `fixed_encoding` IS NULL) OR (" +
+                "`fixed_encoding` = ?)) AND ((? = 1 AND `storage_place_ID` IS NULL) OR (`storage_" +
+                "place_ID` = ?)) AND ((? = 1 AND `position_ID` IS NULL) OR (`position_ID` = ?)) A" +
+                "ND ((? = 1 AND `fixed_status_ID` IS NULL) OR (`fixed_status_ID` = ?)) AND ((? = " +
+                "1 AND `user_ID` IS NULL) OR (`user_ID` = ?)) AND ((? = 1 AND `billing_date` IS N" +
+                "ULL) OR (`billing_date` = ?)) AND ((? = 1 AND `warranty` IS NULL) OR (`warranty`" +
+                " = ?)) AND ((? = 1 AND `account_number` IS NULL) OR (`account_number` = ?)) AND " +
+                "((? = 1 AND `fixed_asset` IS NULL) OR (`fixed_asset` = ?)) AND ((? = 1 AND `card" +
+                "_number` IS NULL) OR (`card_number` = ?)) AND ((? = 1 AND `enable_status` IS NUL" +
+                "L) OR (`enable_status` = ?)) AND ((? = 1 AND `del_status` IS NULL) OR (`del_stat" +
+                "us` = ?)) AND ((? = 1 AND `permissions` IS NULL) OR (`permissions` = ?)) AND ((?" +
+                " = 1 AND `content` IS NULL) OR (`content` = ?)) AND ((? = 1 AND `operator_ID` IS" +
+                " NULL) OR (`operator_ID` = ?)) AND ((? = 1 AND `affiliated_ID` IS NULL) OR (`aff" +
+                "iliated_ID` = ?)) AND ((? = 1 AND `department_ID` IS NULL) OR (`department_ID` =" +
+                " ?)) AND ((? = 1 AND `exit_way_ID` IS NULL) OR (`exit_way_ID` = ?)) AND ((? = 1 " +
+                "AND `employees_ID` IS NULL) OR (`employees_ID` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("barcode", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("nature_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nature_ID", global::System.Data.DataRowVersion.Current, false, null));
@@ -18262,6 +20355,8 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("operator_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "operator_ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("affiliated_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "affiliated_ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("department_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "department_ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("exit_way_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "exit_way_ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("employees_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "employees_ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fixed_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fixed_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_barcode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_barcode", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Original, false, null));
@@ -18327,6 +20422,10 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_affiliated_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "affiliated_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_department_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "department_ID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_department_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "department_ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_exit_way_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "exit_way_ID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_exit_way_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "exit_way_ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_employees_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "employees_ID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_employees_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "employees_ID", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18342,7 +20441,7 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT fixed_ID, barcode, nature_ID, category_ID, designation_ID, specifications_ID, model_ID, purchase_date, limit, purchase_way_ID, fixed_number, unit_ID, fixed_vale, keeper_ID, supplier_ID, factory_number, fixed_encoding, storage_place_ID, position_ID, fixed_status_ID, user_ID, billing_date, warranty, account_number, fixed_asset, card_number, enable_status, del_status, permissions, content, operator_ID, affiliated_ID, department_ID FROM fixed";
+            this._commandCollection[0].CommandText = @"SELECT fixed_ID, barcode, nature_ID, category_ID, designation_ID, specifications_ID, model_ID, purchase_date, limit, purchase_way_ID, fixed_number, unit_ID, fixed_vale, keeper_ID, supplier_ID, factory_number, fixed_encoding, storage_place_ID, position_ID, fixed_status_ID, user_ID, billing_date, warranty, account_number, fixed_asset, card_number, enable_status, del_status, permissions, content, operator_ID, affiliated_ID, department_ID, exit_way_ID, employees_ID FROM fixed";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18436,7 +20535,9 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     string Original_content, 
                     global::System.Nullable<int> Original_operator_ID, 
                     global::System.Nullable<int> Original_affiliated_ID, 
-                    global::System.Nullable<int> Original_department_ID) {
+                    global::System.Nullable<int> Original_department_ID, 
+                    global::System.Nullable<int> Original_exit_way_ID, 
+                    global::System.Nullable<int> Original_employees_ID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_fixed_ID));
             if ((Original_barcode == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -18694,6 +20795,22 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[63].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
+            if ((Original_exit_way_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[66].Value = ((int)(Original_exit_way_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[66].Value = global::System.DBNull.Value;
+            }
+            if ((Original_employees_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[68].Value = ((int)(Original_employees_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[68].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18746,7 +20863,9 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     string content, 
                     global::System.Nullable<int> operator_ID, 
                     global::System.Nullable<int> affiliated_ID, 
-                    global::System.Nullable<int> department_ID) {
+                    global::System.Nullable<int> department_ID, 
+                    global::System.Nullable<int> exit_way_ID, 
+                    global::System.Nullable<int> employees_ID) {
             if ((barcode == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -18939,6 +21058,18 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
+            if ((exit_way_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[32].Value = ((int)(exit_way_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((employees_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[33].Value = ((int)(employees_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18992,6 +21123,8 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     global::System.Nullable<int> operator_ID, 
                     global::System.Nullable<int> affiliated_ID, 
                     global::System.Nullable<int> department_ID, 
+                    global::System.Nullable<int> exit_way_ID, 
+                    global::System.Nullable<int> employees_ID, 
                     int Original_fixed_ID, 
                     string Original_barcode, 
                     global::System.Nullable<int> Original_nature_ID, 
@@ -19024,7 +21157,9 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     string Original_content, 
                     global::System.Nullable<int> Original_operator_ID, 
                     global::System.Nullable<int> Original_affiliated_ID, 
-                    global::System.Nullable<int> Original_department_ID) {
+                    global::System.Nullable<int> Original_department_ID, 
+                    global::System.Nullable<int> Original_exit_way_ID, 
+                    global::System.Nullable<int> Original_employees_ID) {
             if ((barcode == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -19217,262 +21352,290 @@ namespace Fixed_management.FixedDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Original_fixed_ID));
+            if ((exit_way_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(exit_way_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((employees_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(employees_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_fixed_ID));
             if ((Original_barcode == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_barcode));
-            }
-            if ((Original_nature_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_nature_ID.Value));
-            }
-            else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
-            if ((Original_category_ID.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_barcode));
+            }
+            if ((Original_nature_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_category_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_nature_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((Original_designation_ID.HasValue == true)) {
+            if ((Original_category_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_designation_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_category_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            if ((Original_specifications_ID.HasValue == true)) {
+            if ((Original_designation_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Original_specifications_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Original_designation_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
-            if ((Original_model_ID.HasValue == true)) {
+            if ((Original_specifications_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((int)(Original_model_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((int)(Original_specifications_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
-            if ((Original_purchase_date.HasValue == true)) {
+            if ((Original_model_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((System.DateTime)(Original_purchase_date.Value));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((int)(Original_model_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
-            if ((Original_limit.HasValue == true)) {
+            if ((Original_purchase_date.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((int)(Original_limit.Value));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((System.DateTime)(Original_purchase_date.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
-            if ((Original_purchase_way_ID.HasValue == true)) {
+            if ((Original_limit.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((int)(Original_purchase_way_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((int)(Original_limit.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
-            if ((Original_fixed_number.HasValue == true)) {
+            if ((Original_purchase_way_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((int)(Original_fixed_number.Value));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((int)(Original_purchase_way_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
-            if ((Original_unit_ID.HasValue == true)) {
+            if ((Original_fixed_number.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((int)(Original_unit_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((int)(Original_fixed_number.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
-            if ((Original_fixed_vale == null)) {
+            if ((Original_unit_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((int)(Original_unit_ID.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_fixed_vale));
-            }
-            if ((Original_keeper_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((int)(Original_keeper_ID.Value));
-            }
-            else {
+            if ((Original_fixed_vale == null)) {
                 this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
-            if ((Original_supplier_ID.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_fixed_vale));
+            }
+            if ((Original_keeper_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((int)(Original_supplier_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((int)(Original_keeper_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
-            if ((Original_factory_number == null)) {
+            if ((Original_supplier_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((int)(Original_supplier_ID.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_factory_number));
-            }
-            if ((Original_fixed_encoding == null)) {
+            if ((Original_factory_number == null)) {
                 this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_fixed_encoding));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_factory_number));
             }
-            if ((Original_storage_place_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((int)(Original_storage_place_ID.Value));
-            }
-            else {
+            if ((Original_fixed_encoding == null)) {
                 this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
-            if ((Original_position_ID.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_fixed_encoding));
+            }
+            if ((Original_storage_place_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((int)(Original_position_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((int)(Original_storage_place_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
-            if ((Original_fixed_status_ID.HasValue == true)) {
+            if ((Original_position_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((int)(Original_fixed_status_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((int)(Original_position_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
             }
-            if ((Original_user_ID.HasValue == true)) {
+            if ((Original_fixed_status_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((int)(Original_user_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((int)(Original_fixed_status_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
             }
-            if ((Original_billing_date.HasValue == true)) {
+            if ((Original_user_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((System.DateTime)(Original_billing_date.Value));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((int)(Original_user_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
             }
-            if ((Original_warranty.HasValue == true)) {
+            if ((Original_billing_date.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((int)(Original_warranty.Value));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((System.DateTime)(Original_billing_date.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
             }
-            if ((Original_account_number == null)) {
+            if ((Original_warranty.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((int)(Original_warranty.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_account_number));
-            }
-            if ((Original_fixed_asset == null)) {
+            if ((Original_account_number == null)) {
                 this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_fixed_asset));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_account_number));
             }
-            if ((Original_card_number == null)) {
+            if ((Original_fixed_asset == null)) {
                 this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((string)(Original_card_number));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((string)(Original_fixed_asset));
             }
-            if ((Original_enable_status == null)) {
+            if ((Original_card_number == null)) {
                 this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_enable_status));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_card_number));
             }
-            if ((Original_del_status == null)) {
+            if ((Original_enable_status == null)) {
                 this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((string)(Original_del_status));
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((string)(Original_enable_status));
             }
-            if ((Original_permissions == null)) {
+            if ((Original_del_status == null)) {
                 this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(Original_permissions));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(Original_del_status));
             }
-            if ((Original_content == null)) {
+            if ((Original_permissions == null)) {
                 this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((string)(Original_content));
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((string)(Original_permissions));
             }
-            if ((Original_operator_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((int)(Original_operator_ID.Value));
-            }
-            else {
+            if ((Original_content == null)) {
                 this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[92].Value = global::System.DBNull.Value;
             }
-            if ((Original_affiliated_ID.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[92].Value = ((string)(Original_content));
+            }
+            if ((Original_operator_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((int)(Original_affiliated_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[94].Value = ((int)(Original_operator_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[94].Value = global::System.DBNull.Value;
             }
-            if ((Original_department_ID.HasValue == true)) {
+            if ((Original_affiliated_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((int)(Original_department_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[96].Value = ((int)(Original_affiliated_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[96].Value = global::System.DBNull.Value;
+            }
+            if ((Original_department_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[98].Value = ((int)(Original_department_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[98].Value = global::System.DBNull.Value;
+            }
+            if ((Original_exit_way_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[100].Value = ((int)(Original_exit_way_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[100].Value = global::System.DBNull.Value;
+            }
+            if ((Original_employees_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[102].Value = ((int)(Original_employees_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[102].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -20089,12 +22252,12 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._supplierTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.supplier.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(updatedRows));
+                    result = (result + this._supplierTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20107,21 +22270,12 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._unitTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.unit.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._userTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._unitTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._supplierTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.supplier.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._supplierTableAdapter.Update(updatedRows));
+                    result = (result + this._userTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20134,12 +22288,12 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._operatorTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet._operator.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._unitTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.unit.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._operatorTableAdapter.Update(updatedRows));
+                    result = (result + this._unitTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20188,12 +22342,12 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._modelTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.model.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._exit_wayTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.exit_way.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._modelTableAdapter.Update(updatedRows));
+                    result = (result + this._exit_wayTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20206,21 +22360,21 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._keeperTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.keeper.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._operatorTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet._operator.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._keeperTableAdapter.Update(updatedRows));
+                    result = (result + this._operatorTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._exit_wayTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.exit_way.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._modelTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.model.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._exit_wayTableAdapter.Update(updatedRows));
+                    result = (result + this._modelTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20230,6 +22384,15 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._fixed_statuTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._keeperTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.keeper.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._keeperTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20283,11 +22446,11 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._supplierTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.supplier.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(addedRows));
+                    result = (result + this._supplierTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20299,19 +22462,11 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._unitTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.unit.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._userTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._unitTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._supplierTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.supplier.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._supplierTableAdapter.Update(addedRows));
+                    result = (result + this._userTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20323,11 +22478,11 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._operatorTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet._operator.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._unitTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.unit.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._operatorTableAdapter.Update(addedRows));
+                    result = (result + this._unitTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20371,11 +22526,11 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._modelTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.model.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._exit_wayTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.exit_way.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._modelTableAdapter.Update(addedRows));
+                    result = (result + this._exit_wayTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20387,19 +22542,19 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._keeperTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.keeper.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._operatorTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet._operator.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._keeperTableAdapter.Update(addedRows));
+                    result = (result + this._operatorTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._exit_wayTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.exit_way.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._modelTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.model.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._exit_wayTableAdapter.Update(addedRows));
+                    result = (result + this._modelTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20408,6 +22563,14 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._fixed_statuTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._keeperTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.keeper.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._keeperTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20421,6 +22584,14 @@ namespace Fixed_management.FixedDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(FixedDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._keeperTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.keeper.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._keeperTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._fixed_statuTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.fixed_statu.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -20429,19 +22600,19 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._exit_wayTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.exit_way.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._modelTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.model.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._exit_wayTableAdapter.Update(deletedRows));
+                    result = (result + this._modelTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._keeperTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.keeper.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._operatorTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet._operator.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._keeperTableAdapter.Update(deletedRows));
+                    result = (result + this._operatorTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20453,11 +22624,11 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._modelTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.model.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._exit_wayTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.exit_way.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._modelTableAdapter.Update(deletedRows));
+                    result = (result + this._exit_wayTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20501,11 +22672,11 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._operatorTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet._operator.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._unitTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.unit.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._operatorTableAdapter.Update(deletedRows));
+                    result = (result + this._unitTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20517,19 +22688,11 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._supplierTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.supplier.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._userTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._supplierTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._unitTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.unit.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._unitTableAdapter.Update(deletedRows));
+                    result = (result + this._userTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20541,11 +22704,11 @@ namespace Fixed_management.FixedDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._supplierTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.supplier.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(deletedRows));
+                    result = (result + this._supplierTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

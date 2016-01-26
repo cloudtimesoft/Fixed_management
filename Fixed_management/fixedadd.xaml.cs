@@ -202,78 +202,91 @@ namespace Fixed_management
             {
                 fixedDataSet.category.AddcategoryRow(categoryC1ComboBox.Text);
                 fixedDataSetcategoryTableAdapter.Update(fixedDataSet.category);
+                fixedDataSetcategoryTableAdapter.Fill(fixedDataSet.category);
                 categoryViewSource.View.MoveCurrentToLast();
             }
             if (designation == 0)
             {
                 fixedDataSet.designation.AdddesignationRow(designationC1ComboBox.Text);
                 fixedDataSetdesignationTableAdapter.Update(fixedDataSet.designation);
+                fixedDataSetdesignationTableAdapter.Fill(fixedDataSet.designation);
                 designationViewSource.View.MoveCurrentToLast();
             }
             if (specifications == 0)
             {
                 fixedDataSet.specifications.AddspecificationsRow(specifications_IDC1ComboBox.Text);
                 fixedDataSetspecificationsTableAdapter.Update(fixedDataSet.specifications);
+                fixedDataSetspecificationsTableAdapter.Fill(fixedDataSet.specifications);
                 specificationsViewSource.View.MoveCurrentToLast();
             }
             if (model == 0)
             {
                 fixedDataSet.model.AddmodelRow(model_IDC1ComboBox.Text);
                 fixedDataSetmodelTableAdapter.Update(fixedDataSet.model);
+                fixedDataSetmodelTableAdapter.Fill(fixedDataSet.model);
                 modelViewSource.View.MoveCurrentToLast();
             }
             if (purchase_way == 0)
             {
                 fixedDataSet.purchase_way.Addpurchase_wayRow(purchase_way_IDC1ComboBox.Text);
                 fixedDataSetpurchase_wayTableAdapter.Update(fixedDataSet.purchase_way);
+                fixedDataSetpurchase_wayTableAdapter.Fill(fixedDataSet.purchase_way);
                 purchase_wayViewSource.View.MoveCurrentToLast();
             }
             if (unit == 0)
             {
                 fixedDataSet.unit.AddunitRow(unit_IDC1ComboBox.Text);
                 fixedDataSetunitTableAdapter.Update(fixedDataSet.unit);
+                fixedDataSetunitTableAdapter.Fill(fixedDataSet.unit);
                 unitViewSource.View.MoveCurrentToLast();
             }
             if (keeper == 0)
             {
                 fixedDataSet.keeper.AddkeeperRow(keeper_IDC1ComboBox.Text);
                 fixedDataSetkeeperTableAdapter.Update(fixedDataSet.keeper);
+                fixedDataSetkeeperTableAdapter.Fill(fixedDataSet.keeper);
                 keeperViewSource.View.MoveCurrentToLast();
             }
             if (supplier == 0)
             {
                 fixedDataSet.supplier.AddsupplierRow(supplier_IDC1ComboBox.Text);
                 fixedDataSetsupplierTableAdapter.Update(fixedDataSet.supplier);
+                fixedDataSetsupplierTableAdapter.Fill(fixedDataSet.supplier);
                 supplierViewSource.View.MoveCurrentToLast();
             }
             if (position == 0)
             {
                 fixedDataSet.position.AddpositionRow(position_IDC1ComboBox.Text);
                 fixedDataSetpositionTableAdapter.Update(fixedDataSet.position);
+                fixedDataSetpositionTableAdapter.Fill(fixedDataSet.position);
                 positionViewSource.View.MoveCurrentToLast();
             }
             if (fixed_statu == 0)
             {
                 fixedDataSet.fixed_statu.Addfixed_statuRow(fixed_statu_IDC1ComboBox.Text);
                 fixedDataSetfixed_statuTableAdapter.Update(fixedDataSet.fixed_statu);
+                fixedDataSetfixed_statuTableAdapter.Fill(fixedDataSet.fixed_statu);
                 fixed_statusViewSource.View.MoveCurrentToLast();
             }
-            if (specifications == 0)
+            if (storage_place == 0)
             {
                 fixedDataSet.storage_place.Addstorage_placeRow(storage_place_IDC1ComboBox.Text);
                 fixedDataSetstorage_placeTableAdapter.Update(fixedDataSet.storage_place);
+                fixedDataSetstorage_placeTableAdapter.Fill(fixedDataSet.storage_place);
                 storage_placeViewSource.View.MoveCurrentToLast();
             }
             if (affiliated == 0)
             {
                 fixedDataSet.affiliated.AddaffiliatedRow(1,affiliated_IDC1ComboBox.Text);
                 fixedDataSetaffiliatedTableAdapter.Update(fixedDataSet.affiliated);
+                fixedDataSetaffiliatedTableAdapter.Fill(fixedDataSet.affiliated);
                 affiliatedViewSource.View.MoveCurrentToLast();
             }
             if (department == 0)
             {
                 fixedDataSet.department.AdddepartmentRow(1,department_IDC1ComboBox.Text);
                 fixedDataSetdepartmentTableAdapter.Update(fixedDataSet.department);
+                fixedDataSetdepartmentTableAdapter.Fill(fixedDataSet.department);
                 departmentViewSource.View.MoveCurrentToLast();
             }
 
@@ -281,6 +294,7 @@ namespace Fixed_management
             {
                 fixedDataSet.user.AdduserRow(user_IDC1ComboBox.Text);
                 fixedDataSetuserTableAdapter.Update(fixedDataSet.user);
+                fixedDataSetuserTableAdapter.Fill(fixedDataSet.user);
                 userViewSource.View.MoveCurrentToLast();
             }
 
@@ -370,8 +384,6 @@ namespace Fixed_management
 
         }
 
-
-
         private void fixed_add_Click(object sender, RoutedEventArgs e)
         {
             Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
@@ -381,10 +393,6 @@ namespace Fixed_management
                 checkmultitable();
 
             }
-            var t =natureC1ComboBox.SelectedValue;
-            //fixedDataSet._fixed.AddfixedRow(barcode.Text, natureC1ComboBox.Text, categoryC1ComboBox.Text, designationC1ComboBox.Text, specifications_IDC1ComboBox.Text, model_IDC1ComboBox.Text, DateTime.Parse(purchase_dateDatePicker.Text), limitTextBox.Text, purchase_way_IDC1ComboBox.Text, fixed_numberTextBox.Text, unit_IDC1ComboBox.Text, fixed_valeTextBox.Text, keeper_IDC1ComboBox.Text, supplier_IDC1ComboBox.Text, factory_numberTextBox.Text, fixed_encodingTextBox.Text, storage_place_IDC1ComboBox.Text, position_IDC1ComboBox.Text, fixed_statu_IDC1ComboBox.Text, user_IDTextBox.Text,DateTime.Parse( billing_dateDatePicker.Text), warrantyTextBox.Text, account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "", "", "", contentTextBox.Text, affiliated_IDC1ComboBox,1,1);
-            //fixedDataSet._fixed.AddfixedRow("", 1, 1, "", 1, "", DateTime.Now, 1, 1, 1, 1, "", 1, 1, "", "", 1, 1, 1, "", DateTime.Now, 1, "", "", "", "", "", "", "", 1, 1, 1);
-          //  int A;
             var Vnature = from c in fixedDataSet.nature where c.nature == natureC1ComboBox.Text select c;
             int Inature=0;
             foreach (var s in Vnature)
@@ -392,8 +400,110 @@ namespace Fixed_management
                 Inature = s.nature_ID;
                 break;
             }
-            fixedDataSet._fixed.AddfixedRow(barcode.Text, Inature, int.Parse(categoryC1ComboBox.SelectedValue.ToString()), int.Parse(designationC1ComboBox.SelectedValue.ToString()), int.Parse(specifications_IDC1ComboBox.SelectedValue.ToString()), int.Parse(model_IDC1ComboBox.SelectedValue.ToString()), DateTime.Now, int.Parse(limitTextBox.Text), int.Parse(purchase_way_IDC1ComboBox.SelectedValue.ToString()), int.Parse(fixed_numberTextBox.Text), int.Parse(unit_IDC1ComboBox.SelectedValue.ToString()), fixed_valeTextBox.Text, int.Parse(keeper_IDC1ComboBox.SelectedValue.ToString()), int.Parse(supplier_IDC1ComboBox.SelectedValue.ToString()), factory_numberTextBox.Text, fixed_encodingTextBox.Text, int.Parse(storage_place_IDC1ComboBox.SelectedValue.ToString()), int.Parse(position_IDC1ComboBox.SelectedValue.ToString()), int.Parse(fixed_statu_IDC1ComboBox.SelectedValue.ToString()), int.Parse(user_IDC1ComboBox.SelectedValue.ToString()), DateTime.Now, int.Parse(warrantyTextBox.Text), account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "", "", "", contentTextBox.Text, 1, int.Parse(affiliated_IDC1ComboBox.SelectedValue.ToString()), int.Parse(department_IDC1ComboBox.SelectedValue.ToString()));
-            //fixedDataSetfixedTableAdapter.Update(fixedDataSet._fixed);
+            var Vcategory = from c in fixedDataSet.category where c.category == categoryC1ComboBox.Text select c;
+            int Icategory = 0;
+            foreach (var s in Vcategory)
+            {
+                Icategory = s.category_ID;
+                break;
+            }
+            var Vdesignation = from c in fixedDataSet.designation where c.designation == designationC1ComboBox.Text select c;
+            int Idesignation = 0;
+            foreach (var s in Vdesignation)
+            {
+                Idesignation = s.designation_ID;
+                break;
+            }
+            var Vspecifications = from c in fixedDataSet.specifications where c.specifications == specifications_IDC1ComboBox.Text select c;
+            int Ispecifications = 0;
+            foreach (var s in Vspecifications)
+            {
+                Ispecifications = s.specifications_ID;
+                break;
+            }
+            var Vmodel = from c in fixedDataSet.model where c.model == model_IDC1ComboBox.Text select c;
+            int Imodel = 0;
+            foreach (var s in Vmodel)
+            {
+                Imodel = s.model_ID;
+                break;
+            }
+
+  var Vpurchase_way = from c in fixedDataSet.purchase_way where c.purchase_way == purchase_way_IDC1ComboBox.Text select c;
+            int Ipurchase_way = 0;
+            foreach (var s in Vpurchase_way)
+            {
+                Ipurchase_way = s.purchase_way_ID;
+                break;
+            }
+            var Vunit = from c in fixedDataSet.unit where c.unit == unit_IDC1ComboBox.Text select c;
+            int Iunit = 0;
+            foreach (var s in Vunit)
+            {
+                Iunit = s.unit_ID;
+                break;
+            }
+            var Vaffiliated = from c in fixedDataSet.affiliated where c.affiliated == affiliated_IDC1ComboBox.Text select c;
+            int Iaffiliated = 0;
+            foreach (var s in Vaffiliated)
+            {
+                Iaffiliated = s.affiliated_ID;
+                break;
+            }
+            var Vdepartment = from c in fixedDataSet.department where c.department == department_IDC1ComboBox.Text select c;
+            int Idepartment = 0;
+            foreach (var s in Vdepartment)
+            {
+                Idepartment = s.department_ID;
+                break;
+            }
+            var Vkeeper = from c in fixedDataSet.keeper where c.keeper == keeper_IDC1ComboBox.Text select c;
+            int Ikeeper = 0;
+            foreach (var s in Vkeeper)
+            {
+                Ikeeper = s.keeper_ID;
+                break;
+            }
+            var Vsupplier = from c in fixedDataSet.supplier where c.supplier == supplier_IDC1ComboBox.Text select c;
+            int Isupplier = 0;
+            foreach (var s in Vsupplier)
+            {
+                Isupplier = s.supplier_ID;
+                break;
+            }
+            var Vstorage_place = from c in fixedDataSet.storage_place where c.storage_place == storage_place_IDC1ComboBox.Text select c;
+            int Istorage_place = 0;
+            foreach (var s in Vstorage_place)
+            {
+                Istorage_place = s.storage_place_ID;
+                break;
+            }
+
+  var Vposition = from c in fixedDataSet.position where c.position == position_IDC1ComboBox.Text select c;
+            int Iposition = 0;
+            foreach (var s in Vposition)
+            {
+                Iposition = s.position_ID;
+                break;
+            }
+            var Vfixed_statu = from c in fixedDataSet.fixed_statu where c.fixed_statu == fixed_statu_IDC1ComboBox.Text select c;
+            int Ifixed_statu = 0;
+            foreach (var s in Vfixed_statu)
+            {
+                Ifixed_statu = s.fixed_statu_ID;
+                break;
+            }
+            var Vuser = from c in fixedDataSet.user where c.user == user_IDC1ComboBox.Text select c;
+            int Iuser = 0;
+            foreach (var s in Vuser)
+            {
+                Iuser = s.user_ID;
+                break;
+            }
+
+            fixedDataSet._fixed.AddfixedRow(barcode.Text, Inature, Icategory, Idesignation, Ispecifications, Imodel, DateTime.Now, int.Parse(limitTextBox.Text), Ipurchase_way, int.Parse(fixed_numberTextBox.Text), Iunit, fixed_valeTextBox.Text, Ikeeper, Isupplier, factory_numberTextBox.Text, fixed_encodingTextBox.Text, Istorage_place, Iposition, Ifixed_statu, Iuser, DateTime.Now, int.Parse(warrantyTextBox.Text), account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "", "", "", contentTextBox.Text, 1, Iaffiliated, Idepartment, 1, 1);
+            fixedDataSetfixedTableAdapter.Update(fixedDataSet._fixed);
+
         }
 
     }
