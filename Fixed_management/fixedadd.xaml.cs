@@ -11,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+
 
 namespace Fixed_management
 {
@@ -23,7 +25,44 @@ namespace Fixed_management
         {
             InitializeComponent();
         }
- 
+
+     //   public static T FindChild<T>(DependencyObject parent, string childName)//查找控件
+     //where T : DependencyObject
+     //   {
+     //       if (parent == null) return null;
+     //       T foundChild = null;
+     //       int childrenCount = VisualTreeHelper.GetChildrenCount(parent);
+     //       for (int i = 0; i < childrenCount; i++)
+     //       {
+     //           var child = VisualTreeHelper.GetChild(parent, i);
+     //           // 如果子控件不是需查找的控件类型 
+     //           T childType = child as T;
+     //           if (childType == null)
+     //           {
+     //               // 在下一级控件中递归查找 
+     //               foundChild = FindChild<T>(child, childName);
+     //               // 找到控件就可以中断递归操作  
+     //               if (foundChild != null) break;
+     //           }
+     //           else if (!string.IsNullOrEmpty(childName))
+     //           {
+     //               var frameworkElement = child as FrameworkElement;
+     //               // 如果控件名称符合参数条件 
+     //               if (frameworkElement != null && frameworkElement.Name == childName)
+     //               {
+     //                   foundChild = (T)child;
+     //                   break;
+     //               }
+     //           }
+     //           else
+     //           {
+     //               // 查找到了控件 
+     //               foundChild = (T)child;
+     //               break;
+     //           }
+     //       }
+     //       return foundChild;
+     //   }
 
        
 
@@ -42,11 +81,21 @@ namespace Fixed_management
 
             
             Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+
+
+            Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter fixedDataSetfixedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter();
+            fixedDataSetfixedTableAdapter.Fill(fixedDataSet._fixed);
+            System.Windows.Data.CollectionViewSource fixedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixedViewSource")));
+            fixedViewSource.View.MoveCurrentToFirst();
+
+
             // 将数据加载到表 nature 中。可以根据需要修改此代码。
             Fixed_management.FixedDataSetTableAdapters.natureTableAdapter fixedDataSetnatureTableAdapter = new Fixed_management.FixedDataSetTableAdapters.natureTableAdapter();
             fixedDataSetnatureTableAdapter.Fill(fixedDataSet.nature);
             System.Windows.Data.CollectionViewSource natureViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("natureViewSource")));
             natureViewSource.View.MoveCurrentToFirst();
+
+
 
             Fixed_management.FixedDataSetTableAdapters.categoryTableAdapter fixedDataSetcategoryTableAdapter = new Fixed_management.FixedDataSetTableAdapters.categoryTableAdapter();
             fixedDataSetcategoryTableAdapter.Fill(fixedDataSet.category);
@@ -378,8 +427,10 @@ namespace Fixed_management
 
 
 
-           
-           MessageBox.Show(status_err + "不能为空！");
+            if (!check_status)
+            {
+                MessageBox.Show(status_err + "不能为空！");
+            }
             return check_status;    
 
         }
@@ -506,11 +557,129 @@ namespace Fixed_management
             }
 
 
-            fixedDataSet._fixed.AddfixedRow(barcode.Text, Inature, Icategory, Idesignation, Ispecifications, Imodel, DateTime.Now, int.Parse(limitTextBox.Text), Ipurchase_way, int.Parse(fixed_numberTextBox.Text), Iunit, fixed_valeTextBox.Text, Ikeeper, Isupplier, factory_numberTextBox.Text, fixed_encodingTextBox.Text, Istorage_place, Iposition, Ifixed_statu, Iuser, DateTime.Now, int.Parse(warrantyTextBox.Text), account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "", "", "", contentTextBox.Text, 1, Iaffiliated, Idepartment, 1, 1);
+            fixedDataSet._fixed.AddfixedRow(barcode.Text, Inature, Icategory, Idesignation, Ispecifications, Imodel, DateTime.Now, int.Parse(limitTextBox.Text), Ipurchase_way, int.Parse(fixed_numberTextBox.Text), Iunit, fixed_valeTextBox.Text, Ikeeper, Isupplier, factory_numberTextBox.Text, fixed_encodingTextBox.Text, Istorage_place, Iposition, Ifixed_statu, Iuser, DateTime.Now, int.Parse(warrantyTextBox.Text), account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "1", "1", "", contentTextBox.Text, 1, Iaffiliated, Idepartment, 1, 1,DateTime.Now);
             fixedDataSetfixedTableAdapter.Update(fixedDataSet._fixed);
 
 
+            C1.WPF.C1Window findfixed = MainWindow.FindChild<C1.WPF.C1Window>(Application.Current.MainWindow, "newfixed");
+            if (findfixed != null)
+            {
+                findfixed.Close();
+            }
+
+
+
+
         }
+
+     
+
+        private void barcode_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter fixedDataSetfixedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter();
+            if (barcode.Text != "")
+            {
+                string s = barcode.Text.Substring(barcode.Text.Length - 1, 1);
+                Regex regNum = new Regex("^[0-9]");
+                //string f="";
+                if (regNum.IsMatch(s))
+                {
+                    var barco = (from c in fixedDataSet._fixed where c.barcode == barcode.Text select c).Count();
+
+                    if (barco > 0)
+                    {
+                        MessageBox.Show("该编号已经存在！");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("最后一个字符必须为数字！");
+                    barcode.Focus();
+                }
+            }
+
+        }
+
+        private void bar_auto_Click(object sender, RoutedEventArgs e)
+        {
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter fixedDataSetfixedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter();
+            int cot = (from c in fixedDataSet._fixed select c.fixed_ID).Count();
+            string a;
+            if (cot > 0)
+            {
+                int q = (from c in fixedDataSet._fixed select c.fixed_ID).Max();
+                a = fixedDataSet._fixed.FindByfixed_ID(q).barcode;
+            }
+            else
+            {
+                a = "000";
+            }
+            
+           
+            auto_bar(a);
+            barcode.Text = bar_rul;
+        }
+
+        int public_len;
+        string bar_rul;
+        string bar_befo;
+        private string auto_bar(string bar)//自动计算bar值
+        {
+            bar_befo = bar;
+            cal_int_length(bar, 0);
+
+            string stringpart = bar.Substring(0, bar.Length - public_len);
+            int intpart = int.Parse(bar.Substring(bar.Length- public_len, public_len));
+            intpart++;
+            buwei(stringpart, intpart, public_len);
+            return bar_rul;
+
+        }
+
+        private void buwei(string stringpart, int intpart, int len)
+        {
+            string s = stringpart + "0" + intpart;
+            if (s.Length < bar_befo.Length)
+            {
+                buwei(stringpart+"0", intpart, len);
+            }
+            else
+            {
+                //bar_rul = stringpart + intpart;
+                bar_rul = s; 
+            }
+
+        }
+
+        private int cal_int_length(string bar, int len)//计算整数位
+        {
+
+            try
+            {
+                int.Parse(bar.Substring(bar.Length-len-1,1));
+                cal_int_length(bar, len + 1);
+                return len;
+            }catch
+            {
+                public_len = len;
+                return len;
+                
+                
+            }
+        }
+
+        private void limitTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex re = new Regex("[^0-9.]+");
+            e.Handled = re.IsMatch(e.Text);
+        }
+
+   
+
+
+       
 
     }
 }

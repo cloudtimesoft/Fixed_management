@@ -16,22 +16,22 @@
         <DataGrid Grid.Row="0" AutoGenerateColumns="False" EnableRowVirtualization="True"  HorizontalAlignment="Left" ItemsSource="{Binding}"  Name="employeesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="employees_IDColumn" Binding="{Binding Path=employees_ID}" Header="employees ID" Width="SizeToHeader" Visibility="Hidden" />
-                <DataGridTextColumn x:Name="numberColumn" Binding="{Binding Path=number}" Header="number" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="em_nameColumn" Binding="{Binding Path=em_name}" Header="em name" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="passwordColumn" Binding="{Binding Path=password}" Header="password" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="confirm_passwordColumn" Binding="{Binding Path=confirm_password}" Header="confirm password" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="sexColumn" Binding="{Binding Path=sex}" Header="sex" Width="SizeToHeader" />
-                <DataGridTemplateColumn x:Name="birthdayColumn" Header="birthday" Width="SizeToHeader">
+                <DataGridTextColumn x:Name="numberColumn" Binding="{Binding Path=number}" Header="员工编号" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="em_nameColumn" Binding="{Binding Path=em_name}" Header="员工姓名" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="passwordColumn" Binding="{Binding Path=password}" Header="新密码" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="confirm_passwordColumn" Binding="{Binding Path=confirm_password}" Header="确认密码" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="sexColumn" Binding="{Binding Path=sex}" Header="性别" Width="SizeToHeader" />
+                <DataGridTemplateColumn x:Name="birthdayColumn" Header="生日" Width="SizeToHeader">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <DatePicker SelectedDate="{Binding Path=birthday, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="id_numberColumn" Binding="{Binding Path=id_number}" Header="id number" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="phoneColumn" Binding="{Binding Path=phone}" Header="phone" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Path=address}" Header="address" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="content" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="id_numberColumn" Binding="{Binding Path=id_number}" Header="身份证号" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="phoneColumn" Binding="{Binding Path=phone}" Header="联系电话" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Path=address}" Header="联系地址" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="备注" Width="SizeToHeader" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

@@ -26,7 +26,7 @@ namespace Fixed_management
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-           
+            numberTextBox.Focus();
         }
 
         private void login_Click(object sender, RoutedEventArgs e)
@@ -38,8 +38,8 @@ namespace Fixed_management
             System.Windows.Data.CollectionViewSource employeesViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("employeesViewSource")));
             employeesViewSource.View.MoveCurrentToFirst();
 
-            int s = (from c in fixedDataSet.employees where c.number == numberTextBox.Text && c.password == passwordTextBox.Text select c).Count();
-            var id = from c in fixedDataSet.employees where c.number == numberTextBox.Text && c.password == passwordTextBox.Text select c;
+            int s = (from c in fixedDataSet.employees where c.number == numberTextBox.Text && c.password == passwordTextBox.Password select c).Count();
+            var id = from c in fixedDataSet.employees where c.number == numberTextBox.Text && c.password == passwordTextBox.Password select c;
             //user_id
             foreach (var t in id)
             {
@@ -48,12 +48,44 @@ namespace Fixed_management
             if (s > 0)
             {
                 MainWindow newmain = new MainWindow();
-               
+
                 this.Close();
                 newmain.Show();
             }
-
+            else
+            {
+                MessageBox.Show( "用户名或密码有误！","提示");
+            }
 
         }
+
+    
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Key Key = (e.Key == Key.System ? e.SystemKey : e.Key);
+            //if (Key == Key.Enter)
+            //{
+            //    login_Click(null, null);
+            //}
+        }
+
+        private void numberTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.Key == Key.Enter)
+            {
+                passwordTextBox.Focus();
+            }
+        }
+
+        private void passwordTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                login_Click(null, null);
+            }
+        }
+
     }
 }

@@ -2,39 +2,41 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
-        Title="MainWindow" Height="350" Width="525" WindowState="Maximized" xmlns:my="clr-namespace:Fixed_management" Loaded="Window_Loaded">
+        Title="固定资产管理系统" Height="350" Width="525" WindowState="Maximized" xmlns:my="clr-namespace:Fixed_management" Loaded="Window_Loaded">
     <Window.Resources>
         <my:FixedDataSet x:Key="fixedDataSet" />
         <CollectionViewSource x:Key="natureViewSource" Source="{Binding Path=nature, Source={StaticResource fixedDataSet}}" />
+        <CollectionViewSource x:Key="checkViewSource" Source="{Binding Path=check, Source={StaticResource fixedDataSet}}" />
+        <CollectionViewSource x:Key="check_showViewSource" Source="{Binding Path=check_show, Source={StaticResource fixedDataSet}}" />
     </Window.Resources>
     <Grid x:Name="mainwindow" DataContext="{StaticResource natureViewSource}">
         <Menu Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="menu1" VerticalAlignment="Top" >
             <MenuItem Header="系统">
                 <MenuItem Header="登录系统" InputGestureText="Alt+S"></MenuItem>
                 <MenuItem Header="退出系统" InputGestureText="Alt+L"></MenuItem>
-                <MenuItem Header="退出(_X)" x:Name="shutdown" InputGestureText="Alt+X"></MenuItem>
+                <MenuItem Header="退出(_X)" x:Name="shutdown" InputGestureText="Alt+X" Click="shutdown_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="资产">
                 <MenuItem Header="资产增加" x:Name="fix_addtool" Click="MenuItem_Click" IsEnabled="False"></MenuItem>
-                <MenuItem Header="资产转移" x:Name="fix_transfertool" IsEnabled="False"></MenuItem>
-                <MenuItem Header="资产退出"  x:Name="fix_outtool" IsEnabled="False"></MenuItem>
-                <MenuItem Header="资产删除" x:Name="fix_deltool" IsEnabled="False" ></MenuItem>
+                <MenuItem Header="资产转移" x:Name="fix_transfertool" IsEnabled="False" Click="fixed_transfers_Click"></MenuItem>
+                <MenuItem Header="资产退出"  x:Name="fix_outtool" IsEnabled="False" Click="fix_outtool_Click"></MenuItem>
+                <MenuItem Header="资产删除" x:Name="fix_deltool" IsEnabled="False" Click="fix_deltool_Click"></MenuItem>
                 <Separator />
                 <MenuItem Header="信息导入" x:Name="information_intool" IsEnabled="False" ></MenuItem>
                 <MenuItem Header="标签打印" x:Name="fix_printool" IsEnabled="False"></MenuItem>
             </MenuItem>
             <MenuItem Header="查询">
-                <MenuItem Header="有效资产" x:Name="enable_fixtool" IsEnabled="False" ></MenuItem>
-                <MenuItem Header="退出资产" x:Name="exit_fixtool" IsEnabled="False" ></MenuItem>
-                <MenuItem Header="删除资产" x:Name="del_fixtool" IsEnabled="False"   ></MenuItem>
+                <MenuItem Header="有效资产" x:Name="enable_fixtool" IsEnabled="False" Click="effective_name_Click"></MenuItem>
+                <MenuItem Header="退出资产" x:Name="exit_fixtool" IsEnabled="False" Click="exit_fixtool_Click"></MenuItem>
+                <MenuItem Header="删除资产" x:Name="del_fixtool" IsEnabled="False" Click="del_fixtool_Click"></MenuItem>
                 <Separator />
-                <MenuItem Header="转移信息" x:Name="transfer_information_tool" IsEnabled="False"  ></MenuItem>
+                <MenuItem Header="转移信息" x:Name="transfer_information_tool" IsEnabled="False" Click="transfer_information_Click" ></MenuItem>
                 <Separator />
                 <MenuItem Header="资产分类明细表" x:Name="fixclass_detailtool" IsEnabled="False"  ></MenuItem>
                 <MenuItem Header="资产分类汇总表" x:Name="fixclass_tal" IsEnabled="False"  ></MenuItem>
             </MenuItem>
             <MenuItem Header="盘点">
-                <MenuItem Header="资产盘点" x:Name="fix_inventorytool" IsEnabled="False"  ></MenuItem>
+                <MenuItem Header="资产盘点" x:Name="fix_inventorytool" IsEnabled="False" Click="fix_inventorytool_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="设置">
                 <MenuItem Header="员工管理" Name="employees" IsEnabled="False"  Click="employees_Click"></MenuItem>
@@ -51,23 +53,52 @@
             </MenuItem>
         </Menu>
 
-
-        <ToolBarPanel Height="36" HorizontalAlignment="Stretch" Margin="0,23,0,0" Name="toolBarPanel1" VerticalAlignment="Top" Orientation="Horizontal" AllowDrop="True" Background="White">
-            <ToolBar Height="36"  Name="toolBar1" VerticalAlignment="Top" AllowDrop="True">
-                <Button x:Name="fix_add" Content="资产增加" IsEnabled="False"></Button>
-                <Button Name="fixed_transfers" Content="资产转移" Click="fixed_transfers_Click" IsEnabled="False"></Button>
-
-                <Button x:Name="fix_prin" Content="标签打印" IsEnabled="False" ></Button>
-                <Button Content="有效资产" x:Name="effective_name" Click="effective_name_Click" IsEnabled="False"></Button>
-                <Button x:Name="transfer_information" Content="转移信息" IsEnabled="False"></Button>
-                <Button x:Name="fix_inventory" Content="资产盘点" IsEnabled="False"></Button>
+        
+            <ToolBarPanel Height="40" HorizontalAlignment="Stretch" Margin="0,23,0,0" Name="toolBarPanel1" VerticalAlignment="Top" Orientation="Horizontal" AllowDrop="True" Background="White">
+            <ToolBar Height="40" Name="toolBar1" VerticalAlignment="Top" AllowDrop="True" ToolBarTray.IsLocked="True" Loaded="Toolbar_loaded">
+                <Separator Width="10" Background="#00000000"></Separator>
+                <ToggleButton x:Name="fix_add" Content="" IsEnabled="False" Click="MenuItem_Click" ToolTip="资产增加" Width="26" Height="26">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Fixed_management;component/image/资产增加.png" />
+                    </ToggleButton.Background>
+                </ToggleButton>
+                <Separator Width="10" Background="#00000000"></Separator>
+                <ToggleButton Name="fixed_transfers" Content="" Click="fixed_transfers_Click" IsEnabled="False" ToolTip="资产转移" Width="26" Height="26">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Fixed_management;component/image/资产转移.png" />
+                    </ToggleButton.Background>
+                </ToggleButton>
+                <Separator Width="10" Background="#00000000"></Separator>
+                <ToggleButton x:Name="fix_prin" Content="" IsEnabled="False" ToolTip="标签打印" Height="26" Width="26">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Fixed_management;component/image/标签打印.png" />
+                    </ToggleButton.Background>
+                </ToggleButton>
+                <Separator Width="10" Background="#00000000"></Separator>
+                <ToggleButton Content="" x:Name="effective_name" Click="effective_name_Click" IsEnabled="False" ToolTip="有效资产" Width="26" Height="26" >
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Fixed_management;component/image/有效资产.png" />
+                    </ToggleButton.Background>
+                </ToggleButton>
+                <Separator Width="10" Background="#00000000"></Separator>
+                <ToggleButton x:Name="transfer_information" Content="" IsEnabled="False" Click="transfer_information_Click" ToolTip="转移信息" Height="26" Width="26">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Fixed_management;component/image/转移明细.png" />
+                    </ToggleButton.Background>
+                </ToggleButton>
+                <Separator Width="10" Background="#00000000"></Separator>
+                <ToggleButton x:Name="fix_inventory" Content="" IsEnabled="False" ToolTip="资产盘点" Width="26" Height="26">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Fixed_management;component/image/资产盘点.png" />
+                    </ToggleButton.Background>
+                </ToggleButton>
 
             </ToolBar>
         </ToolBarPanel>
 
 
 
-            <avalonDock:DockingManager x:Name="dockingManager" Margin="0,59,0,0" Background="#FFCBC5C5" VerticalAlignment="Top">
+            <avalonDock:DockingManager x:Name="dockingManager" Margin="0,60,0,0" Background="#FFCBC5C5" VerticalAlignment="Top">
             <avalonDock:LayoutRoot>
                 <avalonDock:LayoutPanel Orientation="Horizontal">
                     <avalonDock:LayoutDocumentPaneGroup>

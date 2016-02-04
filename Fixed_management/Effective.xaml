@@ -4,77 +4,77 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" xmlns:my="clr-namespace:Fixed_management" Loaded="UserControl_Loaded">
+             d:DesignHeight="300" d:DesignWidth="2500" xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" xmlns:my="clr-namespace:Fixed_management" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <my:FixedDataSet x:Key="fixedDataSet" />
         <CollectionViewSource x:Key="fixedViewSource" Source="{Binding Path=_fixed, Source={StaticResource fixedDataSet}}" />
         <CollectionViewSource x:Key="fixednameViewSource" Source="{Binding Path=fixedname, Source={StaticResource fixedDataSet}}" />
     </UserControl.Resources>
     <Grid DataContext="{StaticResource fixedViewSource}">
-        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="200" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource fixednameViewSource}}" Margin="0,12,0,0" Name="fixednameDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="400">
+        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource fixednameViewSource}}" Margin="0,12,0,0" Name="fixednameDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto" Height="Auto">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="barcodeColumn" Binding="{Binding Path=barcode}" Header="barcode" Width="SizeToHeader" />
-                <DataGridTemplateColumn x:Name="purchase_dateColumn" Header="purchase date" Width="SizeToHeader">
+                <DataGridTextColumn x:Name="barcodeColumn" Binding="{Binding Path=barcode}" Header="资产条码" />
+                <DataGridTemplateColumn x:Name="purchase_dateColumn" Header="购置日期" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Path=purchase_date}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn x:Name="limitColumn" Header="limit" Width="SizeToHeader">
+                <DataGridTemplateColumn x:Name="limitColumn" Header="使用期限">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Path=limit}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn x:Name="fixed_numberColumn" Header="fixed number" Width="SizeToHeader">
+                <DataGridTemplateColumn x:Name="fixed_numberColumn" Header="资产数量" Width="SizeToHeader">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Path=fixed_number}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="fixed_valeColumn" Binding="{Binding Path=fixed_vale}" Header="fixed vale" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="factory_numberColumn" Binding="{Binding Path=factory_number}" Header="factory number" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="fixed_encodingColumn" Binding="{Binding Path=fixed_encoding}" Header="fixed encoding" Width="SizeToHeader" />
-                <DataGridTemplateColumn x:Name="billing_dateColumn" Header="billing date" Width="SizeToHeader">
+                <DataGridTextColumn x:Name="fixed_valeColumn" Binding="{Binding Path=fixed_vale}" Header="资产原值"  />
+                <DataGridTextColumn x:Name="factory_numberColumn" Binding="{Binding Path=factory_number}" Header="出厂编号"  />
+                <DataGridTextColumn x:Name="fixed_encodingColumn" Binding="{Binding Path=fixed_encoding}" Header="资产编码"  />
+                <DataGridTemplateColumn x:Name="billing_dateColumn" Header="入账日期" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Path=billing_date}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn x:Name="warrantyColumn" Header="warranty" Width="SizeToHeader">
+                <DataGridTemplateColumn x:Name="warrantyColumn" Header="保修期（月）" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Path=warranty}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="account_numberColumn" Binding="{Binding Path=account_number}" Header="account number" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="fixed_assetColumn" Binding="{Binding Path=fixed_asset}" Header="fixed asset" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="card_numberColumn" Binding="{Binding Path=card_number}" Header="card number" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="enable_statusColumn" Binding="{Binding Path=enable_status}" Header="enable status" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="del_statusColumn" Binding="{Binding Path=del_status}" Header="del status" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="content" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="natureColumn" Binding="{Binding Path=nature}" Header="nature" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="categoryColumn" Binding="{Binding Path=category}" Header="category" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="specificationsColumn" Binding="{Binding Path=specifications}" Header="specifications" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="designationColumn" Binding="{Binding Path=designation}" Header="designation" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="modelColumn" Binding="{Binding Path=model}" Header="model" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="unitColumn" Binding="{Binding Path=unit}" Header="unit" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="purchase_wayColumn" Binding="{Binding Path=purchase_way}" Header="purchase way" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="keeperColumn" Binding="{Binding Path=keeper}" Header="keeper" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="supplierColumn" Binding="{Binding Path=supplier}" Header="supplier" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="positionColumn" Binding="{Binding Path=position}" Header="position" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="fixed_statuColumn" Binding="{Binding Path=fixed_statu}" Header="fixed statu" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="userColumn" Binding="{Binding Path=user}" Header="user" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="_operatorColumn" Binding="{Binding Path=operator}" Header="operator" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="affiliatedColumn" Binding="{Binding Path=affiliated}" Header="affiliated" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="departmentColumn" Binding="{Binding Path=department}" Header="department" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="wayColumn" Binding="{Binding Path=way}" Header="way" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="storage_placeColumn" Binding="{Binding Path=storage_place}" Header="storage place" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="account_numberColumn" Binding="{Binding Path=account_number}" Header="入账编号" />
+                <DataGridTextColumn x:Name="fixed_assetColumn" Binding="{Binding Path=fixed_asset}" Header="原资产号"  />
+                <DataGridTextColumn x:Name="card_numberColumn" Binding="{Binding Path=card_number}" Header="原卡片号"  />
+                <DataGridTextColumn x:Name="enable_statusColumn" Binding="{Binding Path=enable_status}" Header="enable status" Width="SizeToHeader" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="del_statusColumn" Binding="{Binding Path=del_status}" Header="del status" Width="SizeToHeader" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="备注"  />
+                <DataGridTextColumn x:Name="natureColumn" Binding="{Binding Path=nature}" Header="资产性质" />
+                <DataGridTextColumn x:Name="categoryColumn" Binding="{Binding Path=category}" Header="资产类别" />
+                <DataGridTextColumn x:Name="specificationsColumn" Binding="{Binding Path=specifications}" Header="资产规格"  />
+                <DataGridTextColumn x:Name="designationColumn" Binding="{Binding Path=designation}" Header="资产名称"  />
+                <DataGridTextColumn x:Name="modelColumn" Binding="{Binding Path=model}" Header="资产型号"  />
+                <DataGridTextColumn x:Name="unitColumn" Binding="{Binding Path=unit}" Header="计量单位"  />
+                <DataGridTextColumn x:Name="purchase_wayColumn" Binding="{Binding Path=purchase_way}" Header="购置方式"  />
+                <DataGridTextColumn x:Name="keeperColumn" Binding="{Binding Path=keeper}" Header="保管人"  />
+                <DataGridTextColumn x:Name="supplierColumn" Binding="{Binding Path=supplier}" Header="供应商"  />
+                <DataGridTextColumn x:Name="positionColumn" Binding="{Binding Path=position}" Header="所在地点" />
+                <DataGridTextColumn x:Name="fixed_statuColumn" Binding="{Binding Path=fixed_statu}" Header="资产状态" />
+                <DataGridTextColumn x:Name="userColumn" Binding="{Binding Path=user}" Header="使用人"  />
+                <DataGridTextColumn x:Name="_operatorColumn" Binding="{Binding Path=operator}" Header="经办人" Visibility="Hidden" />
+                <DataGridTextColumn x:Name="affiliatedColumn" Binding="{Binding Path=affiliated}" Header="所属单位"  />
+                <DataGridTextColumn x:Name="departmentColumn" Binding="{Binding Path=department}" Header="保管部门"  />
+                <DataGridTextColumn x:Name="wayColumn" Binding="{Binding Path=way}" Header="退出方式" Width="SizeToHeader" Visibility="Hidden" />
+                <DataGridTextColumn x:Name="storage_placeColumn" Binding="{Binding Path=storage_place}" Header="存放地点"  />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

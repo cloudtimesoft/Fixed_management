@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
+using System.Threading;
 
 namespace Fixed_management
 {
@@ -79,7 +80,42 @@ namespace Fixed_management
             Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter fixedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter();
             fixedTableAdapter.Fill(fixedDataSet._fixed);
 
-            int s = (from c in fixedDataSet._fixed where c.affiliated_ID == int.Parse(affiliated_IDC1ComboBox.SelectedValue.ToString()) && c.department_ID == int.Parse(department_IDC1ComboBox.SelectedValue.ToString()) && c.keeper_ID == int.Parse(keeper_IDC1ComboBox.SelectedValue.ToString()) && c.storage_place_ID == int.Parse(storage_place_IDC1ComboBox.SelectedValue.ToString()) && c.fixed_ID == i select c).Count();
+
+            var affiliated = from c in fixedDataSet.affiliated where c.affiliated == affiliated_IDC1ComboBox.Text select c;
+            int affiliated_inde = 0;
+            foreach (var a in affiliated)
+            {
+                affiliated_inde = a.affiliated_ID;
+                break;
+            }
+
+
+            var Vdepartment = from c in fixedDataSet.department where c.department == department_IDC1ComboBox.Text select c;
+            int Idepartment = 0;
+            foreach (var a in Vdepartment)
+            {
+                Idepartment = a.department_ID;
+                break;
+            }
+
+            var Vstorage_place = from c in fixedDataSet.storage_place where c.storage_place == storage_place_IDC1ComboBox.Text select c;
+            int Istorage_place = 0;
+            foreach (var a in Vstorage_place)
+            {
+                Istorage_place = a.storage_place_ID;
+                break;
+            }
+
+
+            var Vkeeper = from c in fixedDataSet.keeper where c.keeper == keeper_IDC1ComboBox.Text select c;
+            int Ikeeper = 0;
+            foreach (var a in Vkeeper)
+            {
+                Ikeeper = a.keeper_ID;
+                break;
+            }
+
+            int s = (from c in fixedDataSet._fixed where c.affiliated_ID == affiliated_inde && c.department_ID == Idepartment&& c.keeper_ID == Ikeeper && c.storage_place_ID == Istorage_place && c.fixed_ID == i select c).Count();
             if (s > 0)
             {
                 return false;
@@ -92,6 +128,8 @@ namespace Fixed_management
         }
         private void transfer_btn_Click(object sender, RoutedEventArgs e)
         {
+            
+
             Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
             Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter fixedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter();
             fixedTableAdapter.Fill(fixedDataSet._fixed);
@@ -99,6 +137,7 @@ namespace Fixed_management
             if (checknull())
             {
                 checkmultitable();
+
 
 
                 for (int i = 0; i < fixednameDataGrid.Items.Count; i++)
@@ -117,28 +156,69 @@ namespace Fixed_management
                         old_department = mySelectedElement.Row[29].ToString();
                         old_keeper = mySelectedElement.Row[22].ToString();
                         old_storage_place = mySelectedElement.Row[31].ToString();
+
+
+                        var affiliated = from c in fixedDataSet.affiliated where c.affiliated == affiliated_IDC1ComboBox.Text select c;
+                        int affiliated_inde = 0;
+                        foreach (var a in affiliated)
+                        {
+                            affiliated_inde = a.affiliated_ID;
+                            break;
+                        }
+
+                        var Vdepartment = from c in fixedDataSet.department where c.department == department_IDC1ComboBox.Text select c;
+                        int Idepartment = 0;
+                        foreach (var a in Vdepartment)
+                        {
+                            Idepartment = a.department_ID;
+                            break;
+                        }
+
+                        var Vstorage_place = from c in fixedDataSet.storage_place where c.storage_place == storage_place_IDC1ComboBox.Text select c;
+                        int Istorage_place = 0;
+                        foreach (var a in Vstorage_place)
+                        {
+                            Istorage_place = a.storage_place_ID;
+                            break;
+                        }
+
+
+                        var Vkeeper = from c in fixedDataSet.keeper where c.keeper == keeper_IDC1ComboBox.Text select c;
+                        int Ikeeper = 0;
+                        foreach (var a in Vkeeper)
+                        {
+                            Ikeeper = a.keeper_ID;
+                            break;
+                        }
+
+
+
                         var t = from c in fixedDataSet._fixed where c.fixed_ID == fixedname_id select c;
                         foreach (var n in t)
                         {
-                            n.affiliated_ID = int.Parse(affiliated_IDC1ComboBox.SelectedValue.ToString());
-                            n.department_ID = int.Parse(department_IDC1ComboBox.SelectedValue.ToString());
-                            n.keeper_ID = int.Parse(keeper_IDC1ComboBox.SelectedValue.ToString());
-                            n.storage_place_ID = int.Parse(storage_place_IDC1ComboBox.SelectedValue.ToString());
+                           
+                            n.affiliated_ID = affiliated_inde;
+                            n.department_ID = Idepartment;
+                            n.keeper_ID = Ikeeper;
+                            n.storage_place_ID = Istorage_place;
                         }
                         transfer_detail();
                     }
-
+                    fixedTableAdapter.Update(fixedDataSet._fixed);
+                    fixedDataSet._fixed.AcceptChanges();
 
                 }
-                fixedTableAdapter.Update(fixedDataSet._fixed);
-                fixedDataSet._fixed.AcceptChanges();
+              
 
                 Fixed_management.FixedDataSetTableAdapters.fixednameTableAdapter fixednameTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixednameTableAdapter();
+                fixedDataSet.fixedname.AcceptChanges();
                 fixednameTableAdapter.Fill(fixedDataSet.fixedname);
 
                 //transfer_detail();
 
             }
+              
+
         }
 
         private bool checknull()
@@ -182,18 +262,21 @@ namespace Fixed_management
         {
             Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
             Fixed_management.FixedDataSetTableAdapters.transfer_detailTableAdapter transfer_detailTableAdapter = new Fixed_management.FixedDataSetTableAdapters.transfer_detailTableAdapter();
-            transfer_detailTableAdapter.Fill(fixedDataSet.transfer_detail);
+            
 
             //DateTime s = DateTime.Parse(transfer_dateDatePicker.Text);
 
             fixedDataSet.transfer_detail.Addtransfer_detailRow(DateTime.Parse(transfer_dateDatePicker.Text), barcode, old_unit, old_department, old_keeper, old_storage_place, affiliated_IDC1ComboBox.Text, department_IDC1ComboBox.Text, keeper_IDC1ComboBox.Text, storage_place_IDC1ComboBox.Text);
             transfer_detailTableAdapter.Update(fixedDataSet.transfer_detail);
             fixedDataSet.transfer_detail.AcceptChanges();
+            transfer_detailTableAdapter.Fill(fixedDataSet.transfer_detail);
 
         }
 
         private void checkmultitable()
         {
+          
+
             Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
             Fixed_management.FixedDataSetTableAdapters.affiliatedTableAdapter fixedDataSetaffiliatedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.affiliatedTableAdapter();
             fixedDataSetaffiliatedTableAdapter.Fill(fixedDataSet.affiliated);
@@ -220,7 +303,6 @@ namespace Fixed_management
             //transfer_detailTableAdapter.Fill(fixedDataSet.transfer_detail);
             //System.Windows.Data.CollectionViewSource transfer_detailViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("transfer_detailViewSource")));
             //transfer_detailViewSource.View.MoveCurrentToLast();
-         
 
 
 
@@ -233,13 +315,16 @@ namespace Fixed_management
             {
                 fixedDataSet.affiliated.AddaffiliatedRow(1, affiliated_IDC1ComboBox.Text);
                 fixedDataSetaffiliatedTableAdapter.Update(fixedDataSet.affiliated);
+                fixedDataSet.affiliated.AcceptChanges();
                 fixedDataSetaffiliatedTableAdapter.Fill(fixedDataSet.affiliated);
-                affiliatedViewSource.View.MoveCurrentToLast();
+               
+              
             }
             if (department == 0)
             {
                 fixedDataSet.department.AdddepartmentRow(1, department_IDC1ComboBox.Text);
                 fixedDataSetdepartmentTableAdapter.Update(fixedDataSet.department);
+                fixedDataSet.department.AcceptChanges();
                 fixedDataSetdepartmentTableAdapter.Fill(fixedDataSet.department);
                 departmentViewSource.View.MoveCurrentToLast();
             }
@@ -247,6 +332,7 @@ namespace Fixed_management
             {
                 fixedDataSet.keeper.AddkeeperRow(keeper_IDC1ComboBox.Text);
                 fixedDataSetkeeperTableAdapter.Update(fixedDataSet.keeper);
+                fixedDataSet.keeper.AcceptChanges();
                 fixedDataSetkeeperTableAdapter.Fill(fixedDataSet.keeper);
                 keeperViewSource.View.MoveCurrentToLast();
             }
@@ -255,10 +341,18 @@ namespace Fixed_management
             {
                 fixedDataSet.storage_place.Addstorage_placeRow(storage_place_IDC1ComboBox.Text);
                 fixedDataSetstorage_placeTableAdapter.Update(fixedDataSet.storage_place);
+                fixedDataSet.storage_place.AcceptChanges();
                 fixedDataSetstorage_placeTableAdapter.Fill(fixedDataSet.storage_place);
                 storage_placeViewSource.View.MoveCurrentToLast();
             }
 
+
+           
+        }
+
+        private void transfer_select_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
 
     }

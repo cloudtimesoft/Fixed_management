@@ -27,12 +27,11 @@
     <Grid Width="800">
 
         <Label Content="资产条码:" Height="28" HorizontalAlignment="Left" Name="barcode_lab" VerticalAlignment="Top" Width="62" FontWeight="Bold" Margin="31,20,0,0" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="99,20,0,0" Name="barcode" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="99,20,0,0" Name="barcode" VerticalAlignment="Top" Width="120"  LostKeyboardFocus="barcode_LostKeyboardFocus" />
        
       
         <Label Content="资产性质:" Height="28" HorizontalAlignment="Left" Margin="300,20,0,0" Name="label2" VerticalAlignment="Top" Width="62" FontWeight="Bold" />
         <c1:C1ComboBox Height="28" DataContext="{StaticResource natureViewSource}" SelectedValuePath="nature_ID" DisplayMemberPath="nature"  ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="363,20,0,0" Name="natureC1ComboBox" VerticalAlignment="Top" IsEditable="True" Width="120" />
-        <Button Content="增加资产" Height="28" HorizontalAlignment="Left" Margin="618,465,0,0" Name="fixed_add" VerticalAlignment="Top" Width="75" Click="fixed_add_Click" />
         <Label Content="资产类别:" Height="28" HorizontalAlignment="Left" Margin="548,20,0,0" Name="label3" VerticalAlignment="Top" Width="62" FontWeight="Bold" />
         <c1:C1ComboBox Height="28" DataContext="{StaticResource categoryViewSource}" SelectedValuePath="category_ID" DisplayMemberPath="category"  ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="618,20,0,0" Name="categoryC1ComboBox" VerticalAlignment="Top" IsEditable="True" Width="120" />
         <Label Height="28" HorizontalAlignment="Left" Margin="31,65,0,0" Name="label4" VerticalAlignment="Top" Width="62" Content="资产名称:" FontWeight="Bold" />
@@ -96,9 +95,9 @@
         
         
         
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="363,110,0,0" Name="limitTextBox" Text="{Binding Path=limit, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="363,110,0,0" Name="limitTextBox" Text="{Binding Path=limit, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="120" PreviewTextInput="limitTextBox_PreviewTextInput" />
         <c1:C1ComboBox DataContext="{StaticResource purchase_wayViewSource}" SelectedValuePath="purchase_way_ID" DisplayMemberPath="purchase_way" Height="28" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="618,110,0,0" Name="purchase_way_IDC1ComboBox" VerticalAlignment="Top" Width="120" IsEditable="True" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="99,155,0,0" Name="fixed_numberTextBox" Text="{Binding Path=fixed_number, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="99,155,0,0" Name="fixed_numberTextBox" Text="{Binding Path=fixed_number, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="120" PreviewTextInput="limitTextBox_PreviewTextInput" />
         <c1:C1ComboBox DataContext="{StaticResource unitViewSource}" SelectedValuePath="unit_ID" DisplayMemberPath="unit" Height="28" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="363,155,0,0" Name="unit_IDC1ComboBox" VerticalAlignment="Top" Width="120" IsEditable="True" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="618,155,0,0" Name="fixed_valeTextBox" Text="{Binding Path=fixed_vale, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="120" />
         <c1:C1ComboBox DataContext="{StaticResource affiliatedViewSource}" SelectedValuePath="affiliated_ID" DisplayMemberPath="affiliated" Height="28" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="99,200,62,0" Name="affiliated_IDC1ComboBox" VerticalAlignment="Top" Width="120" IsEditable="True" />
@@ -118,7 +117,7 @@
         <TextBox Height="28" HorizontalAlignment="Left" Margin="368,380,0,0" Name="fixed_assetTextBox" Text="{Binding Path=fixed_asset, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="120" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="618,380,0,0" Name="card_numberTextBox" Text="{Binding Path=card_number, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="120" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="99,425,0,0" Name="contentTextBox" Text="{Binding Path=content, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="600" />
-      
-        
+        <Button Content="auto" Height="23" HorizontalAlignment="Left" Margin="225,19,0,0" Name="bar_auto" VerticalAlignment="Top" Width="40" Click="bar_auto_Click" />
+        <Button Content="增加资产" Height="28" HorizontalAlignment="Left" Margin="618,465,0,0" Name="fixed_add" VerticalAlignment="Top" Width="75" Click="fixed_add_Click" />
     </Grid>
 </UserControl>

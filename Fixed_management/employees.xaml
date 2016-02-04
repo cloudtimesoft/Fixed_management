@@ -13,8 +13,8 @@
         <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="144" HorizontalAlignment="Left" ItemsSource="{Binding}" Name="employeesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="700">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="employees_IDColumn" Binding="{Binding Path=employees_ID}" Header="employees ID" Width="SizeToHeader" Visibility="Hidden" />
-                <DataGridTextColumn x:Name="numberColumn" Binding="{Binding Path=number}" Header="number" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="em_nameColumn" Binding="{Binding Path=em_name}" Header="em name" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="numberColumn" Binding="{Binding Path=number}" Header="员工编号" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="em_nameColumn" Binding="{Binding Path=em_name}" Header="姓名" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="passwordColumn" Binding="{Binding Path=password}" Header="password" Width="SizeToHeader" Visibility="Hidden" />
                 <DataGridTextColumn x:Name="confirm_passwordColumn" Binding="{Binding Path=confirm_password}" Header="confirm password" Width="SizeToHeader" Visibility="Hidden" />
                 <DataGridTextColumn x:Name="sexColumn" Binding="{Binding Path=sex}" Header="sex" Width="SizeToHeader" Visibility="Hidden" />

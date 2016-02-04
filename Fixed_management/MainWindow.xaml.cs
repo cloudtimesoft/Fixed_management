@@ -92,6 +92,7 @@ where T : DependencyObject
                 fixedadd newfixedadd = new fixedadd();
                 newfixedadd.Name = "newfixedadd";
                 newfixed.Content = newfixedadd;
+                
 
             }
 
@@ -162,7 +163,7 @@ where T : DependencyObject
             StackPanel newstack = new StackPanel();
             newstack.Opacity = 0.65;
             newstack.Height = 28;
-           // newstack.Background = Brushes.Red;
+            // newstack.Background = Brushes.Red;
             newstack.VerticalAlignment = VerticalAlignment.Bottom;
 
             TextBlock newtextblock = new TextBlock();
@@ -170,12 +171,13 @@ where T : DependencyObject
             newtextblock.Height = 28;
             newtextblock.FontSize = 20;
             newtextblock.Margin = new Thickness(200, 0, 0, 0);
-            newtextblock.Text ="当前登录  ：" +user;
+            newtextblock.Text = "当前登录  ：" + user;
             newstack.Children.Add(newtextblock);
             mainwindow.Children.Add(newstack);
 
 
             permissions();
+
 
 
 
@@ -338,7 +340,7 @@ where T : DependencyObject
             {
                 foreach (var t in mainpanel.Children)
                 {
-                    if (t.Title == "资产转移")
+                    if (t.Title == "有效资产")
                     {
                         t.IsActive = true;
                         break;
@@ -349,7 +351,7 @@ where T : DependencyObject
             {
                 Effective newEffective = new Effective();
                 LayoutDocument newreport = new LayoutDocument();
-                newreport.Title = "资产转移";
+                newreport.Title = "有效资产";
                 newreport.IsActive = true;
                 newreport.Content = newEffective;
                 newEffective.Name = "newEffective";
@@ -357,5 +359,185 @@ where T : DependencyObject
             }
 
         }
+
+        private void transfer_information_Click(object sender, RoutedEventArgs e)
+        {
+            Transfer_info findfix = MainWindow.FindChild<Transfer_info>(Application.Current.MainWindow, "transferinfo");
+            if (findfix != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "转移信息")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Transfer_info transferinfo = new Transfer_info();
+                LayoutDocument newreport = new LayoutDocument();
+                newreport.Title = "转移信息";
+                newreport.IsActive = true;
+                newreport.Content = transferinfo;
+                transferinfo.Name = "newEffective";
+                mainpanel.Children.Add(newreport);
+            }
+        }
+
+
+        private void fix_outtool_Click(object sender, RoutedEventArgs e)
+        {
+            Exit_assets findfix = MainWindow.FindChild<Exit_assets>(Application.Current.MainWindow, "Exit_assets");
+            if (findfix != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "资产退出")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Exit_assets exit_assets = new Exit_assets();
+                LayoutDocument newreport = new LayoutDocument();
+                newreport.Title = "资产退出";
+                newreport.IsActive = true;
+                newreport.Content = exit_assets;
+                exit_assets.Name = "Exit_assets";
+                mainpanel.Children.Add(newreport);
+            }
+        }
+
+        private void exit_fixtool_Click(object sender, RoutedEventArgs e)
+        {
+            Exit_query findfix = MainWindow.FindChild<Exit_query>(Application.Current.MainWindow, "Exit_query");
+            if (findfix != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "退出资产")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Exit_query exit_query = new Exit_query();
+                LayoutDocument newreport = new LayoutDocument();
+                newreport.Title = "退出资产";
+                newreport.IsActive = true;
+                newreport.Content = exit_query;
+                exit_query.Name = "Exit_query";
+                mainpanel.Children.Add(newreport);
+            }
+        }
+
+        private void fix_deltool_Click(object sender, RoutedEventArgs e)
+        {
+            Delete_assets findfix = MainWindow.FindChild<Delete_assets>(Application.Current.MainWindow, "Delete_assets");
+            if (findfix != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "资产删除")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Delete_assets delete_assets = new Delete_assets();
+                LayoutDocument newreport = new LayoutDocument();
+                newreport.Title = "资产删除";
+                newreport.IsActive = true;
+                newreport.Content = delete_assets;
+                delete_assets.Name = "Delete_assets";
+                mainpanel.Children.Add(newreport);
+            }
+        }
+
+        private void del_fixtool_Click(object sender, RoutedEventArgs e)
+        {
+            Delete_query findfix = MainWindow.FindChild<Delete_query>(Application.Current.MainWindow, "Delete_query");
+            if (findfix != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "删除资产")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Delete_query Delete_query = new Delete_query();
+                LayoutDocument newreport = new LayoutDocument();
+                newreport.Title = "删除资产";
+                newreport.IsActive = true;
+                newreport.Content = Delete_query;
+                Delete_query.Name = "Delete_query";
+                mainpanel.Children.Add(newreport);
+            }
+        }
+
+        private void Toolbar_loaded(object sender, RoutedEventArgs e)
+        {
+            ToolBar toolBar = sender as ToolBar;
+            var overflowGrid = toolBar.Template.FindName("OverflowGrid", toolBar) as FrameworkElement;
+            if(overflowGrid != null)
+            {
+                overflowGrid.Visibility = Visibility.Collapsed;
+            }
+     
+            var mainPanelBorder = toolBar.Template.FindName("MainPanelBorder", toolBar) as FrameworkElement;
+            if(mainPanelBorder != null)
+            {
+                mainPanelBorder.Margin = new Thickness(0);
+            }
+        }
+
+        private void shutdown_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
+
+        private void fix_inventorytool_Click(object sender, RoutedEventArgs e)
+        {
+            Check findfix = MainWindow.FindChild<Check>(Application.Current.MainWindow, "Check");
+            if (findfix != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "资产盘点")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Check check = new Check();
+                LayoutDocument newreport = new LayoutDocument();
+                newreport.Title = "资产盘点";
+                newreport.IsActive = true;
+                newreport.Content = check;
+                check.Name = "Check";
+                mainpanel.Children.Add(newreport);
+            }
+        }
+
+
     }
 }

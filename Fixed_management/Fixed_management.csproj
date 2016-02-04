@@ -35,6 +35,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="C1.WPF.4, Version=4.0.20151.455, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce" />
     <Reference Include="System" />
@@ -64,8 +73,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Check.xaml.cs">
+      <DependentUpon>Check.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Delete_assets.xaml.cs">
+      <DependentUpon>Delete_assets.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Delete_query.xaml.cs">
+      <DependentUpon>Delete_query.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Effective.xaml.cs">
       <DependentUpon>Effective.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exit_assets.xaml.cs">
+      <DependentUpon>Exit_assets.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exit_query.xaml.cs">
+      <DependentUpon>Exit_query.xaml</DependentUpon>
     </Compile>
     <Compile Include="FixedDataSet.cs">
       <DependentUpon>FixedDataSet.xsd</DependentUpon>
@@ -78,8 +102,8 @@
     <Compile Include="transfer.xaml.cs">
       <DependentUpon>transfer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Transfer_Fixed.xaml.cs">
-      <DependentUpon>Transfer_Fixed.xaml</DependentUpon>
+    <Compile Include="Transfer_info.xaml.cs">
+      <DependentUpon>Transfer_info.xaml</DependentUpon>
     </Compile>
     <Compile Include="userdetail.xaml.cs">
       <DependentUpon>userdetail.xaml</DependentUpon>
@@ -87,11 +111,31 @@
     <Compile Include="Userlist.xaml.cs">
       <DependentUpon>Userlist.xaml</DependentUpon>
     </Compile>
+    <Page Include="Check.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Delete_assets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Delete_query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Effective.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="employees.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exit_assets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exit_query.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,7 +178,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Transfer_Fixed.xaml">
+    <Page Include="Transfer_info.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,6 +225,7 @@
     <None Include="FixedDataSet.xss">
       <DependentUpon>FixedDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -188,12 +233,15 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="image\search.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Fixed.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="image\资产盘点.png" />
+    <Resource Include="image\转移明细.png" />
+    <Resource Include="image\有效资产.png" />
+    <Resource Include="image\标签打印.png" />
+    <Resource Include="image\资产转移.png" />
+    <Resource Include="image\资产增加.png" />
     <Resource Include="文档设计.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

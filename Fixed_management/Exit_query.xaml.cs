@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Fixed_management
 {
     /// <summary>
-    /// Transfer_Fixed.xaml 的交互逻辑
+    /// Exit_query.xaml 的交互逻辑
     /// </summary>
-    public partial class Transfer_Fixed : UserControl
+    public partial class Exit_query : UserControl
     {
-        public Transfer_Fixed()
+        public Exit_query()
         {
             InitializeComponent();
         }
@@ -34,6 +34,12 @@ namespace Fixed_management
             // 	System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
             // 	myCollectionViewSource.Source = your data
             // }
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            // 将数据加载到表 nature 中。可以根据需要修改此代码。
+            Fixed_management.FixedDataSetTableAdapters.fixed_exitTableAdapter fixed_exitTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixed_exitTableAdapter();
+            fixed_exitTableAdapter.Fill(fixedDataSet.fixed_exit);
+            System.Windows.Data.CollectionViewSource fixed_exitViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixed_exitViewSource")));
+            fixed_exitViewSource.View.MoveCurrentToFirst();
         }
     }
 }

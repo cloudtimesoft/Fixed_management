@@ -26,6 +26,7 @@ namespace Fixed_management
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            fixednameDataGrid.CanUserAddRows = false;
 
             // 不要在设计时加载数据。
             // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
@@ -41,6 +42,6 @@ namespace Fixed_management
             Fixed_management.FixedDataSetTableAdapters.fixednameTableAdapter fixednameTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixednameTableAdapter();
             fixednameTableAdapter.Fill(fixedDataSet.fixedname);
             System.Windows.Data.CollectionViewSource fixednameViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixednameViewSource")));
-                    }
+          }
     }
 }
