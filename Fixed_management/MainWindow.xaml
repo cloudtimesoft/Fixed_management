@@ -11,9 +11,8 @@
     </Window.Resources>
     <Grid x:Name="mainwindow" DataContext="{StaticResource natureViewSource}">
         <Menu Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="menu1" VerticalAlignment="Top" >
-            <MenuItem Header="系统">
-                <MenuItem Header="登录系统" InputGestureText="Alt+S"></MenuItem>
-                <MenuItem Header="退出系统" InputGestureText="Alt+L"></MenuItem>
+            <MenuItem Header="系统">  
+                <MenuItem Header="注销" InputGestureText="Alt+L" Click="MenuItem_Click_1"></MenuItem>
                 <MenuItem Header="退出(_X)" x:Name="shutdown" InputGestureText="Alt+X" Click="shutdown_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="资产">
@@ -32,8 +31,8 @@
                 <Separator />
                 <MenuItem Header="转移信息" x:Name="transfer_information_tool" IsEnabled="False" Click="transfer_information_Click" ></MenuItem>
                 <Separator />
-                <MenuItem Header="资产分类明细表" x:Name="fixclass_detailtool" IsEnabled="False"  ></MenuItem>
-                <MenuItem Header="资产分类汇总表" x:Name="fixclass_tal" IsEnabled="False"  ></MenuItem>
+                <MenuItem Header="资产分类明细表" x:Name="fixclass_detailtool" IsEnabled="False" Click="fixclass_detailtool_Click"></MenuItem>
+                <MenuItem Header="资产分类汇总表" x:Name="fixclass_tal" IsEnabled="False" Click="fixclass_tal_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="盘点">
                 <MenuItem Header="资产盘点" x:Name="fix_inventorytool" IsEnabled="False" Click="fix_inventorytool_Click"></MenuItem>

@@ -538,6 +538,93 @@ where T : DependencyObject
             }
         }
 
+        private void fixclass_detailtool_Click(object sender, RoutedEventArgs e)
+        {
+            fixed_detal findfix = MainWindow.FindChild<fixed_detal>(Application.Current.MainWindow, "fixed_detal");
+            if (findfix != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "资产分类明细表")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                fixed_detal fixed_detal = new fixed_detal();
+                LayoutDocument newreport = new LayoutDocument();
+                newreport.Title = "资产分类明细表";
+                newreport.IsActive = true;
+                newreport.Content = fixed_detal;
+                fixed_detal.Name = "fixed_detal";
+                mainpanel.Children.Add(newreport);
+            }
+        }
+
+        private void fixclass_tal_Click(object sender, RoutedEventArgs e)
+        {
+            fixed_gather findfix = MainWindow.FindChild<fixed_gather>(Application.Current.MainWindow, "fixed_gather");
+            if (findfix != null)
+            {
+                foreach (var t in mainpanel.Children)
+                {
+                    if (t.Title == "资产分类汇总表")
+                    {
+                        t.IsActive = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                fixed_gather fixed_gather = new fixed_gather();
+                LayoutDocument newreport = new LayoutDocument();
+                newreport.Title = "资产分类汇总表";
+                newreport.IsActive = true;
+                newreport.Content = fixed_gather;
+                fixed_gather.Name = "fixed_gather";
+                mainpanel.Children.Add(newreport);
+            }
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            Login login = new Login();
+            login.Show();
+            this.Close();
+
+        }
+
+        //private void login_Click(object sender, RoutedEventArgs e)
+        //{
+            //Login findfix = MainWindow.FindChild<Login>(Application.Current.MainWindow, "Login");
+            //if (findfix != null)
+            //{
+            //    foreach (var t in mainpanel.Children)
+            //    {
+            //        if (t.Title == "登录系统")
+            //        {
+            //            t.IsActive = true;
+            //            break;
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    Login Login = new Login();
+            //    LayoutDocument newreport = new LayoutDocument();
+            //    newreport.Title = "登录系统";
+            //    newreport.IsActive = true;
+            //    newreport.Content = Login;
+            //    Login.Name = "Login";
+            //    mainpanel.Children.Add(newreport);
+        //    }
+        //}
+
 
     }
 }

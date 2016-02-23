@@ -95,6 +95,12 @@
       <DependentUpon>FixedDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="fixed_detal.xaml.cs">
+      <DependentUpon>fixed_detal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="fixed_gather.xaml.cs">
+      <DependentUpon>fixed_gather.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -140,6 +146,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="fixedadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="fixed_detal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="fixed_gather.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

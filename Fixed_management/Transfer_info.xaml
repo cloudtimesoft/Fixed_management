@@ -13,7 +13,7 @@
     </UserControl.Resources>
     <Grid DataContext="{StaticResource transfer_detailViewSource}">
         <Button Content="还原信息转移" Height="23" HorizontalAlignment="Left" Margin="32,12,0,0" Name="reductive_transfer" VerticalAlignment="Top" Width="80" Click="reductive_transfer_Click" />
-        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,69,0,0" Name="transfer_detailDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto" Height="Auto">
+        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,50,0,0" Name="transfer_detailDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto">
             <DataGrid.Columns>
                 <DataGridTemplateColumn >
                     <DataGridTemplateColumn.CellTemplate>
@@ -30,8 +30,8 @@
                 <DataGridTextColumn x:Name="old_keeperColumn" Binding="{Binding Path=old_keeper}" Header="原保管人" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="old_storage_placeColumn" Binding="{Binding Path=old_storage_place}" Header="原存放地点" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="new_affiliatedColumn" Binding="{Binding Path=new_affiliated}" Header="新所属单位" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="new_departmentColumn" Binding="{Binding Path=new_department}" Header="新保管单位" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="_new_keeperColumn" Binding="{Binding Path=new-keeper}" Header="新保管人" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="new_departmentColumn" Binding="{Binding Path=new_department}" Header="新保管部门" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="new_keeperColumn" Binding="{Binding Path=new-keeper}" Header="新保管人" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="new_storage_placeColumn" Binding="{Binding Path=new_storage_place}" Header="新存放地点" Width="SizeToHeader" />
             </DataGrid.Columns>
         </DataGrid>

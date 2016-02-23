@@ -67,5 +67,33 @@
         </ColumnUISetting>
       </ColumnUISettings>
     </TableUISetting>
+    <TableUISetting Name="fixed_exit">
+      <ColumnUISettings>
+        <ColumnUISetting Name="purchase_date">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows:WPF" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+              <BindableControlInfo Name="TextBox" Type="System.Windows.Controls.TextBox" AssemblyName="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+            </ControlSetting></ControlSettings>
+        </ColumnUISetting>
+        <ColumnUISetting Name="billing_date">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows:WPF" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+              <BindableControlInfo Name="TextBox" Type="System.Windows.Controls.TextBox" AssemblyName="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+            </ControlSetting></ControlSettings>
+        </ColumnUISetting>
+        <ColumnUISetting Name="exit_date">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows:WPF" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+              <BindableControlInfo Name="TextBox" Type="System.Windows.Controls.TextBox" AssemblyName="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+            </ControlSetting></ControlSettings>
+        </ColumnUISetting>
+      </ColumnUISettings>
+    </TableUISetting>
+    <TableUISetting Name="transfer_detail">
+      <ColumnUISettings>
+        <ColumnUISetting Name="transfer_date">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows:WPF" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+              <BindableControlInfo Name="TextBox" Type="System.Windows.Controls.TextBox" AssemblyName="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+            </ControlSetting></ControlSettings>
+        </ColumnUISetting>
+      </ColumnUISettings>
+    </TableUISetting>
   </TableUISettings>
 </DataSetUISetting>

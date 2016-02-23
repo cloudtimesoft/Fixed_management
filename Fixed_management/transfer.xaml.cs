@@ -26,7 +26,7 @@ namespace Fixed_management
             InitializeComponent();
         }
         string barcode;
-        string old_unit;
+        string old_affiliated;
         string old_department;
         string old_keeper;
         string old_storage_place;
@@ -81,11 +81,11 @@ namespace Fixed_management
             fixedTableAdapter.Fill(fixedDataSet._fixed);
 
 
-            var affiliated = from c in fixedDataSet.affiliated where c.affiliated == affiliated_IDC1ComboBox.Text select c;
-            int affiliated_inde = 0;
-            foreach (var a in affiliated)
+            var Vaffiliated = from c in fixedDataSet.affiliated where c.affiliated == affiliated_IDC1ComboBox.Text select c;
+            int Iaffiliated = 0;
+            foreach (var a in Vaffiliated)
             {
-                affiliated_inde = a.affiliated_ID;
+                Iaffiliated = a.affiliated_ID;
                 break;
             }
 
@@ -115,7 +115,7 @@ namespace Fixed_management
                 break;
             }
 
-            int s = (from c in fixedDataSet._fixed where c.affiliated_ID == affiliated_inde && c.department_ID == Idepartment&& c.keeper_ID == Ikeeper && c.storage_place_ID == Istorage_place && c.fixed_ID == i select c).Count();
+            int s = (from c in fixedDataSet._fixed where c.affiliated_ID == Iaffiliated && c.department_ID == Idepartment && c.keeper_ID == Ikeeper && c.storage_place_ID == Istorage_place && c.fixed_ID == i select c).Count();
             if (s > 0)
             {
                 return false;
@@ -152,17 +152,17 @@ namespace Fixed_management
                         
 
                         barcode = mySelectedElement.Row[0].ToString();
-                        old_unit = mySelectedElement.Row[28].ToString();
+                        old_affiliated = mySelectedElement.Row[28].ToString();
                         old_department = mySelectedElement.Row[29].ToString();
                         old_keeper = mySelectedElement.Row[22].ToString();
                         old_storage_place = mySelectedElement.Row[31].ToString();
 
 
-                        var affiliated = from c in fixedDataSet.affiliated where c.affiliated == affiliated_IDC1ComboBox.Text select c;
-                        int affiliated_inde = 0;
-                        foreach (var a in affiliated)
+                        var Vaffiliated = from c in fixedDataSet.affiliated where c.affiliated == affiliated_IDC1ComboBox.Text select c;
+                        int Iaffiliated = 0;
+                        foreach (var a in Vaffiliated)
                         {
-                            affiliated_inde = a.affiliated_ID;
+                            Iaffiliated = a.affiliated_ID;
                             break;
                         }
 
@@ -197,7 +197,7 @@ namespace Fixed_management
                         foreach (var n in t)
                         {
                            
-                            n.affiliated_ID = affiliated_inde;
+                            n.affiliated_ID = Iaffiliated;
                             n.department_ID = Idepartment;
                             n.keeper_ID = Ikeeper;
                             n.storage_place_ID = Istorage_place;
@@ -266,7 +266,7 @@ namespace Fixed_management
 
             //DateTime s = DateTime.Parse(transfer_dateDatePicker.Text);
 
-            fixedDataSet.transfer_detail.Addtransfer_detailRow(DateTime.Parse(transfer_dateDatePicker.Text), barcode, old_unit, old_department, old_keeper, old_storage_place, affiliated_IDC1ComboBox.Text, department_IDC1ComboBox.Text, keeper_IDC1ComboBox.Text, storage_place_IDC1ComboBox.Text);
+            fixedDataSet.transfer_detail.Addtransfer_detailRow(DateTime.Parse(transfer_dateDatePicker.Text), barcode, old_affiliated, old_department, old_keeper, old_storage_place, affiliated_IDC1ComboBox.Text, department_IDC1ComboBox.Text, keeper_IDC1ComboBox.Text, storage_place_IDC1ComboBox.Text);
             transfer_detailTableAdapter.Update(fixedDataSet.transfer_detail);
             fixedDataSet.transfer_detail.AcceptChanges();
             transfer_detailTableAdapter.Fill(fixedDataSet.transfer_detail);
@@ -317,7 +317,7 @@ namespace Fixed_management
                 fixedDataSetaffiliatedTableAdapter.Update(fixedDataSet.affiliated);
                 fixedDataSet.affiliated.AcceptChanges();
                 fixedDataSetaffiliatedTableAdapter.Fill(fixedDataSet.affiliated);
-               
+                affiliatedViewSource.View.MoveCurrentToLast();
               
             }
             if (department == 0)

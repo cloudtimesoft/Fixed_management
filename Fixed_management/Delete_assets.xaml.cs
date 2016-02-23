@@ -55,7 +55,7 @@ namespace Fixed_management
                 FrameworkElement s = fixed_delDataGrid.Columns[0].GetCellContent(fixed_delDataGrid.Items[i]);
                 CheckBox tbOper = templeColumn.CellTemplate.FindName("checkbox", s) as CheckBox;
                 DataRowView mySelectedElement = (DataRowView)fixed_delDataGrid.Items[i];
-                int fixed_del_id = int.Parse(mySelectedElement.Row[32].ToString());
+                int fixed_del_id = int.Parse(mySelectedElement.Row[31].ToString());
                 if ((bool)tbOper.IsChecked)
                 {
                     var Vdel_status = from c in fixedDataSet._fixed where c.fixed_ID == fixed_del_id select c;

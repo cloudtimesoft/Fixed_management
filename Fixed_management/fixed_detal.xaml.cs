@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Fixed_management
 {
     /// <summary>
-    /// Exit_query.xaml 的交互逻辑
+    /// fixed_detal.xaml 的交互逻辑
     /// </summary>
-    public partial class Exit_query : UserControl
+    public partial class fixed_detal : UserControl
     {
-        public Exit_query()
+        public fixed_detal()
         {
             InitializeComponent();
         }
@@ -34,18 +34,14 @@ namespace Fixed_management
             // 	System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
             // 	myCollectionViewSource.Source = your data
             // }
+
             Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
             // 将数据加载到表 nature 中。可以根据需要修改此代码。
-            Fixed_management.FixedDataSetTableAdapters.fixed_exitTableAdapter fixed_exitTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixed_exitTableAdapter();
-            fixed_exitTableAdapter.Fill(fixedDataSet.fixed_exit);
-            System.Windows.Data.CollectionViewSource fixed_exitViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixed_exitViewSource")));
-            fixed_exitViewSource.View.MoveCurrentToFirst();
+            Fixed_management.FixedDataSetTableAdapters.fixed_detalTableAdapter fixed_detalTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixed_detalTableAdapter();
+            fixed_detalTableAdapter.Fill(fixedDataSet.fixed_detal);
+            System.Windows.Data.CollectionViewSource fixed_detalViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixed_detalViewSource")));
 
-            fixed_exitDataGrid.CanUserAddRows = false;
-
-            Fixed_management.FixedDataSetTableAdapters.fixed_exitTableAdapter fixednameTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixed_exitTableAdapter();
-            fixedDataSet.fixed_exit.AcceptChanges();
-            fixed_exitTableAdapter.Fill(fixedDataSet.fixed_exit);
+            fixed_detalDataGrid.CanUserAddRows = false;
         }
     }
 }

@@ -137,10 +137,10 @@ namespace Fixed_management
             System.Windows.Data.CollectionViewSource positionViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("positionViewSource")));
             positionViewSource.View.MoveCurrentToLast();
 
-            Fixed_management.FixedDataSetTableAdapters.fixed_statuTableAdapter fixedDataSetfixed_statuTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixed_statuTableAdapter();
-            fixedDataSetfixed_statuTableAdapter.Fill(fixedDataSet.fixed_statu);
-            System.Windows.Data.CollectionViewSource fixed_statuViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixed_statuViewSource")));
-            fixed_statuViewSource.View.MoveCurrentToLast();
+            Fixed_management.FixedDataSetTableAdapters.fixed_statusTableAdapter fixedDataSetfixed_statusTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixed_statusTableAdapter();
+            fixedDataSetfixed_statusTableAdapter.Fill(fixedDataSet.fixed_status);
+            System.Windows.Data.CollectionViewSource fixed_statusViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixed_statusViewSource")));
+            fixed_statusViewSource.View.MoveCurrentToLast();
 
             Fixed_management.FixedDataSetTableAdapters.storage_placeTableAdapter fixedDataSetstorage_placeTableAdapter = new Fixed_management.FixedDataSetTableAdapters.storage_placeTableAdapter();
             fixedDataSetstorage_placeTableAdapter.Fill(fixedDataSet.storage_place);
@@ -208,8 +208,8 @@ namespace Fixed_management
             Fixed_management.FixedDataSetTableAdapters.positionTableAdapter fixedDataSetpositionTableAdapter = new Fixed_management.FixedDataSetTableAdapters.positionTableAdapter();
             System.Windows.Data.CollectionViewSource positionViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("positionViewSource")));
 
-            Fixed_management.FixedDataSetTableAdapters.fixed_statuTableAdapter fixedDataSetfixed_statuTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixed_statuTableAdapter();
-            System.Windows.Data.CollectionViewSource fixed_statusViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixed_statuViewSource")));
+            Fixed_management.FixedDataSetTableAdapters.fixed_statusTableAdapter fixedDataSetfixed_statusTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixed_statusTableAdapter();
+            System.Windows.Data.CollectionViewSource fixed_statusViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("fixed_statusViewSource")));
 
             Fixed_management.FixedDataSetTableAdapters.storage_placeTableAdapter fixedDataSetstorage_placeTableAdapter = new Fixed_management.FixedDataSetTableAdapters.storage_placeTableAdapter();
             System.Windows.Data.CollectionViewSource storage_placeViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("storage_placeViewSource")));
@@ -233,7 +233,7 @@ namespace Fixed_management
             var keeper = (from c in fixedDataSet.keeper where c.keeper == keeper_IDC1ComboBox.Text select c).Count();
             var supplier = (from c in fixedDataSet.supplier where c.supplier == supplier_IDC1ComboBox.Text select c).Count();
             var position = (from c in fixedDataSet.position where c.position == position_IDC1ComboBox.Text select c).Count();
-            var fixed_statu = (from c in fixedDataSet.fixed_statu where c.fixed_statu == fixed_statu_IDC1ComboBox.Text select c).Count();
+            var fixed_status = (from c in fixedDataSet.fixed_status where c.fixed_status == fixed_status_IDC1ComboBox.Text select c).Count();
             var storage_place = (from c in fixedDataSet.storage_place where c.storage_place == storage_place_IDC1ComboBox.Text select c).Count();
             var affiliated = (from c in fixedDataSet.affiliated where c.affiliated == affiliated_IDC1ComboBox.Text select c).Count();
             var department = (from c in fixedDataSet.department where c.department == department_IDC1ComboBox.Text select c).Count();
@@ -310,11 +310,11 @@ namespace Fixed_management
                 fixedDataSetpositionTableAdapter.Fill(fixedDataSet.position);
                 positionViewSource.View.MoveCurrentToLast();
             }
-            if (fixed_statu == 0)
+            if (fixed_status == 0)
             {
-                fixedDataSet.fixed_statu.Addfixed_statuRow(fixed_statu_IDC1ComboBox.Text);
-                fixedDataSetfixed_statuTableAdapter.Update(fixedDataSet.fixed_statu);
-                fixedDataSetfixed_statuTableAdapter.Fill(fixedDataSet.fixed_statu);
+                fixedDataSet.fixed_status.Addfixed_statusRow(fixed_status_IDC1ComboBox.Text);
+                fixedDataSetfixed_statusTableAdapter.Update(fixedDataSet.fixed_status);
+                fixedDataSetfixed_statusTableAdapter.Fill(fixedDataSet.fixed_status);
                 fixed_statusViewSource.View.MoveCurrentToLast();
             }
             if (storage_place == 0)
@@ -414,7 +414,7 @@ namespace Fixed_management
                 check_status = false;
                 status_err += "所在位置 ";
             }
-            if (fixed_statu_IDC1ComboBox.Text == null)
+            if (fixed_status_IDC1ComboBox.Text == null)
             {
                 check_status = false;
                 status_err += "资产状态 ";
@@ -437,6 +437,7 @@ namespace Fixed_management
 
         private void fixed_add_Click(object sender, RoutedEventArgs e)
         {
+
             Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
             Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter fixedDataSetfixedTableAdapter = new Fixed_management.FixedDataSetTableAdapters.fixedTableAdapter();
             if (checknull())
@@ -541,11 +542,11 @@ namespace Fixed_management
                 Iposition = s.position_ID;
                 break;
             }
-            var Vfixed_statu = from c in fixedDataSet.fixed_statu where c.fixed_statu == fixed_statu_IDC1ComboBox.Text select c;
-            int Ifixed_statu = 0;
-            foreach (var s in Vfixed_statu)
+            var Vfixed_status = from c in fixedDataSet.fixed_status where c.fixed_status == fixed_status_IDC1ComboBox.Text select c;
+            int Ifixed_status = 0;
+            foreach (var s in Vfixed_status)
             {
-                Ifixed_statu = s.fixed_statu_ID;
+                Ifixed_status = s.fixed_status_ID;
                 break;
             }
             var Vuser = from c in fixedDataSet.user where c.user == user_IDC1ComboBox.Text select c;
@@ -557,7 +558,7 @@ namespace Fixed_management
             }
 
 
-            fixedDataSet._fixed.AddfixedRow(barcode.Text, Inature, Icategory, Idesignation, Ispecifications, Imodel, DateTime.Now, int.Parse(limitTextBox.Text), Ipurchase_way, int.Parse(fixed_numberTextBox.Text), Iunit, fixed_valeTextBox.Text, Ikeeper, Isupplier, factory_numberTextBox.Text, fixed_encodingTextBox.Text, Istorage_place, Iposition, Ifixed_statu, Iuser, DateTime.Now, int.Parse(warrantyTextBox.Text), account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "1", "1", "", contentTextBox.Text, 1, Iaffiliated, Idepartment, 1, 1,DateTime.Now);
+            fixedDataSet._fixed.AddfixedRow(barcode.Text, Inature, Icategory, Idesignation, Ispecifications, Imodel, DateTime.Now, int.Parse(limitTextBox.Text), Ipurchase_way, int.Parse(fixed_numberTextBox.Text), Iunit, fixed_valeTextBox.Text, Ikeeper, Isupplier, factory_numberTextBox.Text, fixed_encodingTextBox.Text, Istorage_place, Iposition, Ifixed_status, Iuser, DateTime.Now, int.Parse(warrantyTextBox.Text), account_numberTextBox.Text, fixed_assetTextBox.Text, card_numberTextBox.Text, "1", "1", "", contentTextBox.Text, 1, Iaffiliated, Idepartment, 1, 1,DateTime.Now);
             fixedDataSetfixedTableAdapter.Update(fixedDataSet._fixed);
 
 
@@ -640,7 +641,7 @@ namespace Fixed_management
 
         private void buwei(string stringpart, int intpart, int len)
         {
-            string s = stringpart + "0" + intpart;
+            string s = stringpart /* + "0" */ + intpart;
             if (s.Length < bar_befo.Length)
             {
                 buwei(stringpart+"0", intpart, len);

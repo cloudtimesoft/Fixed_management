@@ -62,6 +62,12 @@ namespace Fixed_management
             userdetail newemployees = new userdetail();
             newemployees.Name = "newemployees";
             employeeswindow.Content = newemployees;
+
+
+            //Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            //Fixed_management.FixedDataSetTableAdapters.employeesTableAdapter fixedDataSetemployeesTableAdapter = new Fixed_management.FixedDataSetTableAdapters.employeesTableAdapter();
+            //fixedDataSet.employees.AcceptChanges();
+            //fixedDataSetemployeesTableAdapter.Fill(fixedDataSet.employees);
         }
 
         private void edit_Click(object sender, RoutedEventArgs e)
@@ -84,6 +90,10 @@ namespace Fixed_management
             //Public.user_id = s;
             newemployees.u_id = s;
             employeeswindow.Content = newemployees;
+
+            
+            
+
         }
     }
 }

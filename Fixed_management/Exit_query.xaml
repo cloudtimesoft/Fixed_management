@@ -11,7 +11,7 @@
     </UserControl.Resources>
     <Grid DataContext="{StaticResource fixed_exitViewSource}">
         <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
-        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True"  HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,52,0,0" Name="fixed_exitDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto" Height="Auto">
+        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,52,0,0" Name="fixed_exitDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="barcodeColumn" Binding="{Binding Path=barcode}" Header="资产条码" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="purchase_dateColumn" Binding="{Binding Path=purchase_date}" Header="购置日期" Width="SizeToHeader" />
@@ -38,7 +38,7 @@
                 <DataGridTextColumn x:Name="keeperColumn" Binding="{Binding Path=keeper}" Header="保管人" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="supplierColumn" Binding="{Binding Path=supplier}" Header="供应商" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="positionColumn" Binding="{Binding Path=position}" Header="所在地点" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="fixed_statuColumn" Binding="{Binding Path=fixed_statu}" Header="资产状态" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="fixed_statusColumn" Binding="{Binding Path=fixed_status}" Header="资产状态" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="userColumn" Binding="{Binding Path=user}" Header="使用人" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="_operatorColumn" Binding="{Binding Path=operator}" Header="经办人" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="affiliatedColumn" Binding="{Binding Path=affiliated}" Header="所属单位" Width="SizeToHeader" />

@@ -18,7 +18,7 @@
         <CollectionViewSource x:Key="keeperViewSource" Source="{Binding Path=keeper, Source={StaticResource fixedDataSet}}" />
         <CollectionViewSource x:Key="supplierViewSource" Source="{Binding Path=supplier, Source={StaticResource fixedDataSet}}" />
         <CollectionViewSource x:Key="positionViewSource" Source="{Binding Path=position, Source={StaticResource fixedDataSet}}" />
-        <CollectionViewSource x:Key="fixed_statuViewSource" Source="{Binding Path=fixed_statu, Source={StaticResource fixedDataSet}}" />
+        <CollectionViewSource x:Key="fixed_statusViewSource" Source="{Binding Path=fixed_status, Source={StaticResource fixedDataSet}}" />
         <CollectionViewSource x:Key="storage_placeViewSource" Source="{Binding Path=storage_place, Source={StaticResource fixedDataSet}}" />
         <CollectionViewSource x:Key="affiliatedViewSource" Source="{Binding Path=affiliated, Source={StaticResource fixedDataSet}}" />
         <CollectionViewSource x:Key="departmentViewSource" Source="{Binding Path=department, Source={StaticResource fixedDataSet}}" />
@@ -109,7 +109,7 @@
         <TextBox Height="28" HorizontalAlignment="Left" Margin="618,245,0,0" Name="fixed_encodingTextBox" Text="{Binding Path=fixed_encoding, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="120" />
         <c1:C1ComboBox DataContext="{StaticResource storage_placeViewSource}" SelectedValuePath="storage_place_ID" DisplayMemberPath="storage_place" Height="28" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="99,290,0,0" Name="storage_place_IDC1ComboBox" VerticalAlignment="Top" Width="120" IsEditable="True"/>
         <c1:C1ComboBox DataContext="{StaticResource positionViewSource}" SelectedValuePath="position_ID" DisplayMemberPath="position" Height="28" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="363,290,0,0" Name="position_IDC1ComboBox" VerticalAlignment="Top" Width="120" IsEditable="True" />
-        <c1:C1ComboBox DataContext="{StaticResource fixed_statuViewSource}" SelectedValuePath="fixed_statu_ID" DisplayMemberPath="fixed_statu" Height="28" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="618,290,0,0" Name="fixed_statu_IDC1ComboBox" VerticalAlignment="Top" Width="120" IsEditable="True" />
+        <c1:C1ComboBox DataContext="{StaticResource fixed_statusViewSource}" SelectedValuePath="fixed_status_ID" DisplayMemberPath="fixed_status" Height="28" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="618,290,0,0" Name="fixed_status_IDC1ComboBox" VerticalAlignment="Top" Width="120" IsEditable="True" />
         <c1:C1ComboBox  DataContext="{StaticResource userViewSource}" SelectedValuePath="user_ID" DisplayMemberPath="user" Height="28" HorizontalAlignment="Left" Margin="99,335,0,0" Name="user_IDC1ComboBox" ItemsSource="{Binding}" VerticalAlignment="Top" Width="120" IsEditable="True" />
         <DatePicker Height="28" HorizontalAlignment="Left" Margin="368,335,0,0" Name="billing_dateDatePicker" SelectedDate="{Binding Path=billing_date, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="115" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="618,335,0,0" Name="warrantyTextBox" Text="{Binding Path=warranty, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Top" Width="120" />
