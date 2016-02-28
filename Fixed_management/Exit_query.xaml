@@ -11,6 +11,8 @@
     </UserControl.Resources>
     <Grid DataContext="{StaticResource fixed_exitViewSource}">
         <Button Content="导出" Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="print" VerticalAlignment="Top" Width="75" Click="print_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="704,12,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
+        <Button Content="查询" Height="23" HorizontalAlignment="Left" Margin="849,12,0,0" Name="select" VerticalAlignment="Top" Width="75" Click="select_Click" />
         <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,52,0,0" Name="fixed_exitDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="barcodeColumn" Binding="{Binding Path=barcode}" Header="资产条码" Width="SizeToHeader" />
@@ -45,10 +47,11 @@
                 <DataGridTextColumn x:Name="departmentColumn" Binding="{Binding Path=department}" Header="保管部门" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="wayColumn" Binding="{Binding Path=way}" Header="退出方式" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="storage_placeColumn" Binding="{Binding Path=storage_place}" Header="存放地点" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="fixed_IDColumn" Binding="{Binding Path=fixed_ID}" Header="资产ID" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="fixed_IDColumn" Binding="{Binding Path=fixed_ID}" Header="资产ID" Width="SizeToHeader" Visibility="Hidden" />
                 <DataGridTextColumn x:Name="exit_dateColumn" Binding="{Binding Path=exit_date}" Header="退出日期" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="备注" Width="SizeToHeader" />
             </DataGrid.Columns>
         </DataGrid>
+        
     </Grid>
 </UserControl>

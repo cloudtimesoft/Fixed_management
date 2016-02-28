@@ -173,5 +173,20 @@ namespace Fixed_management
             fixedDataSet.fixedname.AcceptChanges();
             fixednameTableAdapter.Fill(fixedDataSet.fixedname);
         }
+
+        private void exit_select_Click(object sender, RoutedEventArgs e)
+        {
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            if (textBox1.Text != "")
+            {
+                var s = from c in fixedDataSet.fixedname where c.storage_place == textBox1.Text || c.barcode == textBox1.Text || c.limit == int.Parse(textBox1.Text) || c.fixed_number == int.Parse(textBox1.Text) || c.fixed_vale == textBox1.Text || c.factory_number == textBox1.Text || c.fixed_encoding == textBox1.Text || c.warranty == int.Parse(textBox1.Text) || c.account_number == textBox1.Text || c.fixed_asset == textBox1.Text || c.card_number == textBox1.Text || c.nature == textBox1.Text || c.category == textBox1.Text || c.specifications == textBox1.Text || c.designation == textBox1.Text || c.model == textBox1.Text || c.unit == textBox1.Text || c.purchase_way == textBox1.Text || c.keeper == textBox1.Text || c.supplier == textBox1.Text || c.position == textBox1.Text || c.fixed_status == textBox1.Text || c.user == textBox1.Text || c._operator == textBox1.Text || c.affiliated == textBox1.Text || c.department == textBox1.Text || c.content == textBox1.Text select c;
+                fixednameDataGrid.ItemsSource = s;
+            }
+            else
+            {
+                var s = from c in fixedDataSet.fixed_del_query select c;
+                fixednameDataGrid.ItemsSource = s;
+            }
+        }
     }
 }

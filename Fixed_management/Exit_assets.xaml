@@ -19,8 +19,8 @@
         <Label Content="经办人" Height="28" HorizontalAlignment="Left" Margin="254,12,0,0" Name="label2" VerticalAlignment="Top" />
         <DatePicker Height="28" HorizontalAlignment="Left" Margin="536,12,0,0" Name="exit_dateDatePicker"  VerticalAlignment="Top" Width="115" />
         <Label Content="退出日期" Height="28" HorizontalAlignment="Left" Margin="472,12,0,0" Name="label3" VerticalAlignment="Top" />
-        <Button Content="查询" Height="28" HorizontalAlignment="Left" Margin="700,12,0,0" Name="button1" VerticalAlignment="Top" Width="75"  />
-        <Button Content="资产退出" Height="28" HorizontalAlignment="Left" Margin="850,12,0,0" Name="fix_outtool" VerticalAlignment="Top" Width="75" Click="fix_outtool_Click" />
+        <Button Content="查询" Height="28" HorizontalAlignment="Left" Margin="918,15,0,0" Name="exit_select" VerticalAlignment="Top" Width="75" Click="exit_select_Click" />
+        <Button Content="资产退出" Height="28" HorizontalAlignment="Left" Margin="685,12,0,0" Name="fix_outtool" VerticalAlignment="Top" Width="75" Click="fix_outtool_Click" />
         <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,100,0,0" Name="fixednameDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto" Height="Auto">
             <DataGrid.Columns>
                 <DataGridTemplateColumn >
@@ -44,7 +44,7 @@
                 <DataGridTextColumn x:Name="card_numberColumn" Binding="{Binding Path=card_number}" Header="原卡片号" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="enable_statusColumn" Binding="{Binding Path=enable_status}" Header="enable status" Width="SizeToHeader" Visibility="Hidden"/>
                 <DataGridTextColumn x:Name="del_statusColumn" Binding="{Binding Path=del_status}" Header="del status" Width="SizeToHeader" Visibility="Hidden"/>
-                <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="备注" Width="SizeToHeader" />
+                
                 <DataGridTextColumn x:Name="natureColumn" Binding="{Binding Path=nature}" Header="资产性质" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="categoryColumn" Binding="{Binding Path=category}" Header="资产类别" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="specificationsColumn" Binding="{Binding Path=specifications}" Header="资产规格" Width="SizeToHeader" />
@@ -60,11 +60,14 @@
                 <DataGridTextColumn x:Name="_operatorColumn" Binding="{Binding Path=operator}" Header="经办人" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="affiliatedColumn" Binding="{Binding Path=affiliated}" Header="所属单位" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="departmentColumn" Binding="{Binding Path=department}" Header="保管部门" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="wayColumn" Binding="{Binding Path=way}" Header="退出方式" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="wayColumn" Binding="{Binding Path=way}" Header="退出方式" Width="SizeToHeader" Visibility="Hidden" />
                 <DataGridTextColumn x:Name="storage_placeColumn" Binding="{Binding Path=storage_place}" Header="存放地点" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="fixed_IDColumn" Binding="{Binding Path=fixed_ID}" Header="资产ID" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="exit_dateColumn" Binding="{Binding Path=exit_date}" Header="退出日期" Width="SizeToHeader" />
+                
+                <DataGridTextColumn x:Name="fixed_IDColumn" Binding="{Binding Path=fixed_ID}" Header="资产ID" Width="SizeToHeader" Visibility="Hidden" />
+                <DataGridTextColumn x:Name="exit_dateColumn" Binding="{Binding Path=exit_date}" Header="退出日期" Width="SizeToHeader" Visibility="Hidden" />
+                <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="备注" Width="SizeToHeader" />
             </DataGrid.Columns>
         </DataGrid>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="792,17,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
     </Grid>
 </UserControl>
