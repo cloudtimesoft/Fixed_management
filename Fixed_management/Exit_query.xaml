@@ -10,7 +10,7 @@
         <CollectionViewSource x:Key="fixed_exitViewSource" Source="{Binding Path=fixed_exit, Source={StaticResource fixedDataSet}}" />
     </UserControl.Resources>
     <Grid DataContext="{StaticResource fixed_exitViewSource}">
-        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+        <Button Content="导出" Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="print" VerticalAlignment="Top" Width="75" Click="print_Click" />
         <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,52,0,0" Name="fixed_exitDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="barcodeColumn" Binding="{Binding Path=barcode}" Header="资产条码" Width="SizeToHeader" />
@@ -25,9 +25,9 @@
                 <DataGridTextColumn x:Name="account_numberColumn" Binding="{Binding Path=account_number}" Header="入账编号" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="fixed_assetColumn" Binding="{Binding Path=fixed_asset}" Header="原资产号" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="card_numberColumn" Binding="{Binding Path=card_number}" Header="原卡片号" Width="SizeToHeader" />
-                <DataGridTextColumn x:Name="enable_statusColumn" Binding="{Binding Path=enable_status}" Header="enable status" Width="SizeToHeader" Visibility="Hidden"/>
-                <DataGridTextColumn x:Name="del_statusColumn" Binding="{Binding Path=del_status}" Header="del status" Width="SizeToHeader" Visibility="Hidden"/>
-                <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="备注" Width="SizeToHeader" />
+                <!--<DataGridTextColumn x:Name="enable_statusColumn" Binding="{Binding Path=enable_status}" Header="enable status" Width="SizeToHeader" Visibility="Hidden"/>-->
+                <!--<DataGridTextColumn x:Name="del_statusColumn" Binding="{Binding Path=del_status}" Header="del status" Width="SizeToHeader" Visibility="Hidden"/>-->
+               
                 <DataGridTextColumn x:Name="natureColumn" Binding="{Binding Path=nature}" Header="资产性质" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="categoryColumn" Binding="{Binding Path=category}" Header="资产类别" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="specificationsColumn" Binding="{Binding Path=specifications}" Header="资产规格" Width="SizeToHeader" />
@@ -47,6 +47,7 @@
                 <DataGridTextColumn x:Name="storage_placeColumn" Binding="{Binding Path=storage_place}" Header="存放地点" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="fixed_IDColumn" Binding="{Binding Path=fixed_ID}" Header="资产ID" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="exit_dateColumn" Binding="{Binding Path=exit_date}" Header="退出日期" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="备注" Width="SizeToHeader" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

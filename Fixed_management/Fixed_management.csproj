@@ -62,10 +62,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Xceed.Wpf.AvalonDock">
-      <HintPath>bin\Debug\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <HintPath>..\..\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
     <Reference Include="Xceed.Wpf.AvalonDock.resources">
-      <HintPath>bin\Debug\Xceed.Wpf.AvalonDock.resources.dll</HintPath>
+      <HintPath>..\..\Xceed.Wpf.AvalonDock.resources.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

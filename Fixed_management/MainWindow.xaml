@@ -68,7 +68,7 @@
                     </ToggleButton.Background>
                 </ToggleButton>
                 <Separator Width="10" Background="#00000000"></Separator>
-                <ToggleButton x:Name="fix_prin" Content="" IsEnabled="False" ToolTip="标签打印" Height="26" Width="26">
+                <ToggleButton x:Name="fix_prin" Content="" IsEnabled="False" ToolTip="标签打印" Height="26" Width="26" Click="fix_prin_Click">
                     <ToggleButton.Background>
                         <ImageBrush ImageSource="/Fixed_management;component/image/标签打印.png" />
                     </ToggleButton.Background>

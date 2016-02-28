@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Xceed.Wpf.AvalonDock.Layout;
+using Xceed.Wpf.AvalonDock;
 
 namespace Fixed_management
 {
@@ -350,6 +351,7 @@ where T : DependencyObject
             else
             {
                 Effective newEffective = new Effective();
+                //newEffective.Margin = new Thickness(0, 20, 0, 0);
                 LayoutDocument newreport = new LayoutDocument();
                 newreport.Title = "有效资产";
                 newreport.IsActive = true;
@@ -599,31 +601,23 @@ where T : DependencyObject
 
         }
 
-        //private void login_Click(object sender, RoutedEventArgs e)
-        //{
-            //Login findfix = MainWindow.FindChild<Login>(Application.Current.MainWindow, "Login");
-            //if (findfix != null)
-            //{
-            //    foreach (var t in mainpanel.Children)
-            //    {
-            //        if (t.Title == "登录系统")
-            //        {
-            //            t.IsActive = true;
-            //            break;
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    Login Login = new Login();
-            //    LayoutDocument newreport = new LayoutDocument();
-            //    newreport.Title = "登录系统";
-            //    newreport.IsActive = true;
-            //    newreport.Content = Login;
-            //    Login.Name = "Login";
-            //    mainpanel.Children.Add(newreport);
-        //    }
-        //}
+        private void fix_prin_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                var tbl = dockingManager;
+                var size = new Size(printDialog.PrintableAreaWidth, printDialog.PrintableAreaHeight);
+                tbl.Measure(size);
+                tbl.Arrange(new Rect(new Point(0, 0), size));
+                
+                printDialog.PrintVisual(tbl, "Print Test");
+            }
+        }
+
+      
 
 
     }
