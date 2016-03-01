@@ -43,5 +43,20 @@ namespace Fixed_management
 
             fixed_detalDataGrid.CanUserAddRows = false;
         }
+
+        private void select_detal_Click(object sender, RoutedEventArgs e)
+        {
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            if (textBox1.Text != "")
+            {
+                var s = from c in fixedDataSet.fixed_detal where c.category == textBox1.Text || c.designation == textBox1.Text || c.fixed_number == int.Parse(textBox1.Text) || c.fixed_status == textBox1.Text || c.fixed_vale == textBox1.Text || c.nature == textBox1.Text || c.specifications == textBox1.Text select c;
+                fixed_detalDataGrid.ItemsSource = s;
+            }
+            else 
+            {
+                var s = from c in fixedDataSet.fixed_detal select c;
+                fixed_detalDataGrid.ItemsSource = s;
+            }
+        }
     }
 }

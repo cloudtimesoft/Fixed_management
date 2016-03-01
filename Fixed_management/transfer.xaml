@@ -24,7 +24,7 @@
         <c1:C1ComboBox DataContext="{StaticResource keeperViewSource}" SelectedValuePath="keeper_ID" DisplayMemberPath="keeper" Height="28" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="354,25,0,0" Name="keeper_IDC1ComboBox" VerticalAlignment="Top" Width="120" IsEditable="True"/>
         <Label Content="存放地点" Height="28" HorizontalAlignment="Left" Margin="284,70,0,0" Name="label4" VerticalAlignment="Top" />
         <c1:C1ComboBox DataContext="{StaticResource storage_placeViewSource}" SelectedValuePath="storage_place_ID" DisplayMemberPath="storage_place" Height="28" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="354,70,0,0" Name="storage_place_IDC1ComboBox" VerticalAlignment="Top" Width="120" IsEditable="True"/>
-        <Button Content="查询" Height="28" HorizontalAlignment="Left" Margin="906,70,0,0" Name="transfer_select" VerticalAlignment="Top" Width="75" Click="transfer_select_Click" />
+        <Button Content="查询" Height="28" HorizontalAlignment="Left" Margin="906,70,0,0" Name="transfer_select" VerticalAlignment="Top" Width="80" Click="transfer_select_Click" />
         <Button Content="资产转移" Height="28" HorizontalAlignment="Left" Margin="556,70,0,0" Name="transfer_btn" VerticalAlignment="Top" Width="75" Click="transfer_btn_Click" />
         <DatePicker   Height="28" HorizontalAlignment="Left" Margin="641,26,0,146" Name="transfer_dateDatePicker"  VerticalAlignment="Top" Width="115" />
         <Label Content="转移日期" Height="28" HorizontalAlignment="Left" Margin="556,25,0,0" Name="label5" VerticalAlignment="Top" />

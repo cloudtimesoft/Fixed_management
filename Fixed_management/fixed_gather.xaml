@@ -10,7 +10,7 @@
         <CollectionViewSource x:Key="fixed_gatherViewSource" Source="{Binding Path=fixed_gather, Source={StaticResource fixedDataSet}}" />
     </UserControl.Resources>
     <Grid DataContext="{StaticResource fixed_gatherViewSource}">
-        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,68,0,0" Name="fixed_gatherDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto">
+        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,40,0,0" Name="fixed_gatherDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="fixed_IDColumn" Binding="{Binding Path=fixed_ID}" Header="fixed ID" Width="SizeToHeader" Visibility="Hidden"/>
                 <DataGridTextColumn x:Name="natureColumn" Binding="{Binding Path=nature}" Header="资产性质" Width="SizeToHeader" />
@@ -20,6 +20,7 @@
                 <DataGridTextColumn x:Name="fixed_valeColumn" Binding="{Binding Path=fixed_vale}" Header="资产原值" Width="SizeToHeader" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="查询" Height="23" HorizontalAlignment="Left" Margin="32,24,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+        <Button Content="查询" Height="23" HorizontalAlignment="Left" Margin="200,10,0,0" Name="gather_select" VerticalAlignment="Top" Width="75" Click="gather_select_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="74,11,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
     </Grid>
 </UserControl>

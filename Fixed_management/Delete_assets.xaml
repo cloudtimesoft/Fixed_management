@@ -11,9 +11,9 @@
         <CollectionViewSource x:Key="fixed_delViewSource" Source="{Binding Path=fixed_del, Source={StaticResource fixedDataSet}}" />
     </UserControl.Resources>
     <Grid DataContext="{StaticResource fixednameViewSource}">
-        <Button Content="查询" Height="28" HorizontalAlignment="Left" Margin="900,20,0,0" Name="del_select" VerticalAlignment="Top" Width="75" Click="del_select_Click" />
-        <Button Content="资产删除" Height="28" HorizontalAlignment="Left" Margin="50,20,0,0" Name="del_assets" VerticalAlignment="Top" Width="75" Click="del_assets_Click" />
-        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource fixed_delViewSource}}" Margin="0,68,0,0" Name="fixed_delDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto">
+        <Button Content="查询" Height="28" HorizontalAlignment="Left" Margin="900,10,0,0" Name="del_select" VerticalAlignment="Top" Width="80" Click="del_select_Click" />
+        <Button Content="资产删除" Height="28" HorizontalAlignment="Left" Margin="20,10,0,0" Name="del_assets" VerticalAlignment="Top" Width="75" Click="del_assets_Click" />
+        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource fixed_delViewSource}}" Margin="0,50,0,0" Name="fixed_delDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto">
             <DataGrid.Columns>
                 <DataGridTemplateColumn >
                     <DataGridTemplateColumn.CellTemplate>
@@ -58,6 +58,6 @@
                 <DataGridTextColumn x:Name="exit_dateColumn" Binding="{Binding Path=exit_date}" Header="退出日期" Width="SizeToHeader" Visibility="Hidden" />
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="750,23,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="750,10,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
     </Grid>
 </UserControl>

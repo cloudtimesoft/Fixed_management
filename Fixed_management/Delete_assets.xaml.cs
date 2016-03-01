@@ -41,6 +41,8 @@ namespace Fixed_management
             fixed_delTableAdapter.Fill(fixedDataSet.fixed_del);
 
             fixed_delDataGrid.CanUserAddRows = false;
+            del_select.Margin = new Thickness(SystemParameters.PrimaryScreenWidth - 100, 10, 0, 0);
+            textBox1.Margin = new Thickness(SystemParameters.PrimaryScreenWidth - 230, 10, 0, 0);
         }
 
         private void del_assets_Click(object sender, RoutedEventArgs e)

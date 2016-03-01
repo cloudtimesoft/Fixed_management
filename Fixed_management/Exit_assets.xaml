@@ -19,9 +19,9 @@
         <Label Content="经办人" Height="28" HorizontalAlignment="Left" Margin="254,12,0,0" Name="label2" VerticalAlignment="Top" />
         <DatePicker Height="28" HorizontalAlignment="Left" Margin="536,12,0,0" Name="exit_dateDatePicker"  VerticalAlignment="Top" Width="115" />
         <Label Content="退出日期" Height="28" HorizontalAlignment="Left" Margin="472,12,0,0" Name="label3" VerticalAlignment="Top" />
-        <Button Content="查询" Height="28" HorizontalAlignment="Left" Margin="918,15,0,0" Name="exit_select" VerticalAlignment="Top" Width="75" Click="exit_select_Click" />
+        <Button Content="查询" Height="28" HorizontalAlignment="Left" Margin="918,15,0,0" Name="exit_select" VerticalAlignment="Top" Width="80" Click="exit_select_Click" />
         <Button Content="资产退出" Height="28" HorizontalAlignment="Left" Margin="685,12,0,0" Name="fix_outtool" VerticalAlignment="Top" Width="75" Click="fix_outtool_Click" />
-        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,100,0,0" Name="fixednameDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto" Height="Auto">
+        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="0,50,0,0" Name="fixednameDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto" Height="Auto">
             <DataGrid.Columns>
                 <DataGridTemplateColumn >
                     <DataGridTemplateColumn.CellTemplate>

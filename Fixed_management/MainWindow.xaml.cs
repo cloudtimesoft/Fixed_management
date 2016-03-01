@@ -68,6 +68,7 @@ where T : DependencyObject
         }
 
 
+       
 
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -93,7 +94,8 @@ where T : DependencyObject
                 fixedadd newfixedadd = new fixedadd();
                 newfixedadd.Name = "newfixedadd";
                 newfixed.Content = newfixedadd;
-                
+
+              
 
             }
 
@@ -615,6 +617,32 @@ where T : DependencyObject
                 
                 printDialog.PrintVisual(tbl, "Print Test");
             }
+        }
+
+        private void fixed_about_Click(object sender, RoutedEventArgs e)
+        {
+            C1.WPF.C1Window findfixed = MainWindow.FindChild<C1.WPF.C1Window>(Application.Current.MainWindow, "about");
+            if (findfixed != null)
+            {
+                findfixed.IsActive = true;
+            }
+            else
+            {
+                C1.WPF.C1Window newc1window = new C1.WPF.C1Window();
+                newc1window.Name = "about";
+                newc1window.IsResizable = false;
+                newc1window.ShowMaximizeButton = false;
+                newc1window.ShowMinimizeButton = false;
+                newc1window.Width = 500;
+                newc1window.Height = 400;
+                newc1window.Margin = new Thickness(SystemParameters.PrimaryScreenWidth / 2d - 250, SystemParameters.PrimaryScreenHeight / 2d - 250, 0, 0);
+                newc1window.Show();
+
+                About newabout = new About();
+                newabout.Name = "newabout";
+                newc1window.Content = newabout;
+            }
+
         }
 
       

@@ -48,7 +48,7 @@
             </MenuItem>
             <MenuItem Header="帮助">
                 <MenuItem Header="帮助索引" InputGestureText="F1"></MenuItem>
-                <MenuItem Header="关于" ></MenuItem>
+                <MenuItem Header="关于" x:Name="fixed_about" Click="fixed_about_Click"></MenuItem>
             </MenuItem>
         </Menu>
 

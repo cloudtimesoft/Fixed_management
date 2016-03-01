@@ -44,5 +44,20 @@ namespace Fixed_management
 
             fixed_gatherDataGrid.CanUserAddRows = false;
         }
+
+        private void gather_select_Click(object sender, RoutedEventArgs e)
+        {
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            if (textBox1.Text != "")
+            {
+                var s = from c in fixedDataSet.fixed_gather where c.category == textBox1.Text || c.fixed_status == textBox1.Text || c.fixed_vale == textBox1.Text || c.nature == textBox1.Text select c;
+                fixed_gatherDataGrid.ItemsSource = s;
+            }
+            else
+            {
+                var s = from c in fixedDataSet.fixed_gather select c;
+                fixed_gatherDataGrid.ItemsSource = s;
+            }
+        }
     }
 }

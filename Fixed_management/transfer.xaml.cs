@@ -71,6 +71,8 @@ namespace Fixed_management
             storage_placeViewSource.View.MoveCurrentToFirst();
 
            transfer_dateDatePicker.SelectedDate = DateTime.Now;
+           transfer_select.Margin = new Thickness(SystemParameters.PrimaryScreenWidth - 100, 70, 0, 0);
+           textBox1.Margin = new Thickness(SystemParameters.PrimaryScreenWidth - 230, 70, 0, 0);
         }
 
 

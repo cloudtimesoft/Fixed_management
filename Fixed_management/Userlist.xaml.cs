@@ -45,13 +45,25 @@ namespace Fixed_management
             //employeesViewSource.View.MoveCurrentToFirst();
             employeesDataGrid.CanUserAddRows = false;
 
+            
+            var s = from c in fixedDataSet.employees select c;
+            foreach (var i in s)
+            {
+                if (i.number == "001")
+                {
+                   
+                }
+            }
+           
+
+
         }
 
         private void add_user_Click(object sender, RoutedEventArgs e)
         {
             C1.WPF.C1Window employeeswindow = new C1.WPF.C1Window();
             employeeswindow.IsResizable = false;
-            employeeswindow.Name = "employeeswindow";
+            employeeswindow.Name = "employeeswindow1";
             employeeswindow.Width = 700;
             employeeswindow.Height = 550;
             employeeswindow.Header = "员工管理";
@@ -60,10 +72,10 @@ namespace Fixed_management
             employeeswindow.ShowMaximizeButton = false;
             employeeswindow.ShowMinimizeButton = false;
             userdetail newemployees = new userdetail();
-            newemployees.Name = "newemployees";
+            newemployees.Name = "newemployees1";
             employeeswindow.Content = newemployees;
 
-
+            //newemployees.C1Window += new RoutedPropertyChangedEventHandler<object>(newemployees_C1Window);
             //Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
             //Fixed_management.FixedDataSetTableAdapters.employeesTableAdapter fixedDataSetemployeesTableAdapter = new Fixed_management.FixedDataSetTableAdapters.employeesTableAdapter();
             //fixedDataSet.employees.AcceptChanges();
@@ -72,28 +84,69 @@ namespace Fixed_management
 
         private void edit_Click(object sender, RoutedEventArgs e)
         {
-            C1.WPF.C1Window employeeswindow = new C1.WPF.C1Window();
-            employeeswindow.IsResizable = false;
-            employeeswindow.Name = "employeeswindow";
-            employeeswindow.Width = 700;
-            employeeswindow.Height = 550;
-            employeeswindow.Header = "员工管理";
-            employeeswindow.Margin = new Thickness(SystemParameters.PrimaryScreenWidth / 2d - 250, SystemParameters.PrimaryScreenHeight / 2d - 250, 0, 0);
-            employeeswindow.Show();
-            employeeswindow.ShowMaximizeButton = false;
-            employeeswindow.ShowMinimizeButton = false;
-            userdetail newemployees = new userdetail();
-            newemployees.Name = "newemployees";
+
             var t = employeesDataGrid.SelectedItem;
             var b = t as DataRowView;
             int s = int.Parse(b.Row[0].ToString());
-            //Public.user_id = s;
-            newemployees.u_id = s;
-            employeeswindow.Content = newemployees;
+            string edit_num = b.Row[1].ToString();
 
-            
+            if (edit_num == "admin")
+            {
+                MessageBox.Show("无法编辑管理员", "提示");
+            }
+            else
+            {
+                C1.WPF.C1Window employeeswindow = new C1.WPF.C1Window();
+                employeeswindow.IsResizable = false;
+                employeeswindow.Name = "employeeswindow2";
+                employeeswindow.Width = 700;
+                employeeswindow.Height = 550;
+                employeeswindow.Header = "员工管理";
+                employeeswindow.Margin = new Thickness(SystemParameters.PrimaryScreenWidth / 2d - 250, SystemParameters.PrimaryScreenHeight / 2d - 250, 0, 0);
+                employeeswindow.Show();
+                employeeswindow.ShowMaximizeButton = false;
+                employeeswindow.ShowMinimizeButton = false;
+                userdetail newemployees = new userdetail();
+                newemployees.Name = "newemployees2";
+
+                //Public.user_id = s;
+                newemployees.u_id = s;
+                employeeswindow.Content = newemployees;
+
+            }
             
 
+        }
+
+        void newemployees_C1Window(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            var a = from c in fixedDataSet.employees select c;
+            employeesDataGrid.ItemsSource = a;
+
+        }
+
+        private void delete_Click(object sender, RoutedEventArgs e)
+        {
+            var t = employeesDataGrid.SelectedItem;
+            var b = t as DataRowView;
+            int s = int.Parse(b.Row[0].ToString());
+            string num = b.Row[1].ToString();
+            Fixed_management.FixedDataSet fixedDataSet = ((Fixed_management.FixedDataSet)(this.FindResource("fixedDataSet")));
+            // 将数据加载到表 nature 中。可以根据需要修改此代码。
+            Fixed_management.FixedDataSetTableAdapters.employeesTableAdapter fixedDataSetemployeesTableAdapter = new Fixed_management.FixedDataSetTableAdapters.employeesTableAdapter();
+
+            if (num == "admin")
+            {
+                MessageBox.Show("无法删除管理员", "提示");
+            }
+            else
+            {
+                fixedDataSet.employees.FindByemployees_ID(s).Delete();
+                fixedDataSetemployeesTableAdapter.Update(fixedDataSet.employees);
+                fixedDataSetemployeesTableAdapter.Fill(fixedDataSet.employees);
+                fixedDataSet.employees.AcceptChanges();
+            }
         }
     }
 }

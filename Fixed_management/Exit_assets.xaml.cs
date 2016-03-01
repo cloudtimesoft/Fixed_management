@@ -55,6 +55,9 @@ namespace Fixed_management
 
             fixednameDataGrid.CanUserAddRows = false;
             exit_dateDatePicker.SelectedDate = DateTime.Now;
+
+            exit_select.Margin = new Thickness(SystemParameters.PrimaryScreenWidth - 100, 10, 0, 0);
+            textBox1.Margin = new Thickness(SystemParameters.PrimaryScreenWidth - 230, 10, 0, 0);
         }
         private void checkmultitable()
         {

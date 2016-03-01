@@ -48,7 +48,7 @@ namespace Fixed_management
             if (s > 0)
             {
                 MainWindow newmain = new MainWindow();
-
+                Application.Current.MainWindow = newmain;
                 this.Close();
                 newmain.Show();
             }

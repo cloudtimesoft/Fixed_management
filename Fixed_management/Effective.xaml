@@ -12,8 +12,8 @@
     </UserControl.Resources>
     <Grid DataContext="{StaticResource fixedViewSource}">
         
-        <Button Content="查询" x:Name="select" Width="50" Height="26" Margin="937,13,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="select_Click"></Button>
-        <Button Content="导出" x:Name="prit" Width="50" Height="26" Margin="150,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="prit_Click"></Button>
+        <Button Content="查询" x:Name="select" Width="80" Height="26" Margin="937,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="select_Click"></Button>
+        <Button Content="导出" x:Name="prit" Width="80" Height="26" Margin="12,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="prit_Click"></Button>
         <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource fixednameViewSource}}" Margin="0,40,0,0" Name="fixednameDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="Auto" Height="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="barcodeColumn" Binding="{Binding Path=barcode}" Header="资产条码" />
@@ -81,6 +81,7 @@
                 <DataGridTextColumn x:Name="contentColumn" Binding="{Binding Path=content}" Header="备注"  />
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="790,13,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="800,13,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="354,10,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
     </Grid>
 </UserControl>
